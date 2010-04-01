@@ -1,0 +1,8 @@
+%h2= @book.title
+
+%p 
+	ISBN:
+	%span=@book.ISBN
+
+%a= link_to 'Edit', edit_book_path(@book)
+%a= link_to 'Back', books_path
