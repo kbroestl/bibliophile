@@ -1,0 +1,9 @@
+%h2=@author.fullname
+
+%h3 is the author of:
+%ul
+-@author.books.each do |book|
+	%li= link_to book.title, book_path(book)
+
+%a=link_to 'Edit', edit_author_path(@author)
+%a= link_to 'Back', authors_path

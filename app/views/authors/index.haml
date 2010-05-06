@@ -1,0 +1,13 @@
+%h1 Listing authors
+
+%table
+	%tr
+	-@authors.each do |author|
+		%tr
+			%td= author.fullname
+			%td= link_to 'Show', author
+			%td= link_to 'Edit', edit_author_path(author)
+			%td= link_to 'Destroy', author, :confirm => 'Are you sure?', :method => :delete
+
+#pages= will_paginate @books
+%a= link_to 'New author', new_author_path

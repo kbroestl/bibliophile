@@ -2,8 +2,8 @@ class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.xml
   def index
-    @authors = Author.all
-
+#    @authors = Author.all
+    @authors = Author.paginate :page=>params[:page]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @authors }
