@@ -1,17 +1,27 @@
 %h2= @book.title
-- @book.authors.each do |author|
-	-if author.authorships.find_by_book_id(@book.id).translator == 1
-		%h4= link_to author.fullname + ", translator", author_path(author)
-	-else
-		%h3= link_to author.fullname, author_path(author)
+- @book.authorships.each do |a|
+  -if a.is_translator?
+    %h4= link_to a.author.fullname + ", translator", author_path(a.author)
+  -elsif a.is_editor?
+    %h4= link_to a.author.fullname + ", editor", author_path(a.author)
+  -else
+    %h3= link_to a.author.fullname, author_path(a.author)
 
 %p
-	Publisher: 
-	%span=@book.publisher
+  Publisher: 
+  %span=@book.publisher
 
-%p 
-	ISBN: 
-	%span=@book.ISBN
+%p
+  ISBN: 
+  %span=@book.ISBN
+
+%p
+  Pages
+  %span=@book.pages
+
+%p
+  Language
+  %span= @book.language
 
 %a= link_to 'Edit', edit_book_path(@book)
 %a= link_to 'Back', books_path

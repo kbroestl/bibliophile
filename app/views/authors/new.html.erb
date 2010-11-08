@@ -2,7 +2,7 @@
 
 <% form_for(@author) do |f| %>
   <%= f.error_messages %>
-
+  <%= f.text_field :author_first %>
   <p>
     <%= f.submit 'Create' %>
   </p>
