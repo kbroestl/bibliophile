@@ -5554,3 +5554,880 @@ ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #7 of ap
 Rendered rescues/_trace (46.2ms)
 Rendered rescues/_request_and_response (0.5ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (59.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (213.5ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100218162154)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Table 'books' already exists: CREATE TABLE `books` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default0' at line 1: ALTER TABLE `contributor` ADD `boolean` default0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (80.5ms)[0m   [0;1mALTER TABLE `authorships` ADD `contributor` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-11-10 18:12:27) [GET]
+  [4;36;1mBook Load (0.6ms)[0m   [0;1mSELECT * FROM `books` LIMIT 0, 30[0m
+  [4;35;1mBook Columns (17.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `books` [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 388ms (View: 279, DB: 21) | 200 OK [http://localhost/books/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-10 18:12:36) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (110.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (15.6ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.4ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+Completed in 308ms (View: 171, DB: 131) | 200 OK [http://localhost/books/show/503]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-10 18:13:34) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.3ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+Completed in 29ms (View: 16, DB: 7) | 200 OK [http://localhost/books/show/503]
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (42.2ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (2.1ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mAuthorship Load (12.5ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-10 20:42:58) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (22.9ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.8ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (1.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.7ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+Completed in 173ms (View: 136, DB: 30) | 200 OK [http://localhost/books/show/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 09:41:00) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (11.3ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.4ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.7ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+Completed in 114ms (View: 92, DB: 16) | 200 OK [http://localhost/books/show/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 15:37:39) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.8ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mLanguage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+
+ActionView::TemplateError (undefined method `language' for Language(lanID: string, Language: string, id: integer):Class) on line #26 of app/views/books/show.haml:
+23: 
+24: %p
+25:   Language: 
+26:   %span= @book.languages.language
+27:   
+28: %p
+29:   Current Location:
+
+    app/views/books/show.haml:26:in `_run_haml_app47views47books47show46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/books_controller.rb:20:in `show'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (109.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'languages.book_id' in 'where clause': SELECT * FROM `languages` WHERE (`languages`.book_id = 503) [0m
+  [4;35;1mBook Load (0.5ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'languages.book_id' in 'where clause': SELECT * FROM `languages` WHERE (`languages`.book_id = 503) [0m
+  [4;35;1mBook Load (0.5ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mLanguage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (1.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mAuthor Load (1.0ms)[0m   [0;1mSELECT `authors`.* FROM `authors` INNER JOIN `authorships` ON `authors`.id = `authorships`.author_id WHERE ((`authorships`.book_id = 503)) [0m
+  [4;35;1mAuthor Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'languages.book_id' in 'where clause': SELECT * FROM `languages` WHERE (`languages`.book_id = 503) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (1.8ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mAuthor Load (0.5ms)[0m   [0;1mSELECT `authors`.* FROM `authors` INNER JOIN `authorships` ON `authors`.id = `authorships`.author_id WHERE ((`authorships`.book_id = 503)) [0m
+  [4;35;1mAuthor Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (1.4ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mAuthor Load (0.5ms)[0m   [0;1mSELECT `authors`.* FROM `authors` INNER JOIN `authorships` ON `authors`.id = `authorships`.author_id WHERE ((`authorships`.book_id = 503)) [0m
+  [4;35;1mAuthor Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mLanguage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.9ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 16:03:23) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (1.0ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLanguage Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+Completed in 89ms (View: 74, DB: 8) | 200 OK [http://localhost/books/show/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:03:33) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 63ms (View: 56, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:04:58) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 83ms (View: 5, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 16:05:12) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (202.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (30.8ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLanguage Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.5ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+Completed in 274ms (View: 24, DB: 243) | 200 OK [http://localhost/books/show/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:05:14) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (form_for outputs directly to the Haml template.
+Disregard its return value and use the - operator,
+or use capture_haml to get the value as a String.
+) on line #9 of app/views/books/edit.haml:
+6:   %p= f.submit 'Update'
+7: 
+8: = link_to 'Show', @book |
+9: = link_to 'Back', books_path
+
+    haml (3.0.23) lib/haml/buffer.rb:139:in `format_script_false_false_false_false_false_false_false'
+    app/views/books/edit.haml:9:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (106.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:05:35) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (form_for outputs directly to the Haml template.
+Disregard its return value and use the - operator,
+or use capture_haml to get the value as a String.
+) on line #9 of app/views/books/edit.haml:
+6:   = f.submit 'Update'
+7: 
+8: = link_to 'Show', @book |
+9: = link_to 'Back', books_path
+
+    haml (3.0.23) lib/haml/buffer.rb:139:in `format_script_false_false_false_false_false_false_false'
+    app/views/books/edit.haml:9:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:05:42) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (form_for outputs directly to the Haml template.
+Disregard its return value and use the - operator,
+or use capture_haml to get the value as a String.
+) on line #9 of app/views/books/edit.haml:
+6:   = f.submit
+7: 
+8: = link_to 'Show', @book |
+9: = link_to 'Back', books_path
+
+    haml (3.0.23) lib/haml/buffer.rb:139:in `format_script_false_false_false_false_false_false_false'
+    app/views/books/edit.haml:9:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:06:41) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 18ms (View: 9, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:08:27) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 19ms (View: 11, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:08:53) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:09:12) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 19ms (View: 11, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:09:24) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:11:32) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (undefined method `range_field' for #<ActionView::Helpers::FormBuilder:0x1033e57e8>) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.range_field :language
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (46.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:11:50) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (undefined method `range_field' for #<ActionView::Helpers::FormBuilder:0x10346d058>) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.range_field :language
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (115.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:12:05) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;36;1mLanguage Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+Completed in 24ms (View: 15, DB: 4) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 16:16:37) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.4ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (2.1ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLanguage Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (1.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+Completed in 39ms (View: 21, DB: 11) | 200 OK [http://localhost/books/show/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:16:48) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (342.9ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (wrong number of arguments (1 for 4)) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select :language
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `collection_select'
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:19:18) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.4ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;36;1mLanguage Load (0.4ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+
+ActionView::TemplateError (undefined method `map' for :language_id:Symbol) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select( :language, :language_id, Language.all, :id)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (118.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:19:48) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;35;1mLanguage Load (0.3ms)[0m   [0mSELECT * FROM `languages` [0m
+
+ActionView::TemplateError (undefined method `book' for #<Book:0x103524230>) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select( :book, :language_id, Language.all, :id)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (119.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:20:08) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (6.7ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;36;1mLanguage Load (0.3ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+
+ActionView::TemplateError (undefined method `map' for :language_id:Symbol) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select( :language, :language_id, Language.all, :id)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:20:47) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;35;1mLanguage Load (0.3ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLanguage Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+
+ActionView::TemplateError (undefined method `map' for :language:Symbol) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select( :language, :language, Language.all, :id)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:20:57) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;36;1mLanguage Load (0.3ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+
+ActionView::TemplateError (undefined method `map' for :id:Symbol) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select( :language, :id, Language.all, :id)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:21:11) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;35;1mLanguage Load (0.3ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLanguage Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+
+ActionView::TemplateError (undefined method `map' for :id:Symbol) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select(:language, :id, Language.all, :id)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (116.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:23:44) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+  [4;36;1mLanguage Load (0.3ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+
+ActionView::TemplateError (undefined method `merge' for #<Array:0x1034f0ae8>) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.select("book", "language_id", Language.all)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (115.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:25:00) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+
+ActionView::TemplateError (wrong number of arguments (1 for 4)) on line #8 of app/views/books/edit.haml:
+5:   =f.label :title
+6:   =f.text_field :title
+7:   =f.label :language
+8:   =f.collection_select(:language)
+9:   -f.submit
+10: 
+11: = link_to 'Show', @book |
+
+    app/views/books/edit.haml:8:in `collection_select'
+    app/views/books/edit.haml:8:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `call'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:229:in `form_for'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.23) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:235:in `form_for'
+    app/views/books/edit.haml:3:in `_run_haml_app47views47books47edit46haml'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.23) lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 16:26:21) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (7.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLanguage Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.9ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+Completed in 117ms (View: 94, DB: 17) | 200 OK [http://localhost/books/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:27:02) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 19ms (View: 11, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-11-11 16:27:21) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/edit
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://localhost/books/503/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#update (for 127.0.0.1 at 2010-11-11 16:27:25) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"qSBgjM45eySDW7zBpQLj5ita1E39yX/TJSp6rPsOf6k=", "id"=>"503", "book"=>{"title"=>"Falling into Theory", "publisher"=>"Bedford St. Martin's"}}
+  [4;36;1mBook Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBook Update (0.2ms)[0m   [0mUPDATE `books` SET `publisher` = 'Bedford St. Martin\'s' WHERE `id` = 503[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/books/503
+Completed in 14ms (DB: 2) | 302 Found [http://localhost/books/503]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-11 16:27:25) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.4ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;35;1mLanguage Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.3ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+Completed in 102ms (View: 89, DB: 7) | 200 OK [http://localhost/books/503]
