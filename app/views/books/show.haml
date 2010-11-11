@@ -1,9 +1,11 @@
 %h2= @book.title
 - @book.authorships.each do |a|
-  -if a.is_translator?
+  -if a.translator?
     %h4= link_to a.author.fullname + ", translator", author_path(a.author)
-  -elsif a.is_editor?
+  -elsif a.editor?
     %h4= link_to a.author.fullname + ", editor", author_path(a.author)
+  -elsif a.contributor?
+    %h4= link_to a.author.fullname + ", contributor", author_path(a.author)
   -else
     %h3= link_to a.author.fullname, author_path(a.author)
 
@@ -16,12 +18,16 @@
   %span=@book.ISBN
 
 %p
-  Pages
+  Pages: 
   %span=@book.pages
 
 %p
-  Language
-  %span= @book.language
+  Language: 
+  %span= @book.language.Language
+  
+%p
+  Current Location:
+  %span= @book.current_location
 
 %a= link_to 'Edit', edit_book_path(@book)
 %a= link_to 'Back', books_path

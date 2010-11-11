@@ -1,9 +1,9 @@
 %h1 New Book
 - form_for(@book) do |f|
-  = f.error_messages
-  = f.text_field :title
-  = f.text_field :ISBN
-  = f.text_field :pages
-  = f.submit "Create Book"
+  - f.error_messages
+  - f.text_field :title
+  - f.text_field :ISBN
+  - f.text_field :pages
+  - f.submit "Create Book"
 
 %p= link_to 'Back', books_path

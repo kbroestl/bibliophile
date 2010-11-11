@@ -1,0 +1,12 @@
+%h1 Editing book
+
+-form_for(@book) do |f|
+  -f.error_messages
+  =f.label :title
+  =f.text_field :title
+  =f.label :publisher
+  =f.text_field :publisher
+  =f.submit
+
+= link_to 'Show', @book |
+= link_to 'Back', books_path
