@@ -1,12 +1,34 @@
 %h1 Editing book
 
--form_for(@book) do |f|
+-form_for @book do |f|
   -f.error_messages
-  =f.label :title
-  =f.text_field :title
-  =f.label :publisher
-  =f.text_field :publisher
-  =f.submit
+  %p
+    =f.label :title
+    =f.text_field :title
+  %p
+    =f.label :publisher
+    =f.text_field :publisher
+  %p
+    =f.label :ISBN, 'ISBN:'
+    =f.text_field :ISBN
+  %p
+    =f.label :language
+    =f.select(:language_id, Language.all.collect {|p| [p.Language, p.id]})
+  %p
+    =f.label :genre
+    =f.select(:genre_id, Genre.all.collect{|g| [g.genre, g.id]})
+  %p
+    =f.label :location, "Current Location: "
+    =f.select(:location_id, Location.all.collect{|loc| [loc.Location, loc.id]})
 
-= link_to 'Show', @book |
-= link_to 'Back', books_path
+  %p
+    =f.label :notes
+    =f.text_area :notes
+  %p
+    =f.submit 'Submit Changes'
+
+%p
+  =link_to 'Show', @book 
+  |
+  =link_to 'Back to Main index', books_path
+

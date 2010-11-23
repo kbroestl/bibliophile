@@ -4,15 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <%= stylesheet_link_tag 'reset','scaffold','screen' %>
-  <title>The Portal on Rails</title>
+  <title>Locations: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-  <div id="wrapper">
-    <%if flash %>
-      <p style="color: green"><%= flash[:notice] %></p>
-    <% end %>
-    <%= yield %>
-  </div>
+
+<p style="color: green"><%= notice %></p>
+
+<%= yield %>
+
 </body>
 </html>

@@ -1,0 +1,36 @@
+<h1>Editing reading</h1>
+
+<% form_for(@reading) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :book_id %><br />
+    <%= f.text_field :book_id %>
+  </p>
+  <p>
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </p>
+  <p>
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </p>
+  <p>
+    <%= f.label :date_started %><br />
+    <%= f.datetime_select :date_started %>
+  </p>
+  <p>
+    <%= f.label :date_finished %><br />
+    <%= f.datetime_select :date_finished %>
+  </p>
+  <p>
+    <%= f.label :last_modified %><br />
+    <%= f.datetime_select :last_modified %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @reading %> |
+<%= link_to 'Back', readings_path %>

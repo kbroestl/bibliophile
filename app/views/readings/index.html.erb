@@ -1,0 +1,30 @@
+<h1>Listing readings</h1>
+
+<table>
+  <tr>
+    <th>Book</th>
+    <th>Rating</th>
+    <th>Comments</th>
+    <th>Date started</th>
+    <th>Date finished</th>
+    <th>Last modified</th>
+  </tr>
+
+<% @readings.each do |reading| %>
+  <tr>
+    <td><%=h reading.book_id %></td>
+    <td><%=h reading.rating %></td>
+    <td><%=h reading.comments %></td>
+    <td><%=h reading.date_started %></td>
+    <td><%=h reading.date_finished %></td>
+    <td><%=h reading.last_modified %></td>
+    <td><%= link_to 'Show', reading %></td>
+    <td><%= link_to 'Edit', edit_reading_path(reading) %></td>
+    <td><%= link_to 'Destroy', reading, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New reading', new_reading_path %>

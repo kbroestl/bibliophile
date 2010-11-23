@@ -9,25 +9,26 @@
   -else
     %h3= link_to a.author.fullname, author_path(a.author)
 
-%p
-  Publisher: 
-  %span=@book.publisher
+%p Publisher: #{@book.publisher}
 
-%p
-  ISBN: 
-  %span=@book.ISBN
-
-%p
-  Pages: 
-  %span=@book.pages
-
-%p
-  Language: 
-  %span= @book.language.Language
+%p Notes: #{@book.notes}
   
-%p
-  Current Location:
-  %span= @book.current_location
+%p ISBN: #{@book.ISBN}
 
-%a= link_to 'Edit', edit_book_path(@book)
-%a= link_to 'Back', books_path
+%p Pages: #{@book.pages}
+
+%p Current Location: #{@book.location.Location}
+
+%p Language: #{@book.language.Language}
+
+%p Last Modified: #{@book.last_modified}
+
+-if @book.readings
+  = render 'readings/show'
+
+%p 
+  = link_to 'Edit', edit_book_path(@book)
+  | 
+  = link_to 'Back', books_path
+
+%p= link_to 'Back to Main Index', books_path
