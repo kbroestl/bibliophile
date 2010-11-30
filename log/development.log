@@ -16605,3 +16605,759 @@ Rendering books/show
   [4;35;1mReading Load (0.3ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.book_id = 609) [0m
 Rendered readings/_show (1.2ms)
 Completed in 121ms (View: 29, DB: 10) | 200 OK [http://localhost/books/609]
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:44:27) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (46.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (3.0ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (22.7ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (19.8ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.7ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (1.1ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.7ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLocation Columns (16.1ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.5ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;36;1mLanguage Columns (38.7ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;36;1mReading Load (2.9ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (27.5ms)
+Completed in 468ms (View: 268, DB: 158) | 200 OK [http://localhost/books/503]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:49:29) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.3ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;35;1mLanguage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;35;1mReading Load (0.3ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.2ms)
+Completed in 112ms (View: 28, DB: 10) | 200 OK [http://localhost/books/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:52:09) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.4ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;36;1mLanguage Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;36;1mReading Load (0.4ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.4ms)
+Completed in 52ms (View: 36, DB: 9) | 200 OK [http://localhost/books/503]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:52:18) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.4ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+
+ActionView::TemplateError (undefined method `>>' for []:Array) on line #9 of app/views/books/show.haml:
+6:   -elsif a.editor?
+7:     %h4= link_to a.author.fullname + ", editor", author_path(a.author)
+8:   -elsif a.contributor?
+9:     - @contributors >> a
+10:   -else
+11:     %h3= link_to a.author.fullname, author_path(a.author)
+12: 
+
+    app/views/books/show.haml:9:in `_run_haml_app47views47books47show46haml'
+    vendor/plugins/will_paginate/lib/will_paginate/finder.rb:168:in `method_missing'
+    activerecord (2.3.8) lib/active_record/associations/association_collection.rb:369:in `method_missing_without_paginate'
+    activerecord (2.3.8) lib/active_record/associations/association_proxy.rb:215:in `each'
+    activerecord (2.3.8) lib/active_record/associations/association_proxy.rb:215:in `send'
+    activerecord (2.3.8) lib/active_record/associations/association_proxy.rb:215:in `method_missing'
+    activerecord (2.3.8) lib/active_record/associations/association_collection.rb:369:in `method_missing_without_paginate'
+    vendor/plugins/will_paginate/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/books/show.haml:3:in `_run_haml_app47views47books47show46haml'
+    actionpack (2.3.8) lib/action_view/renderable.rb:34:in `send'
+    actionpack (2.3.8) lib/action_view/renderable.rb:34:in `render'
+    actionpack (2.3.8) lib/action_view/base.rb:306:in `with_template'
+    actionpack (2.3.8) lib/action_view/renderable.rb:30:in `render'
+    actionpack (2.3.8) lib/action_view/template.rb:205:in `render_template'
+    actionpack (2.3.8) lib/action_view/base.rb:265:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    actionpack (2.3.8) lib/action_view/base.rb:348:in `_render_with_layout'
+    actionpack (2.3.8) lib/action_view/base.rb:262:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    actionpack (2.3.8) lib/action_controller/base.rb:1250:in `render_for_file'
+    actionpack (2.3.8) lib/action_controller/base.rb:942:in `render_without_benchmark'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:51:in `render'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:51:in `render'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:135:in `send'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:135:in `custom'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:179:in `call'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:179:in `respond'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:173:in `each'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:173:in `respond'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:20:in `show'
+    actionpack (2.3.8) lib/action_controller/base.rb:1331:in `send'
+    actionpack (2.3.8) lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:617:in `call_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    actionpack (2.3.8) lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    actionpack (2.3.8) lib/action_controller/flash.rb:151:in `perform_action'
+    actionpack (2.3.8) lib/action_controller/base.rb:532:in `send'
+    actionpack (2.3.8) lib/action_controller/base.rb:532:in `process_without_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:606:in `process'
+    actionpack (2.3.8) lib/action_controller/base.rb:391:in `process'
+    actionpack (2.3.8) lib/action_controller/base.rb:386:in `call'
+    actionpack (2.3.8) lib/action_controller/routing/route_set.rb:438:in `call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:87:in `dispatch'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:121:in `_call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:29:in `call'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:29:in `call'
+    activerecord (2.3.8) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:9:in `cache'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:28:in `call'
+    activerecord (2.3.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+    actionpack (2.3.8) lib/action_controller/string_coercion.rb:25:in `call'
+    rack (1.1.0) lib/rack/head.rb:9:in `call'
+    rack (1.1.0) lib/rack/methodoverride.rb:24:in `call'
+    actionpack (2.3.8) lib/action_controller/params_parser.rb:15:in `call'
+    actionpack (2.3.8) lib/action_controller/session/cookie_store.rb:99:in `call'
+    actionpack (2.3.8) lib/action_controller/failsafe.rb:26:in `call'
+    rack (1.1.0) lib/rack/lock.rb:11:in `call'
+    rack (1.1.0) lib/rack/lock.rb:11:in `synchronize'
+    rack (1.1.0) lib/rack/lock.rb:11:in `call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:114:in `call'
+    actionpack (2.3.8) lib/action_controller/reloader.rb:34:in `run'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:108:in `call'
+    rails (2.3.8) lib/rails/rack/static.rb:31:in `call'
+    rack (1.1.0) lib/rack/urlmap.rb:47:in `call'
+    rack (1.1.0) lib/rack/urlmap.rb:41:in `each'
+    rack (1.1.0) lib/rack/urlmap.rb:41:in `call'
+    rails (2.3.8) lib/rails/rack/log_tailer.rb:17:in `call'
+    rack (1.1.0) lib/rack/content_length.rb:13:in `call'
+    rack (1.1.0) lib/rack/chunked.rb:15:in `call'
+    rack (1.1.0) lib/rack/handler/mongrel.rb:67:in `process'
+    mongrel (1.1.5) lib/mongrel.rb:159:in `process_client'
+    mongrel (1.1.5) lib/mongrel.rb:158:in `each'
+    mongrel (1.1.5) lib/mongrel.rb:158:in `process_client'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `initialize'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `new'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `initialize'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `new'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `run'
+    rack (1.1.0) lib/rack/handler/mongrel.rb:38:in `run'
+    rails (2.3.8) lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:52:45) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.3ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;35;1mLanguage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;35;1mReading Load (0.3ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.1ms)
+Completed in 51ms (View: 34, DB: 9) | 200 OK [http://localhost/books/503]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:53:13) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+
+ActionView::TemplateError (undefined local variable or method `a' for #<ActionView::Base:0x1033477a0>) on line #17 of app/views/books/show.haml:
+14:   #contributors
+15:     %h3 Contributors:
+16:     -@contributors.each do |c|
+17:       %h4= link_to c.author.fullname, author_path(a.author)
+18: 
+19: %p Publisher: #{@book.publisher}
+20: 
+
+    app/views/books/show.haml:17:in `_run_haml_app47views47books47show46haml'
+    app/views/books/show.haml:16:in `each'
+    app/views/books/show.haml:16:in `_run_haml_app47views47books47show46haml'
+    actionpack (2.3.8) lib/action_view/renderable.rb:34:in `send'
+    actionpack (2.3.8) lib/action_view/renderable.rb:34:in `render'
+    actionpack (2.3.8) lib/action_view/base.rb:306:in `with_template'
+    actionpack (2.3.8) lib/action_view/renderable.rb:30:in `render'
+    actionpack (2.3.8) lib/action_view/template.rb:205:in `render_template'
+    actionpack (2.3.8) lib/action_view/base.rb:265:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    actionpack (2.3.8) lib/action_view/base.rb:348:in `_render_with_layout'
+    actionpack (2.3.8) lib/action_view/base.rb:262:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    actionpack (2.3.8) lib/action_controller/base.rb:1250:in `render_for_file'
+    actionpack (2.3.8) lib/action_controller/base.rb:942:in `render_without_benchmark'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:51:in `render'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:51:in `render'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:135:in `send'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:135:in `custom'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:179:in `call'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:179:in `respond'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:173:in `each'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:173:in `respond'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:20:in `show'
+    actionpack (2.3.8) lib/action_controller/base.rb:1331:in `send'
+    actionpack (2.3.8) lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:617:in `call_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    actionpack (2.3.8) lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    actionpack (2.3.8) lib/action_controller/flash.rb:151:in `perform_action'
+    actionpack (2.3.8) lib/action_controller/base.rb:532:in `send'
+    actionpack (2.3.8) lib/action_controller/base.rb:532:in `process_without_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:606:in `process'
+    actionpack (2.3.8) lib/action_controller/base.rb:391:in `process'
+    actionpack (2.3.8) lib/action_controller/base.rb:386:in `call'
+    actionpack (2.3.8) lib/action_controller/routing/route_set.rb:438:in `call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:87:in `dispatch'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:121:in `_call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:29:in `call'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:29:in `call'
+    activerecord (2.3.8) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:9:in `cache'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:28:in `call'
+    activerecord (2.3.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+    actionpack (2.3.8) lib/action_controller/string_coercion.rb:25:in `call'
+    rack (1.1.0) lib/rack/head.rb:9:in `call'
+    rack (1.1.0) lib/rack/methodoverride.rb:24:in `call'
+    actionpack (2.3.8) lib/action_controller/params_parser.rb:15:in `call'
+    actionpack (2.3.8) lib/action_controller/session/cookie_store.rb:99:in `call'
+    actionpack (2.3.8) lib/action_controller/failsafe.rb:26:in `call'
+    rack (1.1.0) lib/rack/lock.rb:11:in `call'
+    rack (1.1.0) lib/rack/lock.rb:11:in `synchronize'
+    rack (1.1.0) lib/rack/lock.rb:11:in `call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:114:in `call'
+    actionpack (2.3.8) lib/action_controller/reloader.rb:34:in `run'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:108:in `call'
+    rails (2.3.8) lib/rails/rack/static.rb:31:in `call'
+    rack (1.1.0) lib/rack/urlmap.rb:47:in `call'
+    rack (1.1.0) lib/rack/urlmap.rb:41:in `each'
+    rack (1.1.0) lib/rack/urlmap.rb:41:in `call'
+    rails (2.3.8) lib/rails/rack/log_tailer.rb:17:in `call'
+    rack (1.1.0) lib/rack/content_length.rb:13:in `call'
+    rack (1.1.0) lib/rack/chunked.rb:15:in `call'
+    rack (1.1.0) lib/rack/handler/mongrel.rb:67:in `process'
+    mongrel (1.1.5) lib/mongrel.rb:159:in `process_client'
+    mongrel (1.1.5) lib/mongrel.rb:158:in `each'
+    mongrel (1.1.5) lib/mongrel.rb:158:in `process_client'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `initialize'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `new'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `initialize'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `new'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `run'
+    rack (1.1.0) lib/rack/handler/mongrel.rb:38:in `run'
+    rails (2.3.8) lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mBook Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+  [4;36;1mAuthorship Load (0.5ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:56:02) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.3ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;35;1mLanguage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;35;1mReading Load (0.4ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.4ms)
+Completed in 129ms (View: 113, DB: 9) | 200 OK [http://localhost/books/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 20:56:24) [GET]
+  Parameters: {"id"=>"383"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (51.0ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 383) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.4ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 383) [0m
+  [4;35;1mAuthorship Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (41.8ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 179) [0m
+  [4;36;1mLocation Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 10) [0m
+  [4;36;1mLanguage Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 6) [0m
+  [4;36;1mReading Load (0.3ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 383) [0m
+  [4;35;1mReading Columns (19.9ms)[0m   [0mSHOW FIELDS FROM `readings`[0m
+Rendered readings/_show (25.9ms)
+Completed in 170ms (View: 40, DB: 122) | 200 OK [http://localhost/books/383]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:00:39) [GET]
+  Parameters: {"id"=>"383"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 383) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 383) [0m
+  [4;35;1mAuthorship Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 179) [0m
+
+ActionView::TemplateError (undefined method `lenght' for []:Array) on line #13 of app/views/books/show.haml:
+10:   -else
+11:     %h3= link_to a.author.fullname, author_path(a.author)
+12: 
+13: - if @contributors.lenght > 0
+14:   #contributors
+15:     %h3 Contributors:
+16:     -@contributors.each do |c|
+
+    app/views/books/show.haml:13:in `_run_haml_app47views47books47show46haml'
+    actionpack (2.3.8) lib/action_view/renderable.rb:34:in `send'
+    actionpack (2.3.8) lib/action_view/renderable.rb:34:in `render'
+    actionpack (2.3.8) lib/action_view/base.rb:306:in `with_template'
+    actionpack (2.3.8) lib/action_view/renderable.rb:30:in `render'
+    actionpack (2.3.8) lib/action_view/template.rb:205:in `render_template'
+    actionpack (2.3.8) lib/action_view/base.rb:265:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    actionpack (2.3.8) lib/action_view/base.rb:348:in `_render_with_layout'
+    actionpack (2.3.8) lib/action_view/base.rb:262:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    actionpack (2.3.8) lib/action_controller/base.rb:1250:in `render_for_file'
+    actionpack (2.3.8) lib/action_controller/base.rb:942:in `render_without_benchmark'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:51:in `render'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:51:in `render'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:135:in `send'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:135:in `custom'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:179:in `call'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:179:in `respond'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:173:in `each'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:173:in `respond'
+    actionpack (2.3.8) lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/books_controller.rb:20:in `show'
+    actionpack (2.3.8) lib/action_controller/base.rb:1331:in `send'
+    actionpack (2.3.8) lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:617:in `call_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+    activesupport (2.3.8) lib/active_support/core_ext/benchmark.rb:17:in `ms'
+    actionpack (2.3.8) lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    actionpack (2.3.8) lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    actionpack (2.3.8) lib/action_controller/flash.rb:151:in `perform_action'
+    actionpack (2.3.8) lib/action_controller/base.rb:532:in `send'
+    actionpack (2.3.8) lib/action_controller/base.rb:532:in `process_without_filters'
+    actionpack (2.3.8) lib/action_controller/filters.rb:606:in `process'
+    actionpack (2.3.8) lib/action_controller/base.rb:391:in `process'
+    actionpack (2.3.8) lib/action_controller/base.rb:386:in `call'
+    actionpack (2.3.8) lib/action_controller/routing/route_set.rb:438:in `call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:87:in `dispatch'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:121:in `_call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:29:in `call'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:29:in `call'
+    activerecord (2.3.8) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:9:in `cache'
+    activerecord (2.3.8) lib/active_record/query_cache.rb:28:in `call'
+    activerecord (2.3.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+    actionpack (2.3.8) lib/action_controller/string_coercion.rb:25:in `call'
+    rack (1.1.0) lib/rack/head.rb:9:in `call'
+    rack (1.1.0) lib/rack/methodoverride.rb:24:in `call'
+    actionpack (2.3.8) lib/action_controller/params_parser.rb:15:in `call'
+    actionpack (2.3.8) lib/action_controller/session/cookie_store.rb:99:in `call'
+    actionpack (2.3.8) lib/action_controller/failsafe.rb:26:in `call'
+    rack (1.1.0) lib/rack/lock.rb:11:in `call'
+    rack (1.1.0) lib/rack/lock.rb:11:in `synchronize'
+    rack (1.1.0) lib/rack/lock.rb:11:in `call'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:114:in `call'
+    actionpack (2.3.8) lib/action_controller/reloader.rb:34:in `run'
+    actionpack (2.3.8) lib/action_controller/dispatcher.rb:108:in `call'
+    rails (2.3.8) lib/rails/rack/static.rb:31:in `call'
+    rack (1.1.0) lib/rack/urlmap.rb:47:in `call'
+    rack (1.1.0) lib/rack/urlmap.rb:41:in `each'
+    rack (1.1.0) lib/rack/urlmap.rb:41:in `call'
+    rails (2.3.8) lib/rails/rack/log_tailer.rb:17:in `call'
+    rack (1.1.0) lib/rack/content_length.rb:13:in `call'
+    rack (1.1.0) lib/rack/chunked.rb:15:in `call'
+    rack (1.1.0) lib/rack/handler/mongrel.rb:67:in `process'
+    mongrel (1.1.5) lib/mongrel.rb:159:in `process_client'
+    mongrel (1.1.5) lib/mongrel.rb:158:in `each'
+    mongrel (1.1.5) lib/mongrel.rb:158:in `process_client'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `initialize'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `new'
+    mongrel (1.1.5) lib/mongrel.rb:285:in `run'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `initialize'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `new'
+    mongrel (1.1.5) lib/mongrel.rb:268:in `run'
+    rack (1.1.0) lib/rack/handler/mongrel.rb:38:in `run'
+    rails (2.3.8) lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered rescues/_trace (42.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:00:53) [GET]
+  Parameters: {"id"=>"383"}
+  [4;36;1mBook Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 383) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.4ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 383) [0m
+  [4;35;1mAuthorship Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 179) [0m
+  [4;36;1mLocation Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 10) [0m
+  [4;36;1mLanguage Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 6) [0m
+  [4;36;1mReading Load (0.3ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 383) [0m
+  [4;35;1mReading Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `readings`[0m
+Rendered readings/_show (4.8ms)
+Completed in 130ms (View: 113, DB: 10) | 200 OK [http://localhost/books/383]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:01:02) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;36;1mLanguage Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;36;1mReading Load (0.3ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.3ms)
+Completed in 44ms (View: 27, DB: 9) | 200 OK [http://localhost/books/503]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:03:24) [GET]
+  Parameters: {"id"=>"503"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.3ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;36;1mAuthorship Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;35;1mLocation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;35;1mLanguage Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;35;1mReading Load (0.3ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.2ms)
+Completed in 116ms (View: 99, DB: 10) | 200 OK [http://localhost/books/503]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:06:55) [GET]
+  Parameters: {"id"=>"503"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.2ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 503) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 503) [0m
+  [4;35;1mAuthorship Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.7ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 376) [0m
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 24) [0m
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 5) [0m
+  [4;36;1mLanguage Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 4) [0m
+  [4;36;1mReading Load (0.3ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 503) [0m
+Rendered readings/_show (1.1ms)
+Completed in 44ms (View: 27, DB: 10) | 200 OK [http://localhost/books/503]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2010-11-26 21:08:55) [GET]
+  Parameters: {"id"=>"243"}
+  [4;35;1mAuthor Columns (14.7ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 243) [0m
+Rendering template within layouts/application
+Rendering authors/show
+  [4;35;1mBook Load (0.8ms)[0m   [0mSELECT `books`.* FROM `books` INNER JOIN `authorships` ON `books`.id = `authorships`.book_id WHERE ((`authorships`.author_id = 243)) [0m
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+Completed in 145ms (View: 121, DB: 18) | 200 OK [http://localhost/authors/243]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-11-26 21:09:05) [GET]
+  [4;35;1mBook Load (51.4ms)[0m   [0mSELECT * FROM `books` LIMIT 0, 30[0m
+  [4;36;1mBook Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `books` [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 122ms (View: 58, DB: 54) | 200 OK [http://localhost/books/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-11-26 21:09:11) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mBook Load (0.5ms)[0m   [0;1mSELECT * FROM `books` LIMIT 30, 30[0m
+  [4;35;1mBook Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `books` [0m
+Rendering template within layouts/application
+Rendering books/index
+Completed in 40ms (View: 29, DB: 2) | 200 OK [http://localhost/books?page=2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-11-26 21:09:19) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM `authors` LIMIT 0, 30[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `authors` [0m
+Rendering template within layouts/application
+Rendering authors/index
+Completed in 86ms (View: 77, DB: 2) | 200 OK [http://localhost/authors]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-11-26 21:09:29) [GET]
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/locations
+Rendering locations/index
+  [4;35;1mLocation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 119ms (View: 112, DB: 2) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-11-26 21:09:33) [GET]
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/locations
+Rendering locations/index
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 35ms (View: 28, DB: 2) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LanguagesController#index (for 127.0.0.1 at 2010-11-26 21:09:37) [GET]
+  [4;36;1mLanguage Load (0.3ms)[0m   [0;1mSELECT * FROM `languages` [0m
+Rendering template within layouts/languages
+Rendering languages/index
+  [4;35;1mLanguage Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+Completed in 55ms (View: 48, DB: 2) | 200 OK [http://localhost/languages]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReadingsController#index (for 127.0.0.1 at 2010-11-26 21:09:46) [GET]
+  [4;36;1mReading Load (0.6ms)[0m   [0;1mSELECT * FROM `readings` [0m
+Rendering template within layouts/readings
+Rendering readings/index
+  [4;35;1mReading Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `readings`[0m
+Completed in 766ms (View: 756, DB: 2) | 200 OK [http://localhost/readings]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReadingsController#show (for 127.0.0.1 at 2010-11-26 21:11:31) [GET]
+  Parameters: {"id"=>"186"}
+  [4;36;1mReading Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `readings`[0m
+  [4;35;1mReading Load (0.2ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.`id` = 186) [0m
+Rendering template within layouts/readings
+Rendering readings/show
+Completed in 57ms (View: 50, DB: 2) | 200 OK [http://localhost/readings/186]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:25:20) [GET]
+  Parameters: {"id"=>"61"}
+  [4;36;1mBook Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM `books` WHERE (`books`.`id` = 61) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;36;1mAuthorship Load (0.3ms)[0m   [0;1mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 61) [0m
+  [4;35;1mAuthorship Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `authorships`[0m
+  [4;36;1mAuthor Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authors`[0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM `authors` WHERE (`authors`.`id` = 322) [0m
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 10) [0m
+  [4;36;1mLanguage Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 6) [0m
+  [4;36;1mReading Load (0.4ms)[0m   [0;1mSELECT * FROM `readings` WHERE (`readings`.book_id = 61) [0m
+Rendered readings/_show (1.2ms)
+Completed in 112ms (View: 96, DB: 9) | 200 OK [http://localhost/books/61]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2010-11-26 21:27:31) [GET]
+  Parameters: {"id"=>"322"}
+  [4;35;1mAuthor Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 322) [0m
+Rendering template within layouts/application
+Rendering authors/show
+  [4;35;1mBook Load (0.5ms)[0m   [0mSELECT `books`.* FROM `books` INNER JOIN `authorships` ON `books`.id = `authorships`.book_id WHERE ((`authorships`.author_id = 322)) [0m
+  [4;36;1mBook Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+Completed in 27ms (View: 17, DB: 4) | 200 OK [http://localhost/authors/322]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-11-26 21:27:33) [GET]
+  Parameters: {"id"=>"56"}
+  [4;35;1mBook Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `books`[0m
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT * FROM `books` WHERE (`books`.`id` = 56) [0m
+Rendering template within layouts/application
+Rendering books/show
+  [4;35;1mAuthorship Load (0.4ms)[0m   [0mSELECT * FROM `authorships` WHERE (`authorships`.book_id = 56) [0m
+  [4;36;1mAuthorship Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `authorships`[0m
+  [4;35;1mAuthor Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 322) [0m
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 10) [0m
+  [4;35;1mLanguage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`id` = 6) [0m
+  [4;35;1mReading Load (0.3ms)[0m   [0mSELECT * FROM `readings` WHERE (`readings`.book_id = 56) [0m
+  [4;36;1mReading Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `readings`[0m
+Rendered readings/_show (4.4ms)
+Completed in 116ms (View: 99, DB: 10) | 200 OK [http://localhost/books/56]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2010-11-26 21:28:00) [GET]
+  Parameters: {"id"=>"322"}
+  [4;35;1mAuthor Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `authors`[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM `authors` WHERE (`authors`.`id` = 322) [0m
+Rendering template within layouts/application
+Rendering authors/show
+  [4;35;1mBook Load (0.5ms)[0m   [0mSELECT `books`.* FROM `books` INNER JOIN `authorships` ON `books`.id = `authorships`.book_id WHERE ((`authorships`.author_id = 322)) [0m
+  [4;36;1mBook Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `books`[0m
+Completed in 26ms (View: 17, DB: 4) | 200 OK [http://localhost/authors/322]
