@@ -1,8 +1,10 @@
 class BooksController < ApplicationController
+
   # GET /books
   # GET /books.xml
   def index
-#    @books = Book.all
+
+    @books = Book.find(:all)
     @books = Book.paginate :page=>params[:page]
     
     respond_to do |format|
