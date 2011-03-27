@@ -1,11 +1,14 @@
-%h1 Listing books
-%table.index
-	-@books.each do |book|
-		%tr
-			%td.title= link_to book.title, book
-			%td.show= link_to 'Show', book
-			%td.edit= link_to 'Edit', edit_book_path(book)
-			%td.delete= link_to 'Destroy', book, :confirm => "Are you sure you want to delete this book?", :method => :delete
-			
-#pages= will_paginate @books
+%h1 Welcome to the Bibliophile library catalog.
+
+%p here's a quick glimpse of what's being reported as currently being read right now.
+
+-@books.each do |book|
+	.item
+		%h3.title=link_to book.title, book
+		-book.authorships.each do |a|
+			%p= link_to a.author.fullname, author_path(a.author)
+		.links
+			%span= link_to 'Show', book
+			%span= link_to 'Edit', edit_book_path(book)
+
 %a= link_to 'New book', new_book_path

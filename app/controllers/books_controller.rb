@@ -4,8 +4,7 @@ class BooksController < ApplicationController
   # GET /books.xml
   def index
 
-    @books = Book.find(:all)
-    @books = Book.paginate :page=>params[:page]
+    @books = Book.find_all_by_location_id(7)
     
     respond_to do |format|
       format.html # index.html.erb

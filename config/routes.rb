@@ -1,7 +1,8 @@
 RailsPortal::Application.routes.draw do
   resources :books
   resources :authors
-
+  resources :readings
+  resources :locations
 
   root :to => "books#index"
   # The priority is based upon order of creation:
