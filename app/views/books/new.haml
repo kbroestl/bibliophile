@@ -1,4 +1,36 @@
 %h1 New Book
-=render @book
+- form_for @book do |f|
+  - f.fields_for :authors do |author|
+    %p
+      = author.label :nonsense
+      = author.text_field :author_first
+      = author.label :author_last
+      = author.text_field :author_last
+  %p
+    = f.label :title, "Title: "
+    = f.text_field :title
+  %p  
+    = f.label :publisher, "Publisher: "
+    = f.text_field :publisher
+  %p
+    = f.label :ISBN, "ISBN: "
+    = f.text_field :ISBN
+  %p
+    = f.label :pages, "Pages: "
+    = f.text_field :pages
+  %p
+    =f.label :language, "Language: "
+    =f.select(:language_id, Language.all.collect {|l| [l.Language, l.id]})
+  %p
+    =f.label :genre, "Genre: "
+    =f.select(:genre_id, Genre.all.collect{|g| [g.genre, g.id]})
+  %p
+    =f.label :location, "Current Location: "
+    =f.select(:location_id, Location.all.collect{|loc| [loc.Location, loc.id]})
+  %p
+    =f.label :notes
+    =f.text_area :notes
+  %p
+    =f.submit
 
 %p= link_to 'Back', books_path

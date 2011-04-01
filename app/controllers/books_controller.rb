@@ -28,7 +28,8 @@ class BooksController < ApplicationController
   # GET /books/new.xml
   def new
     @book = Book.new
-    @book.authors.build
+    # @book.authors.build
+    @author = Author.new
     respond_to do |format|
       format.html
       format.xml  { render :xml => @book }
@@ -51,6 +52,7 @@ class BooksController < ApplicationController
         format.html { redirect_to(@book) }
         format.xml  { render :xml => @book, :status => :created, :location => @book }
       else
+        flash[:notice] ="Something's gone horribly wrong."
         format.html { render :action => "new" }
         format.xml  { render :xml => @book.errors, :status => :unprocessable_entity }
       end

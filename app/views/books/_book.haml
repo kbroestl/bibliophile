@@ -1,17 +1,15 @@
-- form_for(@book) do |f|
+- form_for @book do |f|
   - f.error_messages
-  -for author in @book.authors
-    -fields_for :author do |a|
-      %p
-        = a.label :author_first
-        = a.text_field :author_first
-      %p
-        = a.label :author_last
-        = a.text_field :author_last
+  - f.fields_for :authorships do |author|
+    %p
+      = author.label :author_first
+      = author.text_field :author_first
+      = author.label :author_last
+      = author.text_field :author_last
   %p
     = f.label :title
     = f.text_field :title
-  %p
+  %p  
     = f.label :publisher
     = f.text_field :publisher
   %p
@@ -28,11 +26,9 @@
     =f.select(:genre_id, Genre.all.collect{|g| [g.genre, g.id]})
   %p
     =f.label :location, "Current Location: "
-    =f.select(:location_id, Location.all.collect{|loc| [loc.location, loc.id]})
+    =f.select(:location_id, Location.all.collect{|loc| [loc.Location, loc.id]})
   %p
     =f.label :notes
     =f.text_area :notes
   %p
     =f.submit
-  
-

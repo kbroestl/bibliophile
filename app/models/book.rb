@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   belongs_to :language
   belongs_to :genre
   belongs_to :location
-  accepts_nested_attributes_for :authors
+  accepts_nested_attributes_for :authorships
   
   #validations
   

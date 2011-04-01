@@ -1,3 +1,4 @@
+doc/app/*
 config/database.yml
 .bundle
 db/*.sqlite3
