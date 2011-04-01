@@ -2,7 +2,7 @@
 - form_for @book do |f|
   - f.fields_for :authors do |author|
     %p
-      = author.label :nonsense
+      = author.label :author_first
       = author.text_field :author_first
       = author.label :author_last
       = author.text_field :author_last

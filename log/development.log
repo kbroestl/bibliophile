@@ -4256,3 +4256,585 @@ Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:45:01 -0400 2011
 DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2178037160_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
 Rendered books/new.haml within layouts/application (144.9ms)
 Completed 200 OK in 182ms (Views: 142.5ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:53:06 -0400 2011
+  Processing by BooksController#new as HTML
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT `languages`.* FROM `languages`[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres`
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT `locations`.* FROM `locations`[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2175411360_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (133.3ms)
+Completed 200 OK in 186ms (Views: 144.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:53:16 -0400 2011
+  Processing by BooksController#new as HTML
+Completed   in 96ms
+
+NoMethodError (undefined method `author' for #<Book:0x1040a6a40>):
+  activemodel (3.0.4) lib/active_model/attribute_methods.rb:364:in `method_missing'
+  activerecord (3.0.4) lib/active_record/attribute_methods.rb:46:in `method_missing'
+  activerecord (3.0.4) lib/active_record/attribute_methods.rb:44:in `send'
+  activerecord (3.0.4) lib/active_record/attribute_methods.rb:44:in `method_missing'
+  app/controllers/books_controller.rb:31:in `new'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__244799010__process_action__943997142__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:75:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:54:12 -0400 2011
+  Processing by BooksController#new as HTML
+  [1m[35mLanguage Load (0.4ms)[0m  SELECT `languages`.* FROM `languages`
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres`[0m
+  [1m[35mLocation Load (0.3ms)[0m  SELECT `locations`.* FROM `locations`
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2172220480_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (125.4ms)
+Completed 200 OK in 177ms (Views: 135.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:54:32 -0400 2011
+  Processing by BooksController#new as HTML
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT `languages`.* FROM `languages`[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres`
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT `locations`.* FROM `locations`[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2178702900_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (122.4ms)
+Completed 200 OK in 248ms (Views: 132.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:55:12 -0400 2011
+  Processing by BooksController#new as HTML
+  [1m[35mLanguage Load (0.3ms)[0m  SELECT `languages`.* FROM `languages`
+  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT `genres`.* FROM `genres`[0m
+  [1m[35mLocation Load (0.3ms)[0m  SELECT `locations`.* FROM `locations`
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2175917520_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (138.4ms)
+Completed 200 OK in 530ms (Views: 150.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:55:40 -0400 2011
+  Processing by BooksController#new as HTML
+Rendered books/new.haml within layouts/application (9.7ms)
+Completed   in 129ms
+
+ActionView::Template::Error (undefined method `author_first' for #<Authorship:0x10402f3c8>):
+    3:   - f.fields_for :authorships do |author|
+    4:     %p
+    5:       = author.label :nonsense
+    6:       = author.text_field :author_first
+    7:       = author.label :author_last
+    8:       = author.text_field :author_last
+    9:   %p
+  activemodel (3.0.4) lib/active_model/attribute_methods.rb:364:in `method_missing'
+  activerecord (3.0.4) lib/active_record/attribute_methods.rb:46:in `method_missing'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1019:in `send'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1019:in `value_before_type_cast'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1007:in `value_before_type_cast'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:915:in `to_input_field_tag'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:915:in `fetch'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:915:in `to_input_field_tag'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:625:in `text_field'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1131:in `send'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1131:in `text_field'
+  app/views/books/new.haml:6:in `_app_views_books_new_haml___950853885_2180554680_0'
+  haml (3.0.25) lib/haml/helpers.rb:343:in `call'
+  haml (3.0.25) lib/haml/helpers.rb:343:in `capture_haml_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers.rb:566:in `with_haml_buffer'
+  haml (3.0.25) lib/haml/helpers.rb:339:in `capture_haml_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers/xss_mods.rb:61:in `capture_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:88:in `capture'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:544:in `fields_for'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1289:in `fields_for_nested_model'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1272:in `fields_for_with_nested_attributes'
+  vendor/plugins/will_paginate/lib/will_paginate/finder.rb:168:in `method_missing'
+  activerecord (3.0.4) lib/active_record/associations/association_collection.rb:430:in `method_missing_without_paginate'
+  activerecord (3.0.4) lib/active_record/associations/association_proxy.rb:216:in `method_missing'
+  activerecord (3.0.4) lib/active_record/associations/association_proxy.rb:216:in `each'
+  activerecord (3.0.4) lib/active_record/associations/association_proxy.rb:216:in `send'
+  activerecord (3.0.4) lib/active_record/associations/association_proxy.rb:216:in `method_missing'
+  activerecord (3.0.4) lib/active_record/associations/association_collection.rb:430:in `method_missing_without_paginate'
+  vendor/plugins/will_paginate/lib/will_paginate/finder.rb:168:in `method_missing'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1271:in `fields_for_with_nested_attributes'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:1158:in `fields_for'
+  app/views/books/new.haml:3:in `_app_views_books_new_haml___950853885_2180554680_0'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:167:in `call'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:167:in `form_for_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers.rb:253:in `with_tabs'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:167:in `form_for_without_haml_xss'
+  actionpack (3.0.4) lib/action_view/helpers/capture_helper.rb:40:in `capture_without_haml'
+  actionpack (3.0.4) lib/action_view/helpers/capture_helper.rb:172:in `with_output_buffer_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers/xss_mods.rb:109:in `with_output_buffer'
+  actionpack (3.0.4) lib/action_view/helpers/capture_helper.rb:40:in `capture_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:92:in `capture'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:544:in `fields_for'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:320:in `form_for_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:169:in `form_for_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers/xss_mods.rb:132:in `form_for'
+  app/views/books/new.haml:2:in `_app_views_books_new_haml___950853885_2180554680_0'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `send'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/books_controller.rb:33:in `new'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__244799010__process_action__943997142__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:75:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:56:17 -0400 2011
+  Processing by BooksController#new as HTML
+Rendered books/new.haml within layouts/application (78.2ms)
+Completed   in 123ms
+
+ActionView::Template::Error (undefined method `author' for :authorships:Symbol):
+    1: %h1 New Book
+    2: - form_for @book do |f|
+    3:   - f.fields_for :authorships.author do |author|
+    4:     %p
+    5:       = author.label :author_first
+    6:       = author.text_field :author_first
+  app/views/books/new.haml:3:in `_app_views_books_new_haml___950853885_2171243300_0'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:167:in `call'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:167:in `form_for_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers.rb:253:in `with_tabs'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:167:in `form_for_without_haml_xss'
+  actionpack (3.0.4) lib/action_view/helpers/capture_helper.rb:40:in `capture_without_haml'
+  actionpack (3.0.4) lib/action_view/helpers/capture_helper.rb:172:in `with_output_buffer_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers/xss_mods.rb:109:in `with_output_buffer'
+  actionpack (3.0.4) lib/action_view/helpers/capture_helper.rb:40:in `capture_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:92:in `capture'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:544:in `fields_for'
+  actionpack (3.0.4) lib/action_view/helpers/form_helper.rb:320:in `form_for_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:169:in `form_for_without_haml_xss'
+  haml (3.0.25) lib/haml/helpers/xss_mods.rb:132:in `form_for'
+  app/views/books/new.haml:2:in `_app_views_books_new_haml___950853885_2171243300_0'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `send'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/books_controller.rb:33:in `new'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__244799010__process_action__943997142__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:75:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:58:06 -0400 2011
+  Processing by BooksController#new as HTML
+  [1m[36mLanguage Load (0.3ms)[0m  [1mSELECT `languages`.* FROM `languages`[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres`
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT `locations`.* FROM `locations`[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2172393140_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (131.0ms)
+Completed 200 OK in 519ms (Views: 143.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:58:39 -0400 2011
+  Processing by BooksController#new as HTML
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2178854080_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:3)
+  [1m[35mLanguage Load (0.3ms)[0m  SELECT `languages`.* FROM `languages`
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres`[0m
+  [1m[35mLocation Load (0.3ms)[0m  SELECT `locations`.* FROM `locations`
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2178854080_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (126.6ms)
+Completed 200 OK in 254ms (Views: 137.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Thu Mar 31 23:59:06 -0400 2011
+  Processing by BooksController#new as HTML
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2175507920_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:3)
+  [1m[36mLanguage Load (0.4ms)[0m  [1mSELECT `languages`.* FROM `languages`[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres`
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT `locations`.* FROM `locations`[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2175507920_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (133.9ms)
+Completed 200 OK in 186ms (Views: 145.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at Thu Mar 31 23:59:25 -0400 2011
+  Processing by BooksController#create as HTML
+  Parameters: {"commit"=>"Create Book", "authenticity_token"=>"26dwcye7e9Cim4nrPQKSHdV2A6Yiy57h0wVmqYjONAE=", "utf8"=>"✓", "book"=>{"title"=>"Dracula", "ISBN"=>"", "genre_id"=>"1", "notes"=>"", "authors_attributes"=>{"0"=>{"author_last"=>"Stoker", "author_first"=>"Bram "}}, "publisher"=>"Wordsworth Editions", "pages"=>"", "language_id"=>"1", "location_id"=>"1"}}
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `books`[0m
+  [1m[35mAREL (0.7ms)[0m  INSERT INTO `books` (`last_modified`, `translator`, `notes`, `location_id`, `original_language`, `ISBN`, `pages`, `publisher`, `language_id`, `genre_id`, `title`) VALUES (NULL, NULL, '', 1, NULL, '', NULL, 'Wordsworth Editions', 1, 1, 'Dracula')
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `authors`[0m
+  [1m[35mAREL (43.3ms)[0m  INSERT INTO `authors` (`other`, `title`, `author_last`, `author`, `author_first`) VALUES (NULL, NULL, 'Stoker', NULL, 'Bram ')
+  [1m[36mSQL (17.5ms)[0m  [1mdescribe `authorships`[0m
+  [1m[35mAREL (40.9ms)[0m  INSERT INTO `authorships` (`translator`, `book_id`, `author_id`, `contributor`, `editor`) VALUES (0, 618, 377, 0, 0)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://railsportal.local/books/618
+Completed 302 Found in 251ms
+
+
+Started GET "/books/618" for 127.0.0.1 at Thu Mar 31 23:59:25 -0400 2011
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"618"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT `books`.* FROM `books` WHERE `books`.`id` = 618 LIMIT 1
+  [1m[36mAuthorship Load (0.4ms)[0m  [1mSELECT `authorships`.* FROM `authorships` WHERE (`authorships`.book_id = 618)[0m
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 377 LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 1 LIMIT 1[0m
+  [1m[35mLanguage Load (0.2ms)[0m  SELECT `languages`.* FROM `languages` WHERE `languages`.`id` = 1 LIMIT 1
+  [1m[36mReading Load (0.4ms)[0m  [1mSELECT `readings`.* FROM `readings` WHERE (`readings`.book_id = 618)[0m
+Rendered readings/_show.haml (4.3ms)
+Rendered books/show.haml within layouts/application (168.0ms)
+Completed 200 OK in 197ms (Views: 178.4ms | ActiveRecord: 107.2ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at Fri Apr 01 00:01:53 -0400 2011
+  Processing by BooksController#new as HTML
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2179538920_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:3)
+  [1m[35mLanguage Load (0.3ms)[0m  SELECT `languages`.* FROM `languages`
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres`[0m
+  [1m[35mLocation Load (0.4ms)[0m  SELECT `locations`.* FROM `locations`
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_books_new_haml___950853885_2179538920_0 at /Users/kbroestl/Sites/RailsPortal/app/views/books/new.haml:2)
+Rendered books/new.haml within layouts/application (58.5ms)
+Completed 200 OK in 183ms (Views: 68.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at Fri Apr 01 00:02:12 -0400 2011
+  Processing by BooksController#create as HTML
+  Parameters: {"commit"=>"Create Book", "authenticity_token"=>"26dwcye7e9Cim4nrPQKSHdV2A6Yiy57h0wVmqYjONAE=", "utf8"=>"✓", "book"=>{"title"=>"No Apology", "ISBN"=>"", "genre_id"=>"1", "notes"=>"", "authors_attributes"=>{"0"=>{"author_last"=>"Romney", "author_first"=>"Mitt"}}, "publisher"=>"", "pages"=>"", "language_id"=>"1", "location_id"=>"1"}}
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (53.5ms)[0m  describe `books`
+  [1m[36mAREL (6.4ms)[0m  [1mINSERT INTO `books` (`language_id`, `genre_id`, `ISBN`, `location_id`, `pages`, `original_language`, `translator`, `publisher`, `last_modified`, `notes`, `title`) VALUES (1, 1, '', 1, NULL, NULL, NULL, '', NULL, '', 'No Apology')[0m
+  [1m[35mSQL (1.3ms)[0m  describe `authors`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `authors` (`other`, `title`, `author_last`, `author_first`, `author`) VALUES (NULL, NULL, 'Romney', 'Mitt', NULL)[0m
+  [1m[35mSQL (1.7ms)[0m  describe `authorships`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `authorships` (`translator`, `editor`, `author_id`, `book_id`, `contributor`) VALUES (0, 0, 378, 619, 0)[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Redirected to http://railsportal.local/books/619
+Completed 302 Found in 128ms
+
+
+Started GET "/books/619" for 127.0.0.1 at Fri Apr 01 00:02:12 -0400 2011
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"619"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`id` = 619 LIMIT 1[0m
+  [1m[35mAuthorship Load (0.4ms)[0m  SELECT `authorships`.* FROM `authorships` WHERE (`authorships`.book_id = 619)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 378 LIMIT 1[0m
+  [1m[35mLocation Load (0.2ms)[0m  SELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 1 LIMIT 1
+  [1m[36mLanguage Load (0.2ms)[0m  [1mSELECT `languages`.* FROM `languages` WHERE `languages`.`id` = 1 LIMIT 1[0m
+  [1m[35mReading Load (0.4ms)[0m  SELECT `readings`.* FROM `readings` WHERE (`readings`.book_id = 619)
+Rendered readings/_show.haml (3.6ms)
+Rendered books/show.haml within layouts/application (88.5ms)
+Completed 200 OK in 185ms (Views: 98.2ms | ActiveRecord: 65.5ms)
+
+
+Started GET "/authors/378" for 127.0.0.1 at Fri Apr 01 00:02:21 -0400 2011
+  Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"378"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 378 LIMIT 1[0m
+  [1m[35mBook Load (0.5ms)[0m  SELECT `books`.* FROM `books` INNER JOIN `authorships` ON `books`.id = `authorships`.book_id WHERE ((`authorships`.author_id = 378))
+Rendered authors/show.haml within layouts/application (43.4ms)
+Completed 200 OK in 68ms (Views: 55.6ms | ActiveRecord: 0.7ms)

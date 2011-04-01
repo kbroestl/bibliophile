@@ -28,8 +28,8 @@ class BooksController < ApplicationController
   # GET /books/new.xml
   def new
     @book = Book.new
-    # @book.authors.build
-    @author = Author.new
+    @book.authors.build
+    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @book }
