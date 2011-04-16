@@ -1,0 +1,18 @@
+%h1 Reading for:
+%h2= link_to @reading.book.title, book_path(@reading.book)
+%h3= link_to @reading.book.authorships.first.author.fullname, author_path(@reading.book.authorships.first.author)
+
+%p Rating: #{@reading.rating}
+
+%p Comments: #{@reading.comments}
+
+%p Date started: #{@reading.date_started}
+
+%p Date finished: #{ @reading.date_finished }
+
+%p Last modified: #{ @reading.last_modified }
+
+%p
+  = link_to 'Edit', edit_reading_path(@reading)
+  |
+  = link_to 'Back', readings_path

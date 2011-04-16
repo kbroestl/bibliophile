@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   def index
 
     @books = Book.find_all_by_location_id(7)
+    @unread = Book.count(:joins => "left join readings r on r.book_id = books.id", :conditions => "r.id is NULL")
     
     respond_to do |format|
       format.html # index.html.erb
