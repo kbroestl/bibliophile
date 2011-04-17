@@ -17,11 +17,11 @@
   </p>
   <p>
     <%= f.label :date_started %><br />
-    <%= f.datetime_select :date_started %>
+    <%= f.datetime_select :date_started, :start_year => 1990 %>
   </p>
   <p>
     <%= f.label :date_finished %><br />
-    <%= f.datetime_select :date_finished %>
+    <%= f.datetime_select :date_finished, :start_year => 1990 %>
   </p>
   <p>
     <%= f.label :last_modified %><br />
