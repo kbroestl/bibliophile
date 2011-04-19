@@ -17,9 +17,9 @@
     %td #{ reading.comments }
     %td #{ reading.date_started }
     %td #{ reading.date_finished }
-    %td #{ reading.last_modified }
-    %td #{ link_to  'Show', reading }
-    %td #{ link_to  'Edit', edit_reading_path(reading) }
+    %td #{ reading.updated_on }
+    %td #{ link_to  'Show', book_reading_path }
+    %td #{ link_to  'Edit', edit_book_reading_path(reading) }
     %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
 
-%p #{ link_to  'New reading', new_reading_path %>
+%p #{ link_to  'New reading', new_reading_path }

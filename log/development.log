@@ -18736,3 +18736,871 @@ DEPRECATION WARNING: f.error_messages was removed from Rails and is now availabl
 DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_readings_edit_html_haml__1229809362_2180710640_0 at /Users/kbroestl/Sites/RailsPortal/app/views/readings/edit.html.haml:3)
 Rendered readings/edit.html.haml within layouts/readings (32.0ms)
 Completed 200 OK in 71ms (Views: 36.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/102/readings" for 127.0.0.1 at Tue Apr 19 09:57:48 -0400 2011
+  Processing by ReadingsController#index as HTML
+  Parameters: {"book_id"=>"102"}
+  [1m[35mReading Load (0.6ms)[0m  SELECT `readings`.* FROM `readings`
+Rendered readings/index.html.haml within layouts/readings (5.5ms)
+Completed   in 29ms
+
+ActionView::Template::Error (Unbalanced brackets.):
+    22:     %td #{ link_to  'Edit', edit_reading_path(reading) }
+    23:     %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
+    24: 
+    25: %p #{ link_to  'New reading', new_reading_path %>
+  app/views/readings/index.html.haml:25
+  haml (3.0.25) lib/haml/precompiler.rb:1044:in `balance'
+  haml (3.0.25) lib/haml/precompiler.rb:1033:in `unescape_interpolation'
+  haml (3.0.25) lib/haml/shared.rb:20:in `handle_interpolation'
+  haml (3.0.25) lib/haml/precompiler.rb:1027:in `unescape_interpolation'
+  haml (3.0.25) lib/haml/precompiler.rb:746:in `render_tag'
+  haml (3.0.25) lib/haml/precompiler.rb:214:in `process_line'
+  haml (3.0.25) lib/haml/precompiler.rb:178:in `precompile'
+  haml (3.0.25) lib/haml/engine.rb:121:in `initialize'
+  haml (3.0.25) lib/haml/template/plugin.rb:34:in `new'
+  haml (3.0.25) lib/haml/template/plugin.rb:34:in `compile'
+  haml (3.0.25) lib/haml/template/plugin.rb:39:in `call'
+  actionpack (3.0.4) lib/action_view/template.rb:226:in `compile'
+  actionpack (3.0.4) lib/action_view/template.rb:134:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/readings_controller.rb:7:in `index'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__875190792__process_action__199225275__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:68:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (319.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (326.6ms)
+
+
+Started GET "/books/102/readings" for 127.0.0.1 at Tue Apr 19 09:58:28 -0400 2011
+  Processing by ReadingsController#index as HTML
+  Parameters: {"book_id"=>"102"}
+  [1m[36mReading Load (0.7ms)[0m  [1mSELECT `readings`.* FROM `readings`[0m
+Rendered readings/index.html.haml within layouts/readings (11.6ms)
+Completed   in 110ms
+
+ActionView::Template::Error (undefined method `last_modified' for #<Reading:0x10451a518>):
+    17:     %td #{ reading.comments }
+    18:     %td #{ reading.date_started }
+    19:     %td #{ reading.date_finished }
+    20:     %td #{ reading.last_modified }
+    21:     %td #{ link_to  'Show', reading }
+    22:     %td #{ link_to  'Edit', edit_reading_path(reading) }
+    23:     %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
+  activemodel (3.0.4) lib/active_model/attribute_methods.rb:364:in `method_missing'
+  activerecord (3.0.4) lib/active_record/attribute_methods.rb:46:in `method_missing'
+  app/views/readings/index.html.haml:20:in `_app_views_readings_index_html_haml__1447963186_2182998540_0'
+  app/views/readings/index.html.haml:13:in `each'
+  app/views/readings/index.html.haml:13:in `_app_views_readings_index_html_haml__1447963186_2182998540_0'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `send'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/readings_controller.rb:7:in `index'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__875190792__process_action__199225275__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:68:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (99.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (106.1ms)
+
+
+Started GET "/books/102/readings" for 127.0.0.1 at Tue Apr 19 09:58:40 -0400 2011
+  Processing by ReadingsController#index as HTML
+  Parameters: {"book_id"=>"102"}
+  [1m[35mReading Load (0.6ms)[0m  SELECT `readings`.* FROM `readings`
+Rendered readings/index.html.haml within layouts/readings (12.8ms)
+Completed   in 121ms
+
+ActionView::Template::Error (No route matches {:controller=>"readings", :id=>#<Reading id: 1, book_id: 1, rating: 5, comments: nil, date_started: "2005-02-16", date_finished: "2005-04-03", updated_on: "2005-04-04 00:00:00">, :action=>"show"}):
+    18:     %td #{ reading.date_started }
+    19:     %td #{ reading.date_finished }
+    20:     %td #{ reading.updated_on }
+    21:     %td #{ link_to  'Show', reading }
+    22:     %td #{ link_to  'Edit', edit_reading_path(reading) }
+    23:     %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
+    24: 
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:424:in `raise_routing_error'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:406:in `generate'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:453:in `generate'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:481:in `url_for'
+  actionpack (3.0.4) lib/action_dispatch/routing/url_for.rb:131:in `url_for'
+  actionpack (3.0.4) lib/action_view/helpers/url_helper.rb:99:in `url_for'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:195:in `reading_path'
+  actionpack (3.0.4) lib/action_dispatch/routing/polymorphic_routes.rb:114:in `send'
+  actionpack (3.0.4) lib/action_dispatch/routing/polymorphic_routes.rb:114:in `polymorphic_url'
+  actionpack (3.0.4) lib/action_dispatch/routing/polymorphic_routes.rb:120:in `polymorphic_path'
+  actionpack (3.0.4) lib/action_view/helpers/url_helper.rb:103:in `url_for'
+  actionpack (3.0.4) lib/action_view/helpers/url_helper.rb:236:in `link_to'
+  app/views/readings/index.html.haml:21:in `_app_views_readings_index_html_haml__1447963186_2184084780_0'
+  app/views/readings/index.html.haml:13:in `each'
+  app/views/readings/index.html.haml:13:in `_app_views_readings_index_html_haml__1447963186_2184084780_0'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `send'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/readings_controller.rb:7:in `index'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__875190792__process_action__199225275__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:68:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (97.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (103.2ms)
+
+
+Started GET "/books/102/readings" for 127.0.0.1 at Tue Apr 19 09:59:07 -0400 2011
+  Processing by ReadingsController#index as HTML
+  Parameters: {"book_id"=>"102"}
+  [1m[36mReading Load (0.7ms)[0m  [1mSELECT `readings`.* FROM `readings`[0m
+Rendered readings/index.html.haml within layouts/readings (11.9ms)
+Completed   in 34ms
+
+ActionView::Template::Error (No route matches {:controller=>"readings", :action=>"show"}):
+    18:     %td #{ reading.date_started }
+    19:     %td #{ reading.date_finished }
+    20:     %td #{ reading.updated_on }
+    21:     %td #{ link_to  'Show', book_reading_path }
+    22:     %td #{ link_to  'Edit', edit_reading_path(reading) }
+    23:     %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
+    24: 
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:424:in `raise_routing_error'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:397:in `generate'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:453:in `generate'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:481:in `url_for'
+  actionpack (3.0.4) lib/action_dispatch/routing/url_for.rb:131:in `url_for'
+  actionpack (3.0.4) lib/action_view/helpers/url_helper.rb:99:in `url_for'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:195:in `book_reading_path'
+  app/views/readings/index.html.haml:21:in `_app_views_readings_index_html_haml__1447963186_2177685200_0'
+  app/views/readings/index.html.haml:13:in `each'
+  app/views/readings/index.html.haml:13:in `_app_views_readings_index_html_haml__1447963186_2177685200_0'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `send'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/readings_controller.rb:7:in `index'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__875190792__process_action__199225275__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:68:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (96.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (102.9ms)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+
+
+Started GET "/books/102/readings" for 127.0.0.1 at Tue Apr 19 10:00:12 -0400 2011
+  Processing by ReadingsController#index as HTML
+  Parameters: {"book_id"=>"102"}
+  [1m[35mReading Load (0.6ms)[0m  SELECT `readings`.* FROM `readings`
+Rendered readings/index.html.haml within layouts/readings (11.2ms)
+Completed   in 34ms
+
+ActionView::Template::Error (No route matches {:controller=>"readings", :action=>"show"}):
+    18:     %td #{ reading.date_started }
+    19:     %td #{ reading.date_finished }
+    20:     %td #{ reading.updated_on }
+    21:     %td #{ link_to  'Show', book_reading_path }
+    22:     %td #{ link_to  'Edit', edit_book_reading_path(reading) }
+    23:     %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
+    24: 
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:424:in `raise_routing_error'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:397:in `generate'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:453:in `generate'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:481:in `url_for'
+  actionpack (3.0.4) lib/action_dispatch/routing/url_for.rb:131:in `url_for'
+  actionpack (3.0.4) lib/action_view/helpers/url_helper.rb:99:in `url_for'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:195:in `book_reading_path'
+  app/views/readings/index.html.haml:21:in `_app_views_readings_index_html_haml__1447963186_2178186440_0'
+  app/views/readings/index.html.haml:13:in `each'
+  app/views/readings/index.html.haml:13:in `_app_views_readings_index_html_haml__1447963186_2178186440_0'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `send'
+  actionpack (3.0.4) lib/action_view/template.rb:135:in `render'
+  activesupport (3.0.4) lib/active_support/notifications.rb:54:in `instrument'
+  actionpack (3.0.4) lib/action_view/template.rb:127:in `render'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:59:in `_render_template'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:56:in `_render_template'
+  actionpack (3.0.4) lib/action_view/render/rendering.rb:26:in `render_without_haml'
+  haml (3.0.25) lib/haml/helpers/action_view_mods.rb:13:in `render'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:115:in `_render_template'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:109:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+  actionpack (3.0.4) lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:102:in `render_to_string'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:93:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:17:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+  activesupport (3.0.4) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+  activerecord (3.0.4) lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `call'
+  actionpack (3.0.4) lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+  app/controllers/readings_controller.rb:7:in `index'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:150:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rendering.rb:11:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:18:in `process_action'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:435:in `_run__875190792__process_action__199225275__callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `send'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:93:in `run_callbacks'
+  actionpack (3.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (3.0.4) lib/active_support/notifications.rb:52:in `instrument'
+  actionpack (3.0.4) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.0.4) lib/action_controller/metal/rescue.rb:17:in `process_action'
+  actionpack (3.0.4) lib/abstract_controller/base.rb:119:in `process'
+  actionpack (3.0.4) lib/abstract_controller/rendering.rb:41:in `process'
+  actionpack (3.0.4) lib/action_controller/metal.rb:138:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.0.4) lib/action_controller/metal.rb:178:in `action'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:27:in `call'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:148:in `call'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:93:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:68:in `optimized_each'
+  rack-mount (0.6.13) lib/rack/mount/code_generation.rb:92:in `recognize'
+  rack-mount (0.6.13) lib/rack/mount/route_set.rb:139:in `call'
+  actionpack (3.0.4) lib/action_dispatch/routing/route_set.rb:492:in `call'
+  haml (3.0.25) lib/sass/plugin/rack.rb:41:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/head.rb:14:in `call'
+  rack (1.2.1) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/flash.rb:182:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/cookies.rb:302:in `call'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:12:in `cache'
+  activerecord (3.0.4) lib/active_record/query_cache.rb:31:in `call'
+  activerecord (3.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+  activesupport (3.0.4) lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+  actionpack (3.0.4) lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+  rack (1.2.1) lib/rack/sendfile.rb:107:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+  railties (3.0.4) lib/rails/rack/logger.rb:13:in `call'
+  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.0.4) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.2.1) lib/rack/lock.rb:11:in `call'
+  actionpack (3.0.4) lib/action_dispatch/middleware/static.rb:30:in `call'
+  railties (3.0.4) lib/rails/application.rb:168:in `call'
+  railties (3.0.4) lib/rails/application.rb:77:in `send'
+  railties (3.0.4) lib/rails/application.rb:77:in `method_missing'
+  passenger (3.0.5) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.5) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.5) lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.5) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.5) helper-scripts/passenger-spawn-server:99
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (173.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (179.6ms)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (131.6ms)[0m  ALTER TABLE `books` ADD `created_at` datetime
+  [1m[36mSQL (234.1ms)[0m  [1mALTER TABLE `books` ADD `updated_at` datetime[0m
+  [1m[35mSQL (122.6ms)[0m  ALTER TABLE `books` DROP `last_modified`
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110419210447')[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (9.9ms)[0m  [1mdescribe `authors`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW KEYS FROM `authors`
+  [1m[36mSQL (8.5ms)[0m  [1mdescribe `authorships`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `authorships`
+  [1m[36mSQL (8.1ms)[0m  [1mdescribe `books`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `books`
+  [1m[36mSQL (8.9ms)[0m  [1mdescribe `child_books`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `child_books`
+  [1m[36mSQL (8.2ms)[0m  [1mdescribe `genres`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `genres`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `languages`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `languages`
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `locations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `locations`
+  [1m[36mSQL (27.2ms)[0m  [1mdescribe `old_books`[0m
+  [1m[35mSQL (10.9ms)[0m  SHOW KEYS FROM `old_books`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `ratings`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW KEYS FROM `ratings`
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `readings`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `readings`
+  [1m[36mSQL (23.2ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (107.9ms)[0m  ALTER TABLE `authors` ADD `created_at` datetime
+  [1m[36mSQL (239.7ms)[0m  [1mALTER TABLE `authors` ADD `updated_at` datetime[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110419211217')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.8ms)[0m  describe `authors`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `authors`[0m
+  [1m[35mSQL (2.1ms)[0m  describe `authorships`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `authorships`[0m
+  [1m[35mSQL (2.4ms)[0m  describe `books`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `books`[0m
+  [1m[35mSQL (3.7ms)[0m  describe `child_books`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `child_books`[0m
+  [1m[35mSQL (2.6ms)[0m  describe `genres`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `genres`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `languages`
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW KEYS FROM `languages`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `locations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `locations`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `old_books`
+  [1m[36mSQL (1.4ms)[0m  [1mSHOW KEYS FROM `old_books`[0m
+  [1m[35mSQL (26.2ms)[0m  describe `ratings`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `ratings`[0m
+  [1m[35mSQL (10.5ms)[0m  describe `readings`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `readings`[0m
+  [1m[35mSQL (3.2ms)[0m  describe `users`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `users`[0m
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+
+
+Started GET "/" for 127.0.0.1 at Tue Apr 19 17:15:31 -0400 2011
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.8ms)[0m  [1mSELECT `books`.* FROM `books` WHERE `books`.`location_id` = 7[0m
+  [1m[35mSQL (39.5ms)[0m  SELECT COUNT(*) FROM `books` left join readings r on r.book_id = books.id WHERE (r.id is NULL)
+  [1m[36mAuthorship Load (0.4ms)[0m  [1mSELECT `authorships`.* FROM `authorships` WHERE (`authorships`.book_id = 6)[0m
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 45 LIMIT 1
+Rendered books/index.haml within layouts/application (397.7ms)
+Completed 200 OK in 583ms (Views: 407.5ms | ActiveRecord: 40.9ms)
+
+
+Started GET "/locations" for 127.0.0.1 at Tue Apr 19 17:15:38 -0400 2011
+  Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT `locations`.* FROM `locations`[0m
+Rendered locations/index.html.erb within layouts/locations (18.3ms)
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locations/1" for 127.0.0.1 at Tue Apr 19 17:15:48 -0400 2011
+  Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 1 LIMIT 1
+Rendered locations/show.html.erb within layouts/locations (5.5ms)
+Completed 200 OK in 20ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (181.6ms)[0m  ALTER TABLE `locations` ADD `created_at` datetime
+  [1m[36mSQL (251.2ms)[0m  [1mALTER TABLE `locations` ADD `updated_at` datetime[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110419211639')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.9ms)[0m  describe `authors`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `authors`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `authorships`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `authorships`[0m
+  [1m[35mSQL (2.4ms)[0m  describe `books`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW KEYS FROM `books`[0m
+  [1m[35mSQL (3.0ms)[0m  describe `child_books`
+  [1m[36mSQL (1.7ms)[0m  [1mSHOW KEYS FROM `child_books`[0m
+  [1m[35mSQL (4.5ms)[0m  describe `genres`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `genres`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `languages`
+  [1m[36mSQL (1.5ms)[0m  [1mSHOW KEYS FROM `languages`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `locations`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `locations`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `old_books`
+  [1m[36mSQL (1.9ms)[0m  [1mSHOW KEYS FROM `old_books`[0m
+  [1m[35mSQL (1.8ms)[0m  describe `ratings`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `ratings`[0m
+  [1m[35mSQL (3.1ms)[0m  describe `readings`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `readings`[0m
+  [1m[35mSQL (2.5ms)[0m  describe `users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `users`[0m
+
+
+Started GET "/locations" for 127.0.0.1 at Tue Apr 19 17:19:15 -0400 2011
+  Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT `locations`.* FROM `locations`[0m
+Rendered locations/index.html.erb within layouts/locations (19.1ms)
+Completed 200 OK in 31ms (Views: 24.1ms | ActiveRecord: 0.3ms)

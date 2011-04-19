@@ -10,14 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110418162841) do
+ActiveRecord::Schema.define(:version => 20110419211639) do
 
   create_table "authors", :force => true do |t|
-    t.string "author",       :limit => 50
-    t.string "author_first", :limit => 25
-    t.string "author_last",  :limit => 25
-    t.string "title",        :limit => 25
-    t.text   "other"
+    t.string   "author",       :limit => 50
+    t.string   "author_first", :limit => 25
+    t.string   "author_last",  :limit => 25
+    t.string   "title",        :limit => 25
+    t.text     "other"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "authorships", :force => true do |t|
@@ -29,17 +31,18 @@ ActiveRecord::Schema.define(:version => 20110418162841) do
   end
 
   create_table "books", :force => true do |t|
-    t.string    "title",             :limit => 100
-    t.string    "publisher",         :limit => 50
-    t.integer   "language_id"
-    t.integer   "genre_id"
-    t.integer   "location_id"
-    t.text      "notes",             :limit => 2147483647
-    t.string    "translator",        :limit => 50
-    t.string    "ISBN",              :limit => 14
-    t.integer   "pages"
-    t.timestamp "last_modified",                           :null => false
-    t.string    "original_language", :limit => 2
+    t.string   "title",             :limit => 100
+    t.string   "publisher",         :limit => 50
+    t.integer  "language_id"
+    t.integer  "genre_id"
+    t.integer  "location_id"
+    t.text     "notes",             :limit => 2147483647
+    t.string   "translator",        :limit => 50
+    t.string   "ISBN",              :limit => 14
+    t.integer  "pages"
+    t.string   "original_language", :limit => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "child_books", :force => true do |t|
@@ -69,7 +72,9 @@ ActiveRecord::Schema.define(:version => 20110418162841) do
   end
 
   create_table "locations", :force => true do |t|
-    t.string "Location", :limit => 11
+    t.string   "Location",   :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "old_books", :force => true do |t|

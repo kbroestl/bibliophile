@@ -3,7 +3,6 @@ RailsPortal::Application.routes.draw do
     resources :readings
   end
   resources :authors
-  #resources :readings
   resources :locations
 
   root :to => "books#index"
