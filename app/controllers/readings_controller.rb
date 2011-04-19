@@ -14,7 +14,7 @@ class ReadingsController < ApplicationController
   # GET /readings/1.xml
   def show
     @book = Book.find(params[:book_id])
-    @reading = Reading.find(params[:id])
+    @reading = @book.readings.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,19 +37,19 @@ class ReadingsController < ApplicationController
   # GET /readings/1/edit
   def edit
     @book = Book.find(params[:book_id])
-    @reading = Reading.find(params[:id])
+    @reading = @book.readings.find(params[:id])
   end
 
   # POST /readings
   # POST /readings.xml
   def create
     @book = Book.find(params[:book_id])
-    @reading = Reading.new(params[:reading])
+    @reading = @book.readings.new(params[:reading])
 
     respond_to do |format|
       if @reading.save
-        format.html { redirect_to(@reading, :notice => 'Reading was successfully created.') }
-        format.xml  { render :xml => @reading, :status => :created, :location => @reading }
+        format.html { redirect_to(@book, :notice => 'Reading was successfully created.') }
+        format.xml  { render :xml => @book, :status => :created, :location => @reading }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @reading.errors, :status => :unprocessable_entity }
@@ -61,11 +61,11 @@ class ReadingsController < ApplicationController
   # PUT /readings/1.xml
   def update
     @book = Book.find(params[:book_id])
-    @reading = Reading.find(params[:id])
+    @reading = @book.readings.find(params[:id])
 
     respond_to do |format|
       if @reading.update_attributes(params[:reading])
-        format.html { redirect_to(@reading, :notice => 'Reading was successfully updated.') }
+        format.html { redirect_to(@book, :notice => 'Reading was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
