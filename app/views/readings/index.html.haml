@@ -1,0 +1,25 @@
+%h1 Listing of readings
+
+%table
+  %tr
+    %th Book
+    %th Rating
+    %th Comments
+    %th Date started
+    %th Date finished
+    %th Last modified
+  
+
+- @readings.each do |reading|
+  %tr
+    %td #{ reading.book_id }
+    %td #{ reading.rating }
+    %td #{ reading.comments }
+    %td #{ reading.date_started }
+    %td #{ reading.date_finished }
+    %td #{ reading.last_modified }
+    %td #{ link_to  'Show', reading }
+    %td #{ link_to  'Edit', edit_reading_path(reading) }
+    %td #{ link_to  'Destroy', reading, :confirm => 'Are you sure?', :method => :delete }
+
+%p #{ link_to  'New reading', new_reading_path %>

@@ -13,6 +13,7 @@ class ReadingsController < ApplicationController
   # GET /readings/1
   # GET /readings/1.xml
   def show
+    @book = Book.find(params[:book_id])
     @reading = Reading.find(params[:id])
 
     respond_to do |format|
@@ -21,9 +22,10 @@ class ReadingsController < ApplicationController
     end
   end
 
-  # GET /readings/new
-  # GET /readings/new.xml
+  # GET /books/1/readings/new
+  # GET /books/1/readings/new.xml
   def new
+    @book = Book.find(params[:book_id])
     @reading = Reading.new
 
     respond_to do |format|
@@ -34,12 +36,14 @@ class ReadingsController < ApplicationController
 
   # GET /readings/1/edit
   def edit
+    @book = Book.find(params[:book_id])
     @reading = Reading.find(params[:id])
   end
 
   # POST /readings
   # POST /readings.xml
   def create
+    @book = Book.find(params[:book_id])
     @reading = Reading.new(params[:reading])
 
     respond_to do |format|
@@ -56,6 +60,7 @@ class ReadingsController < ApplicationController
   # PUT /readings/1
   # PUT /readings/1.xml
   def update
+    @book = Book.find(params[:book_id])
     @reading = Reading.find(params[:id])
 
     respond_to do |format|

@@ -1,0 +1,13 @@
+%h1 Editing reading for #{@book.title}
+
+- form_for [@book, @reading] do |f|
+  .errors #{f.error_messages}
+
+  %p #{f.label :book_id } #{f.text_field :book_id }
+  %p #{f.label :rating } #{f.text_field :rating }
+  %p #{f.label :comments } #{f.text_area :comments }
+  %p #{f.label :date_started } #{f.datetime_select :date_started, :start_year => 1990, :include_blank => true }
+  %p #{f.label :date_finished } #{f.datetime_select :date_finished, :start_year => 1990, :include_blank => true }
+  %p #{f.submit 'Update' }
+
+%p #{link_to 'Show', @book } | #{link_to 'Back', book_readings_path }

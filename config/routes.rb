@@ -1,7 +1,9 @@
 RailsPortal::Application.routes.draw do
-  resources :books
+  resources :books do
+    resources :readings
+  end
   resources :authors
-  resources :readings
+  #resources :readings
   resources :locations
 
   root :to => "books#index"

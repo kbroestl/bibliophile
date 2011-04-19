@@ -11,4 +11,11 @@ class Book < ActiveRecord::Base
   
   #validations
   
+  
+  # still working on this one. Should be a simple function call, but something's
+  # amiss.
+  def count_unread()
+    Book.count(:joins => "left join readings r on r.book_id = books.id", :conditions => "r.id is NULL")
+  end
+  
 end

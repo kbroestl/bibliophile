@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110418162841) do
 
   create_table "authors", :force => true do |t|
     t.string "author",       :limit => 50
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   create_table "locations", :force => true do |t|
-    t.string "LocID",    :limit => 2,  :default => "", :null => false
     t.string "Location", :limit => 11
   end
 
@@ -96,12 +95,12 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   create_table "readings", :force => true do |t|
-    t.integer "book_id",       :limit => 2
-    t.integer "rating",        :limit => 1
-    t.text    "comments"
-    t.date    "date_started"
-    t.date    "date_finished"
-    t.date    "last_modified"
+    t.integer  "book_id",       :limit => 2
+    t.integer  "rating",        :limit => 1
+    t.text     "comments"
+    t.date     "date_started"
+    t.date     "date_finished"
+    t.datetime "updated_on"
   end
 
   add_index "readings", ["id"], :name => "id_idx"

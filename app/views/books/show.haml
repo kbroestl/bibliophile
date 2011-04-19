@@ -26,16 +26,13 @@
 
 %p Current Location: #{@book.location.Location}
 
+%p Genre: #{@book.genre.genre}
+
 %p Language: #{@book.language.Language}
 
 %p Last Modified: #{@book.last_modified}
 
 -if @book.readings
   = render 'readings/show'
-
-%p 
-  = link_to 'Edit', edit_book_path(@book)
-  | 
-  = link_to 'Back', books_path
-
-%p= link_to 'Back to Main Index', books_path
+%p #{ link_to 'Add a reading for this book', new_book_reading_path( @book )}
+%p #{link_to 'Edit', edit_book_path(@book)} | #{link_to 'Back', books_path }
