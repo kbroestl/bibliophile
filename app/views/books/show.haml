@@ -26,11 +26,11 @@
 
 %p Current Location: #{@book.location.Location}
 
-%p Genre: #{@book.genre.genre}
+%p Genre: #{ @book.genre.genre.downcase.gsub(/\b\w/){$&.upcase} }
 
 %p Language: #{@book.language.Language}
 
-%p Last Modified: #{@book.last_modified}
+%p Last Modified: #{@book.updated_at}
 
 -if @book.readings
   = render 'readings/show'
