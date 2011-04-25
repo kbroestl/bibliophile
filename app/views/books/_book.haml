@@ -1,6 +1,6 @@
 - form_for @book do |f|
   - f.error_messages
-  - f.fields_for :authorships do |author|
+  - f.fields_for :authors do |author|
     %p
       = author.label :author_first
       = author.text_field :author_first
