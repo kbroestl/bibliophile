@@ -5,6 +5,8 @@ gem 'rails', '3.0.4'
 gem 'mysql2'
 gem 'formtastic'
 gem 'haml'
+gem 'nifty-generators'
+gem 'jquery-rails'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
