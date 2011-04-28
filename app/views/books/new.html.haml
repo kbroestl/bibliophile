@@ -1,11 +1,6 @@
 %h1 New Book
 - form_for @book do |f|
-  - f.fields_for :authors do |author|
-    %p
-      = author.label :author_first
-      = author.text_field :author_first
-      = author.label :author_last
-      = author.text_field :author_last
+  %p #{f.label :author_tokens, "Authors"} #{f.text_field :author_tokens}
   %p
     = f.label :title, "Title: "
     = f.text_field :title
@@ -23,7 +18,7 @@
     =f.select(:language_id, Language.all.collect {|l| [l.Language, l.id]})
   %p
     =f.label :genre, "Genre: "
-    =f.select(:genre_id, Genre.all.collect{|g| [g.genre, g.id]})
+    =f.select(:genre_id, Genre.all.collect{|g| [g.genre.downcase.gsub(/\b\w/){$&.upcase}, g.id]}, {:order => :genre})
   %p
     =f.label :location, "Current Location: "
     =f.select(:location_id, Location.all.collect{|loc| [loc.Location, loc.id]})

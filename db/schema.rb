@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110419211639) do
+ActiveRecord::Schema.define(:version => 20110426235926) do
 
   create_table "authors", :force => true do |t|
     t.string   "author",       :limit => 50
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110419211639) do
     t.text     "other"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "authorships", :force => true do |t|

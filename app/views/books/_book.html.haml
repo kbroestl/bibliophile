@@ -23,7 +23,7 @@
     =f.select(:language_id, Language.all.collect {|l| [l.Language, l.id]})
   %p
     =f.label :genre
-    =f.select(:genre_id, Genre.all.collect{|g| [g.genre, g.id]})
+    =f.select(:genre_id, Genre.all.collect{|g| [g.genre.downcase.gsub(/\b\w/){$&.upcase}, g.id]})
   %p
     =f.label :location, "Current Location: "
     =f.select(:location_id, Location.all.collect{|loc| [loc.Location, loc.id]})

@@ -2,19 +2,19 @@
 - @contributors = []
 - @book.authorships.each do |a|
   -if a.translator?
-    %h4= link_to a.author.fullname + ", translator", author_path(a.author)
+    %h4= link_to a.author.name + ", translator", author_path(a.author)
   -elsif a.editor?
-    %h4= link_to a.author.fullname + ", editor", author_path(a.author)
+    %h4= link_to a.author.name + ", editor", author_path(a.author)
   -elsif a.contributor?
     -@contributors << a
   -else
-    %h3= link_to a.author.fullname, author_path(a.author)
+    %h3= link_to a.author.name, author_path(a.author)
 
 - if @contributors.length > 0
   #contributors
     %h3 Contributors:
     -@contributors.each do |c|
-      %h4= link_to c.author.fullname, author_path(c.author)
+      %h4= link_to c.author.name, author_path(c.author)
 
 %p Publisher: #{@book.publisher}
 

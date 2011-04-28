@@ -3,11 +3,13 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.xml
   def index
+    @page_title = "Welcome"
+    
     @books = Book.find_all_by_location_id(7)
-    @unread = Book.count(:joins => "left join readings r on r.book_id = books.id", :conditions => "r.id is NULL")
+    @unread = Book.count_unread
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @books }
       format.json { render :json => @books }
     end
@@ -17,9 +19,10 @@ class BooksController < ApplicationController
   # GET /books/1.xml
   def show
     @book = Book.find(params[:id])
+    @page_title = @book.title
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @book }
     end
   end
@@ -28,7 +31,7 @@ class BooksController < ApplicationController
   # GET /books/new.xml
   def new
     @book = Book.new
-    @book.authors.build
+    # @book.authors.build
     
     respond_to do |format|
       format.html
@@ -39,6 +42,7 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
+    @page_title = "Editing " + @book.title
   end
 
   # POST /books
@@ -70,6 +74,7 @@ class BooksController < ApplicationController
         format.html { redirect_to(@book) }
         format.xml  { head :ok }
       else
+        flash[:notice] ="Something's gone horribly wrong."
         format.html { render :action => "edit" }
         format.xml  { render :xml => @book.errors, :status => :unprocessable_entity }
       end

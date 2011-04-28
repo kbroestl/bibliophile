@@ -1,12 +1,14 @@
 class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.xml
+  
   def index
-#    @authors = Author.all
-    @authors = Author.paginate :page=>params[:page]
+    @authors = Author.where("name like ?", "%#{params[:q]}%")
+    # @authors = Author.paginate :page=>params[:page]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @authors }
+      format.json { render :json => @authors.map(&:json_attributes) }
     end
   end
 
