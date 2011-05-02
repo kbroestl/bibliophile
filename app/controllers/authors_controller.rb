@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
   # GET /authors.xml
   
   def index
-    @authors = Author.where("name like ?", "%#{params[:q]}%")
+    @authors = Author.where("author_first like ? or author_last like ?", "%#{params[:q]}%", "%#{params[:q]}%")
     # @authors = Author.paginate :page=>params[:page]
     respond_to do |format|
       format.html # index.html.erb
@@ -43,7 +43,10 @@ class AuthorsController < ApplicationController
   # POST /authors.xml
   def create
     @author = Author.new(params[:author])
-
+    # @author.name = @author.author_last
+    # if @author.author_first && @author.author_first != ''
+    #   @author.name = @author.author_first + " " + @author.name
+    # end
     respond_to do |format|
       if @author.save
         flash[:notice] = 'Author was successfully created.'
