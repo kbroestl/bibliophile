@@ -1,0 +1,11 @@
+%h1 Listing Genres
+
+%table
+	%tr
+	-@genres.each do |genre|
+		%tr
+			%td= genre.genre
+			%td= link_to 'Show', genre
+			%td= link_to 'Edit', edit_genre_path(genre)
+
+%a= link_to 'New Genre', new_genre_path

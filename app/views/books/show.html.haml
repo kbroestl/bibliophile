@@ -32,7 +32,9 @@
 
 %p Last Modified: #{@book.updated_at}
 
+%p #{link_to 'Edit', edit_book_path(@book)} | #{link_to 'Back', books_path }
+
 -if @book.readings
   = render 'readings/show'
+
 %p #{ link_to 'Add a reading for this book', new_book_reading_path( @book )}
-%p #{link_to 'Edit', edit_book_path(@book)} | #{link_to 'Back', books_path }

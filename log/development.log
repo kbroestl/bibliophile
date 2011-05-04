@@ -45450,3 +45450,46 @@ Started GET "/authors/457" for 127.0.0.1 at Fri Apr 29 10:30:13 -0400 2011
   [1m[35mBook Load (0.4ms)[0m  SELECT `books`.* FROM `books` INNER JOIN `authorships` ON `books`.id = `authorships`.book_id WHERE ((`authorships`.author_id = 457))
 Rendered authors/show.haml within layouts/application (451.1ms)
 Completed 200 OK in 472ms (Views: 460.6ms | ActiveRecord: 0.6ms)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [1m[36mSQL (169.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT `authors`.* FROM `authors` WHERE `authors`.`author_last` = 'O\'Brien' LIMIT 1
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (62.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (311.0ms)[0m  ALTER TABLE `genres` ADD `created_at` datetime
+  [1m[36mSQL (366.6ms)[0m  [1mALTER TABLE `genres` ADD `updated_at` datetime[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110504024841')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  describe `authors`
+  [1m[36mSQL (19.3ms)[0m  [1mSHOW KEYS FROM `authors`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `authorships`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `authorships`[0m
+  [1m[35mSQL (2.2ms)[0m  describe `books`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW KEYS FROM `books`[0m
+  [1m[35mSQL (2.2ms)[0m  describe `child_books`
+  [1m[36mSQL (26.5ms)[0m  [1mSHOW KEYS FROM `child_books`[0m
+  [1m[35mSQL (2.4ms)[0m  describe `genres`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `genres`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `languages`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `languages`[0m
+  [1m[35mSQL (1.2ms)[0m  describe `locations`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `locations`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `old_books`
+  [1m[36mSQL (45.6ms)[0m  [1mSHOW KEYS FROM `old_books`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `ratings`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW KEYS FROM `ratings`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `readings`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `readings`[0m
+  [1m[35mSQL (2.1ms)[0m  describe `users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `users`[0m
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+DEPRECATION WARNING: Object#returning has been deprecated in favor of Object#tap. (called from enable_activerecord at /Users/kbroestl/Sites/RailsPortal/vendor/plugins/will_paginate/lib/will_paginate.rb:39)
+  [1m[36mAuthor Load (0.6ms)[0m  [1mSELECT `authors`.* FROM `authors` WHERE `authors`.`author_last` = 'O\'Brien' LIMIT 1[0m
+  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` WHERE `genres`.`id` = 5 LIMIT 1
+  [1m[36mBook Load (0.8ms)[0m  [1mSELECT `books`.* FROM `books` WHERE (`books`.genre_id = 5)[0m

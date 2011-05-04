@@ -1,0 +1,6 @@
+%h1 A New Genre
+%h5 (How exciting!)
+
+- form_for @genre do |f|
+  %p #{f.label :genre, "Genre Name: "}#{ f.text_field :genre }
+  %p #{f.submit}  

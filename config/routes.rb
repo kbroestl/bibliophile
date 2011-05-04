@@ -4,6 +4,7 @@ RailsPortal::Application.routes.draw do
   end
   resources :authors
   resources :locations
+  resources :genres
 
   root :to => "books#index"
   # The priority is based upon order of creation:
