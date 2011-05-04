@@ -3,7 +3,7 @@
 %p #{link_to 'Edit', edit_genre_path(@genre)}
 
 - if @genre.books.length != 0
-  %p Here are some books that are in this genre:
+  %p Here are an assortment of books that are in this genre:
   %ul
-  - @genre.books.each do |book|
+  - @genre.books.shuffle[1..10].each do |book|
     %li #{ link_to book.title, book }
