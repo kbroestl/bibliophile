@@ -1,3 +1,7 @@
+body, p, ol, ul, td {
+  /* Look into custom font-replacement, something stately like Garamond */
+    font-family: "Helvetica Neue", helvetica, verdana, arial, sans-serif;
+}
 #wrapper {
   width:970px;
   padding:10px 20px 10px 10px;

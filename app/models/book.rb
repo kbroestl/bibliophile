@@ -15,6 +15,10 @@ class Book < ActiveRecord::Base
     Book.count(:joins => "left join readings r on r.book_id = books.id", :conditions => "r.id is NULL")
   end
   
+  def self.find_most_prominent_publishers
+    Book.find_by_sql('select count(publisher) as "total", publisher from books where publisher <> "" group by publisher order by total desc limit 10;')
+  end
+  
   def author_tokens=(ids)
     self.author_ids = ids.split(",")
   end

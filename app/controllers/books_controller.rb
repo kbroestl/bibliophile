@@ -7,6 +7,7 @@ class BooksController < ApplicationController
     
     @books = Book.find_all_by_location_id(7)
     @unread = Book.count_unread
+    @prolific_publishers = Book.find_most_prominent_publishers
     
     respond_to do |format|
       format.html
@@ -31,7 +32,6 @@ class BooksController < ApplicationController
   # GET /books/new.xml
   def new
     @book = Book.new
-    # @book.authors.build
     
     respond_to do |format|
       format.html

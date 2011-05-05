@@ -14,15 +14,8 @@ class Author < ActiveRecord::Base
   
   def process_author
     # Rails.logger.debug "Author last is #{author_last}"
-    # Set the combined field "first_name last_name"
-    
-    #  self.name = author_last
-    #  if author_first && author_first != ''
-    #    self.name = author_first + " " + self.name
-    #  end
-    # Rails.logger.debug "Name is #{name}"
-    
     self.name = "#{author_first} #{author_last}".strip
+
   end
      
   def json_attributes 

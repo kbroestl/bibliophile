@@ -2,7 +2,8 @@
 
 %p #{link_to 'Edit', edit_genre_path(@genre)}
 
-- if @genre.books.length != 0
+- if @count > 0
+  %p There are currently #{@count} books in the collection which belong to this genre.
   %p Here are an assortment of books that are in this genre:
   %ul
   - @genre.books.shuffle[1..10].each do |book|

@@ -3,8 +3,7 @@ class AuthorsController < ApplicationController
   # GET /authors.xml
   
   def index
-    @authors = Author.where("author_first like ? or author_last like ?", "%#{params[:q]}%", "%#{params[:q]}%")
-    # @authors = Author.paginate :page=>params[:page]
+    @authors = Author.where("name like ?", "%#{params[:q]}%")
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @authors }
@@ -16,7 +15,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1.xml
   def show
     @author = Author.find(params[:id])
-
+    @page_title = "Details for " + @author.name
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @author }
