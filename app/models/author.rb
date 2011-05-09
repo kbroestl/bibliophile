@@ -8,10 +8,6 @@ class Author < ActiveRecord::Base
     author_first + " " + author_last
   end
   
-  # def as_json
-  #   
-  # end
-  
   def process_author
     # Rails.logger.debug "Author last is #{author_last}"
     self.name = "#{author_first} #{author_last}".strip

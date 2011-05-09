@@ -1,12 +1,4 @@
 %h1 New reading for #{@book.title}
-
-- form_for [@book, @reading] do |f|
-  .errors #{f.error_messages}
-  
-  %p #{ f.label :rating } #{ f.text_field :rating }
-  %p #{ f.label :comments } #{ f.text_area :comments }
-  %p #{ f.label :date_started } #{ f.date_select :date_started, :start_year => 1990, :include_blank => true }
-  %p #{ f.label :date_finished } #{ f.date_select :date_finished, :start_year => 1990, :include_blank => true }
-  %p #{ f.submit 'Create' }
-  
+=@reading.errors
+=render 'form'  
 %p #{link_to 'Back', books_path }

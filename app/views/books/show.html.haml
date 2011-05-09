@@ -1,4 +1,4 @@
-%h2= @book.title
+%h2 <i>#{@book.title}</i>
 - @contributors = []
 - @book.authorships.each do |a|
   -if a.translator?
