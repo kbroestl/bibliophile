@@ -1,0 +1,7 @@
+$('#modal-receiver').html('<h2>New Author').append('<%= escape_javascript(render "remoteauthor") %> or <a class=\"close-modal\" href=\"#\"> Cancel</a>');
+
+$('a.close-modal').click(
+  function(){
+    $('#modal-receiver').fadeOut('slow');
+    $('#blackout').fadeOut('slow');
+  });

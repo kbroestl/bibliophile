@@ -24,3 +24,29 @@ body, p, ol, ul, td {
   padding:10px;
   margin-top:10px;
 }
+
+#blackout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  z-index:1000;
+  display:none;
+}
+
+#modal-receiver {
+  border:3px double #333;
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+  background-color:white;
+  padding:20px;
+  position:absolute;
+  top:50px;
+  width:300px;
+  left:50%;
+  margin-left:-170px;
+  z-index:1001;
+  display:none;
+}

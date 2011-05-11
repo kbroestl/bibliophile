@@ -1,0 +1,13 @@
+$('#modal-receiver').empty();
+var contents = "<h2>Your author has been created.</h2>\n";
+contents += "<p><%= escape_javascript(@author.name) %> is now in the database.\n";
+contents += " <a href=\"#\" class=\"close-modal\">Close this window</a> and use\n";
+contents += " the standard search to add the author to the current record.</p>\n";
+
+$('#modal-receiver').append( contents );
+
+$('a.close-modal').click(
+  function(){
+    $('#modal-receiver').fadeOut('slow');
+    $('#blackout').fadeOut('slow');
+  });

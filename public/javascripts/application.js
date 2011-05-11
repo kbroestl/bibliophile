@@ -5,4 +5,13 @@ $(function(){
     crossDomain: false,
     prePopulate: $('#book_author_tokens').data('pre')
   });
+  $('a.open-modal').click(
+    function() {
+      $('body').append('<div id="blackout"></div>');
+      $('body').append('<div id="modal-receiver"></div>');
+      
+      $('#blackout').fadeTo('slow',0.5);
+      $('#modal-receiver').fadeIn('slow');
+    });
+    
 })

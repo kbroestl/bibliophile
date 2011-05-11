@@ -30,6 +30,7 @@ class AuthorsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @author }
+      format.js
     end
   end
 
@@ -42,18 +43,18 @@ class AuthorsController < ApplicationController
   # POST /authors.xml
   def create
     @author = Author.new(params[:author])
-    # @author.name = @author.author_last
-    # if @author.author_first && @author.author_first != ''
-    #   @author.name = @author.author_first + " " + @author.name
-    # end
+
     respond_to do |format|
       if @author.save
         flash[:notice] = 'Author was successfully created.'
         format.html { redirect_to(@author) }
         format.xml  { render :xml => @author, :status => :created, :location => @author }
+        format.js { render :action => "show" }
       else
+        flash[:notice] = "Something's gone horribly wrong."
         format.html { render :action => "new" }
         format.xml  { render :xml => @author.errors, :status => :unprocessable_entity }
+        format.js { render :action => "new" }
       end
     end
   end
