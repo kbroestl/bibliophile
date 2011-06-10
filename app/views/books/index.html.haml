@@ -26,5 +26,5 @@
 					%td #{pub.total} 
 
 	-if @unread > 0
-		%p #{@unread} books are reported unread.
+		%p #{@unread} books are reported #{ link_to 'unread', unread_path }.
 

@@ -19,6 +19,10 @@ class Book < ActiveRecord::Base
     Book.find_by_sql('select count(publisher) as "total", publisher from books where publisher <> "" group by publisher order by total desc limit 10;')
   end
   
+  def self.unread_books()
+    Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id where r.id is NULL")
+  end
+  
   def author_tokens=(ids)
     self.author_ids = ids.split(",")
   end

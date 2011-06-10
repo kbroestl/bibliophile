@@ -92,4 +92,15 @@ class BooksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def unread
+    @books = Book.unread_books
+    @page_title = "Unread Books"
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @books }
+      format.json { render :json => @books }
+    end
+  end
+    
 end

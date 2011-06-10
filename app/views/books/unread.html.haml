@@ -1,0 +1,10 @@
+%h1 Unread Books
+
+%p What classifies a book as "unread?" In general, it's a book that is in the catalog which has no associated reading.
+
+%table
+	-@books.each do |book|
+		%tr
+			%td #{book.title}
+			%td= link_to 'Show', book
+			%td= link_to 'Edit', edit_book_path(book)    

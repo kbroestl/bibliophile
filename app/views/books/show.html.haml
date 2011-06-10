@@ -37,4 +37,4 @@
 -if @book.readings
   = render 'readings/show'
 
-%p #{ link_to 'Add a reading for this book', new_book_reading_path( @book )}
+%p #{ link_to 'Add a reading for this book', new_book_reading_path( @book )} | #{ link_to 'Show unread books', unread_path }

@@ -7,6 +7,8 @@ RailsPortal::Application.routes.draw do
   resources :genres
 
   root :to => "books#index"
+  
+  match 'unread' => "books#unread"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
