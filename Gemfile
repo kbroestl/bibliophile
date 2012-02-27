@@ -7,6 +7,8 @@ gem 'formtastic'
 gem 'haml'
 gem 'nifty-generators'
 gem 'jquery-rails'
+gem 'bluecloth'
+
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

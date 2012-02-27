@@ -2,7 +2,7 @@
   .reading
     %p Rating: #{r.rating}
     -if r.comments
-      %p Comments: #{r.comments}
+      %p Comments: #{markdown_parse(r.comments)}
   
     %p Date Started: #{r.date_started} | Date Finished: #{r.date_finished} | Last Modified: #{r.updated_on}
     %p= link_to 'View this reading', book_reading_path(@book, r)

@@ -7,8 +7,23 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="wrapper">
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="#">Bibliophile</a>
+        <ul class="nav">
+          <li class="active"><%= link_to "Home", books_path %></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
 <%= yield %>
-</div>
+    </div>
+  </div>
+
 </body>
 </html>

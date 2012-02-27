@@ -4,7 +4,7 @@
 
 %p Rating: #{@reading.rating}
 
-%p Comments: #{@reading.comments}
+%p Comments: #{ markdown_parse(@reading.comments) }
 
 %p Date Started: #{@reading.date_started} | Date Finished: #{ @reading.date_finished } | Last Modified: #{ @reading.updated_on }
 
