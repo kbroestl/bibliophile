@@ -35,7 +35,7 @@
 			%h3 Latest Read Books:
 			-@last_read.each do |read|
 				%h5=link_to read.title, read
-				%p.small #{read.date_finished}
+				%p.small Completed #{read.date_finished.strftime('%B %-d, %Y')}
 	
 	-if @prolific_authors
 		#prolific_authors
