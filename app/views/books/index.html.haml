@@ -12,19 +12,35 @@
 			%span= link_to 'Edit', edit_book_path(book)
 
 %a= link_to 'New book', new_book_path
+#unread_prompt
+	-if @unread > 0
+		%p #{@unread} books are reported #{ link_to 'unread', unread_path }.
+
 
 #administrivia
 	-if @prolific_publishers
-		%h3 Most Represented Publishers
-		%table
-			%tr
-				%th Publisher
-				%th Books
-			- @prolific_publishers.each do |pub|
+		#prolific_publishers
+			%h3 Most Represented Publishers
+			%table
 				%tr
-					%td #{pub.publisher}
-					%td #{pub.total} 
-
-	-if @unread > 0
-		%p #{@unread} books are reported #{ link_to 'unread', unread_path }.
+					%th Publisher
+					%th Books
+				- @prolific_publishers.each do |pub|
+					%tr
+						%td #{pub.publisher}
+						%td #{pub.total} 
+	
+	-if @last_read
+		#last_read
+			%h3 Latest Read Books:
+			-@last_read.each do |read|
+				%h5=link_to read.title, read
+				%p.small #{read.date_finished}
+	
+	-if @prolific_authors
+		#prolific_authors
+			%h3 Most Represented Authors:
+			-@prolific_authors.each do |author|
+				%h5=link_to author.name, author
+				%p.small Number of Titles: #{author.total}
 

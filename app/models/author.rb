@@ -13,6 +13,11 @@ class Author < ActiveRecord::Base
     self.name = "#{author_first} #{author_last}".strip
 
   end
+  
+  def self.find_most_prominent_authors
+    Author.find_by_sql('select count(ap.author_id) as "total", a.name, a.id from authorships ap Inner Join authors a on ap.author_id = a.id group by ap.author_id order by total DESC limit 10')
+  end
+  
      
   def json_attributes 
     { :id => id, :name => name }

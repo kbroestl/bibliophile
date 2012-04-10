@@ -23,6 +23,10 @@ class Book < ActiveRecord::Base
     Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id where r.id is NULL and b.excluded = 0")
   end
   
+  def self.latest_readings()
+    Book.find_by_sql('select b.id, b.title, r.date_finished from books b INNER JOIN readings r on b.id = r.book_id order by r.date_finished DESC limit 10')
+  end
+    
   def author_tokens=(ids)
     self.author_ids = ids.split(",")
   end

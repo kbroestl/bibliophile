@@ -19,7 +19,7 @@
 
 %p Publisher: #{@book.publisher}
 
-%p Notes: #{@book.notes}
+%p Notes: #{markdown_parse(@book.notes)}
   
 %p ISBN: #{@book.ISBN}
 

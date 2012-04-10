@@ -8,6 +8,8 @@ class BooksController < ApplicationController
     @books = Book.find_all_by_location_id(7)
     @unread = Book.count_unread
     @prolific_publishers = Book.find_most_prominent_publishers
+    @last_read = Book.latest_readings
+    @prolific_authors = Author.find_most_prominent_authors
     
     respond_to do |format|
       format.html

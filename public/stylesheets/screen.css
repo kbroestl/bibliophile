@@ -30,6 +30,36 @@ body {
   margin-top:10px;
 }
 
+#administrivia {
+  padding-top:20px;
+  border-top:1px solid #ccc;
+}
+
+#prolific_authors,
+#prolific_publishers,
+#last_read {
+  width: 32%;
+  float: left;
+}
+
+#prolific_publishers,
+#last_read {
+  margin-right:2%;
+}
+
+#administrivia h5 {
+  line-height:15px;
+  margin-bottom:2px;
+}
+
+#administrivia p.small {
+  margin-top:0;
+}
+
+#unread_prompt {
+  clear:both;
+}
+
 #blackout {
   position: absolute;
   top: 0;
