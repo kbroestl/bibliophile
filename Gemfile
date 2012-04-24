@@ -8,6 +8,7 @@ gem 'haml'
 gem 'nifty-generators'
 gem 'jquery-rails'
 gem 'bluecloth'
+gem 'high_voltage'
 
 
 # Bundle gems for the local environment. Make sure to
