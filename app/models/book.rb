@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
   #validations
   
   def self.count_unread()
-    Book.count(:joins => "left join readings r on r.book_id = books.id", :conditions => "r.id is NULL and excluded = 0")
+    Book.count(:joins => "left join readings r on r.book_id = books.id left join genres g on books.genre_id = g.id left join locations l on l.id = books.location_id", :conditions => "r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1")
   end
   
   def self.find_most_prominent_publishers
@@ -20,7 +20,7 @@ class Book < ActiveRecord::Base
   end
   
   def self.unread_books()
-    Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id where r.id is NULL and b.excluded = 0")
+    Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id Left Join genres g on b.genre_id = g.id Left Join locations l on l.id = b.location_id where r.id is NULL and b.excluded = 0 and g.readable = 1 and l.readable = 1")
   end
   
   def self.latest_readings()

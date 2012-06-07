@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110928014703) do
+ActiveRecord::Schema.define(:version => 20120604010940) do
 
   create_table "authors", :force => true do |t|
     t.string   "author",       :limit => 50
@@ -64,10 +64,11 @@ ActiveRecord::Schema.define(:version => 20110928014703) do
   end
 
   create_table "genres", :force => true do |t|
-    t.string   "genID",      :limit => 5, :default => "", :null => false
+    t.string   "genID",      :limit => 5, :default => "",   :null => false
     t.string   "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "readable",                :default => true
   end
 
   create_table "languages", :force => true do |t|
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20110928014703) do
     t.string   "Location",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "readable",                 :default => true
   end
 
   create_table "old_books", :force => true do |t|

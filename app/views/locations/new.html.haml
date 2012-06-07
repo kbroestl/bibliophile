@@ -1,0 +1,6 @@
+%h1 New Location
+
+- form_for @location do |f|
+  %p #{f.label :Location, "Location Name: "}#{ f.text_field :Location }
+  %p #{f.check_box :readable} #{ f.label :readable, "If a book is in this location, can it still be read (if it hasn't)? For example, if it was returned?"}
+  %p #{f.submit}
