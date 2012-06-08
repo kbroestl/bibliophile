@@ -5,7 +5,8 @@ RailsPortal::Application.routes.draw do
   resources :authors
   resources :locations
   resources :genres
-
+  resources :authorships
+  
   root :to => "books#index"
   
   match 'unread' => "books#unread"

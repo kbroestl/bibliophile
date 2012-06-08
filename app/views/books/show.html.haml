@@ -9,7 +9,9 @@
   -elsif a.contributor?
     -@contributors << a
   -else
-    %h3= link_to a.author.name, author_path(a.author)
+    %h3
+      #{link_to a.author.name, author_path(a.author)}
+      %span.small #{link_to 'Edit this relationship', edit_authorship_path()}
 
 - if @contributors.length > 0
   #contributors

@@ -85,3 +85,13 @@ body {
   z-index:1001;
   display:none;
 }
+
+p.exclude label {
+  float:none;
+  clear:both;
+  vertical-align:middle;
+}
+
+p.exclude input {
+  vertical-align:middle;
+}
