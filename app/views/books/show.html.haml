@@ -11,7 +11,7 @@
   -else
     %h3
       #{link_to a.author.name, author_path(a.author)}
-      %span.small #{link_to 'Edit this relationship', edit_authorship_path()}
+      %span.small #{link_to 'Edit this relationship', edit_authorship_path(a.id)}
 
 - if @contributors.length > 0
   #contributors
