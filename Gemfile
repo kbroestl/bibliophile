@@ -7,6 +7,7 @@ gem 'formtastic'
 gem 'haml'
 gem 'nifty-generators'
 gem 'jquery-rails'
+gem 'jquery_datepicker'
 gem 'bluecloth'
 gem 'high_voltage'
 

@@ -12,6 +12,5 @@ $(function(){
       
       $('#blackout').fadeTo('slow',0.5);
       $('#modal-receiver').fadeIn('slow');
-    });
-    
+    }); 
 })
