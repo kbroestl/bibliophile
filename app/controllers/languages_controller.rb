@@ -82,4 +82,12 @@ class LanguagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def languageschart
+    @languages = Language.lchartstats
+    respond_to do |format|
+      format.json { render :json => @languages }
+      format.xml { render :xml => @languages }
+    end
+  end
 end

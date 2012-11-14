@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  attr_accessible :author_first, :author_last, :author_tokens, :title, :publisher, :ISBN, :genre_id, :location_id, :pages, :language_id, :notes, :excluded
+  attr_accessible :author_first, :author_last, :author_tokens, :title, :publisher, :ISBN, :genre_id, :location_id, :pages, :language_id, :notes, :excluded, :original_language
   attr_reader :author_tokens, :author_first, :author_last
   #relationships/associations
   has_many :authorships
@@ -8,6 +8,7 @@ class Book < ActiveRecord::Base
   belongs_to :language
   belongs_to :genre
   belongs_to :location
+  belongs_to :original_language, :class_name => 'Language', :foreign_key => 'original_language'
   accepts_nested_attributes_for :authors, :authorships
   #validations
   

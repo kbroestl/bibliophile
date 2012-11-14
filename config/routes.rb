@@ -6,10 +6,13 @@ RailsPortal::Application.routes.draw do
   resources :locations
   resources :genres
   resources :authorships
+  resources :languages
   
   root :to => "books#index"
   
   match 'unread' => "books#unread"
+
+  match 'lchart' => "languages#languageschart"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

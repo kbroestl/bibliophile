@@ -1,0 +1,6 @@
+%h1 A New Language
+%h5 (Head back to grad school did we?)
+
+- form_for @language do |f|
+  %p #{f.label :Language, "Language: "}#{ f.text_field :Language }
+  %p #{f.submit}

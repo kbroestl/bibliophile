@@ -2,13 +2,28 @@
   %p #{ f.label :author_tokens, "Authors"} #{f.text_field :author_tokens, "data-pre" => @book.authors.map(&:json_attributes).to_json }
   -# %p Need an author which is not found above? <a href="#" class="open-modal">Click Here</a>
   %p Need an author which is not found above? #{ link_to "Click here", new_author_path, :remote => true, :class =>"open-modal" }
+  
   %p #{ f.label :title , "Title:"} #{ f.text_field :title }
+  
   %p #{ f.label :publisher, "Publisher:" } #{ f.text_field :publisher } 
+  
   %p #{ f.label :ISBN, "ISBN:"} #{f.text_field :ISBN}
+  
   %p #{ f.label :pages, "Pages:"} #{f.text_field :pages}
+  
   %p #{ f.label :language, "Language:"} #{f.select(:language_id, Language.all.collect {|l| [l.Language, l.id]})}
+  
+  -# next line really acting up -- 'TypeMismatch expecting Language, got string on submit.'
+  -# %p #{ f.label :original_languge, "Original Language"} #{f.select(:original_language, Language.all.sort!{|a,b| a.Language <=> b.Language}.collect { |ol| [ol.Language, ol.id]}, {:default => 0 })}
+  
+  %p #{ f.label :original_languge, "Original Language"} #{f.select(:original_language, Language.all.collect { |ol| [ol.Language, ol.id]}, :default => 0)}
+
   %p #{ f.label :genre, "Genre:"} #{f.select(:genre_id, Genre.all.sort!{|a,b| a.genre <=> b.genre}.collect{|g| [g.genre.downcase.gsub(/\b\w/){$&.upcase}, g.id]})}
+  
   %p #{ f.label :location, "Current Location: "} #{f.select(:location_id, Location.all.sort!{|a,b| a.Location <=> b.Location}.collect{|loc| [loc.Location, loc.id]})}
+  
   %p #{ f.label :notes, "Notes:"}<br />#{f.text_area :notes}
+  
   %p.exclude #{f.check_box :excluded} #{ f.label :excluded, "Exclude from aggregate data (read counts, rating averages, etc.)"}
+  
   %p #{ f.submit :class => 'btn btn-large primary'}
