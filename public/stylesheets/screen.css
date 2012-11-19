@@ -33,6 +33,7 @@ body {
 #administrivia {
   padding-top:20px;
   border-top:1px solid #ccc;
+  clear:both;
 }
 
 #prolific_authors,
@@ -95,3 +96,26 @@ p.exclude label {
 p.exclude input {
   vertical-align:middle;
 }
+
+#charts {
+  clear: both;
+}
+
+#lchart {
+  width: 50%;
+  height: 400px;
+}
+
+#lchart .legend table {
+  width: 100px;
+}
+
+#lchart .legend table th,
+#lchart .legend table td {
+  padding: 0;
+}
+
+tbody tr:nth-child(2n) td, 
+tbody tr.even td {
+  background-color: transparent;
+  }

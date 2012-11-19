@@ -32,7 +32,6 @@
 %p Genre: #{ @book.genre.genre.downcase.gsub(/\b\w/){$&.upcase} }
 
 %p Language: #{@book.language.Language} 
--#(Originally in #{@book.original_language.Language})
 
 %p Last Modified: #{@book.updated_at}
 

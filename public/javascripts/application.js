@@ -12,5 +12,30 @@ $(function(){
       
       $('#blackout').fadeTo('slow',0.5);
       $('#modal-receiver').fadeIn('slow');
-    }); 
-})
+    });
+
+
+  $.ajax({
+    url: '/lchart.json',
+    dataType: 'json'
+    // data: data,
+  }).done(function (stats) {
+      var set = [];
+      //var series = Math.floor(Math.random()*10)+1;
+      for (i in stats){
+        console.log( stats[i].language.percent );
+        set[i] = {label: stats[i].language.Language + ": " + Math.ceil(stats[i].language.percent) + "%", 
+                  data: parseInt(stats[i].language.percent) }
+      }
+
+      $.plot($("#lchart"), set,
+      {
+        series:{
+          pie:{
+            show:true
+          }
+        }
+      });
+      
+    });
+});

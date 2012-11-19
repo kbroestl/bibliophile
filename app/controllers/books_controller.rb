@@ -10,6 +10,7 @@ class BooksController < ApplicationController
     @prolific_publishers = Book.find_most_prominent_publishers
     @last_read = Book.latest_readings
     @prolific_authors = Author.find_most_prominent_authors
+    @lchart = Language.lchartstats
     
     respond_to do |format|
       format.html

@@ -43,4 +43,7 @@
 			-@prolific_authors.each do |author|
 				%h5=link_to author.name, author
 				%p.small Number of Titles: #{author.total}
-
+#charts
+	-if @lchart
+		#lchart
+			

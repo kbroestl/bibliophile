@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
   belongs_to :language
   belongs_to :genre
   belongs_to :location
-  belongs_to :original_language, :class_name => 'Language', :foreign_key => 'original_language'
+  #belongs_to :original_language, :class_name => 'Language', :foreign_key => 'original_language'
   accepts_nested_attributes_for :authors, :authorships
   #validations
   
