@@ -21,7 +21,7 @@ class Book < ActiveRecord::Base
   end
   
   def self.unread_books()
-    Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id Left Join genres g on b.genre_id = g.id Left Join locations l on l.id = b.location_id where r.id is NULL and b.excluded = 0 and g.readable = 1 and l.readable = 1")
+    Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id Left Join genres g on b.genre_id = g.id Left Join locations l on l.id = b.location_id where r.id is NULL and b.excluded = 0 and g.readable = 1 and l.readable = 1 order by b.title")
   end
   
   def self.latest_readings()

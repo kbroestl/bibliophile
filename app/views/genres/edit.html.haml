@@ -1,7 +1,5 @@
 %h1 Editing #{@genre.genre}
 
-%p Here we are in the view for the genre.
-
 =form_for @genre do |f|
   %p #{f.label :genre, "Genre Name: "}#{ f.text_field :genre }
   %p #{f.check_box :readable} #{ f.label :readable, "Can this book be read? Ex. Reference books aren't ever really read."}
