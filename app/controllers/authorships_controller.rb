@@ -56,13 +56,16 @@ class AuthorshipsController < ApplicationController
 
   # PUT /authorships/1
   # PUT /authorships/1.xml
+  # Authorships are never updated in the context of the authorship itself, 
+  # rather, in the context of a book. Therefore on update redirect to the book
+  # in question.
   def update
     @authorship = Authorship.find(params[:id])
 
     respond_to do |format|
       if @authorship.update_attributes(params[:authorship])
         flash[:notice] = 'Authorship was successfully updated.'
-        format.html { redirect_to(@authorship) }
+        format.html { redirect_to(@authorship.book) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

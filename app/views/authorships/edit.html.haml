@@ -3,7 +3,6 @@
   %em #{@authorship.book.title}
 
 = form_for(@authorship) do |f|
-  #{f.error_messages}
   %p #{f.check_box :translator } Translator
   %p #{f.check_box :editor} Editor
   %p #{f.submit :class => 'btn btn-large primary' }
