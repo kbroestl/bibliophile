@@ -1,6 +1,7 @@
 doc/app/*
 config/database.yml
 .bundle
+.secret
 db/*.sqlite3
 log/*
 tmp/
