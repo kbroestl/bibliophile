@@ -1,8 +1,8 @@
 class CreateReadings < ActiveRecord::Migration
   def self.up
     create_table :readings do |t|
-      t.int :book_id
-      t.int :rating
+      t.integer :book_id
+      t.integer :rating
       t.text :comments
       t.datetime :date_started
       t.datetime :date_finished

@@ -1,6 +1,6 @@
 class AddContributorToAuthorships < ActiveRecord::Migration
   def self.up
-    add_column :authorships, :contributor, :boolean, :default => 0
+    add_column :authorships, :contributor, :boolean, :default => false
   end
 
   def self.down
