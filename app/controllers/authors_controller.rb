@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
   # GET /authors.xml
   
   def index
-    @authors = Author.where("name like ?", "%#{params[:q]}%")
+    @authors = Author.order(:author_last)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @authors }
