@@ -11,6 +11,7 @@ class Book < ActiveRecord::Base
   #belongs_to :original_language, :class_name => 'Language', :foreign_key => 'original_language'
   accepts_nested_attributes_for :authors, :authorships
   #validations
+  before_save :set_sortby_title
   
   def self.count_unread()
     Book.count(:joins => "left join readings r on r.book_id = books.id left join genres g on books.genre_id = g.id left join locations l on l.id = books.location_id", :conditions => "r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1")
@@ -32,4 +33,11 @@ class Book < ActiveRecord::Base
     self.author_ids = ids.split(",")
   end
   
+  #should create a before_save action to create the sortby_title field from given title (remove articles, primarily)
+  def set_sortby_title
+      #as we discover more articles (for instance french, spanish, etc.), add to the array of articles
+      articles = %W(the a an der die das dem den des)
+
+      self.sortby_title = title.gsub(/#{articles.join('\b|\A')}/i, '').lstrip()
+  end
 end
