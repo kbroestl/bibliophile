@@ -19,21 +19,37 @@
     -@contributors.each do |c|
       %h4= link_to c.author.name, author_path(c.author)
 
-%p Publisher: #{@book.publisher}
+%p 
+  %strong Publisher:
+  #{@book.publisher}
 
-%p Notes: #{markdown_parse(@book.notes)}
+%p 
+  %strong Notes:
+  #{markdown_parse(@book.notes)}
   
-%p ISBN: #{@book.ISBN}
+%p
+  %strong ISBN:
+  #{@book.ISBN}
 
-%p Pages: #{@book.pages}
+%p
+  %strong Pages:
+  #{@book.pages}
 
-%p Current Location: #{@book.location.Location}
+%p
+  %strong Current Location:
+  #{@book.location.Location}
 
-%p Genre: #{ @book.genre.genre.downcase.gsub(/\b\w/){$&.upcase} }
+%p
+  %strong Genre:
+  #{ @book.genre.genre.downcase.gsub(/\b\w/){$&.upcase} }
 
-%p Language: #{@book.language.Language} 
+%p
+  %strong Language:
+  #{@book.language.Language} 
 
-%p Last Modified: #{@book.updated_at}
+%p 
+  %strong Last Modified:
+  #{@book.updated_at}
 
 %p #{link_to 'Edit', edit_book_path(@book)} | #{link_to 'Back', books_path }
 
