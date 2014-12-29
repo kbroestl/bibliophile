@@ -11,118 +11,72 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140302143656) do
+ActiveRecord::Schema.define(:version => 20141211153334) do
 
   create_table "authors", :force => true do |t|
-    t.string   "author",       :limit => 50
-    t.string   "author_first", :limit => 25
-    t.string   "author_last",  :limit => 25
-    t.string   "title",        :limit => 25
-    t.text     "other"
+    t.string   "author"
+    t.string   "author_first"
+    t.string   "author_last"
+    t.string   "title"
+    t.string   "other"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
   end
 
   create_table "authorships", :force => true do |t|
-    t.integer "book_id",                  :default => 0,     :null => false
-    t.integer "author_id",   :limit => 2, :default => 0,     :null => false
-    t.integer "translator",  :limit => 2, :default => 0
-    t.integer "editor",      :limit => 2, :default => 0
-    t.boolean "contributor",              :default => false
+    t.integer  "book_id"
+    t.integer  "author_id"
+    t.boolean  "translatior", :default => false
+    t.boolean  "editor",      :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "contributor", :default => false
   end
 
   create_table "books", :force => true do |t|
     t.string   "title"
-    t.string   "publisher",         :limit => 50
-    t.integer  "language_id"
-    t.integer  "genre_id"
+    t.string   "publisher"
+    t.integer  "lanugage_id"
     t.integer  "location_id"
-    t.text     "notes",             :limit => 2147483647
-    t.string   "translator",        :limit => 50
-    t.string   "ISBN",              :limit => 14
+    t.text     "notes"
+    t.string   "ISBN"
     t.integer  "pages"
-    t.string   "original_language", :limit => 2
+    t.integer  "original_language"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "excluded",                                :default => false
+    t.boolean  "excluded",          :default => false
     t.string   "sortby_title"
   end
 
-  create_table "child_books", :force => true do |t|
-    t.string  "title",             :limit => 100
-    t.string  "Author",            :limit => 100
-    t.string  "language",          :limit => 2
-    t.integer "rating",            :limit => 1
-    t.date    "date_started"
-    t.date    "date_finished"
-    t.string  "genre",             :limit => 5
-    t.text    "notes",             :limit => 2147483647
-    t.string  "translator",        :limit => 20
-    t.string  "parent_ISBN",       :limit => 20
-    t.integer "pages"
-    t.date    "last_modified"
-    t.string  "original_language", :limit => 2
-  end
-
   create_table "genres", :force => true do |t|
-    t.string   "genID",      :limit => 5, :default => "",   :null => false
     t.string   "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "readable",                :default => true
+    t.boolean  "readable",   :default => true
   end
 
   create_table "languages", :force => true do |t|
-    t.string "lanID",    :limit => 2,  :default => "", :null => false
-    t.string "Language", :limit => 20
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "locations", :force => true do |t|
-    t.string   "Location",   :limit => 11
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "readable",                 :default => true
-  end
-
-  create_table "old_books", :force => true do |t|
-    t.string  "Title",             :limit => 100
-    t.string  "Publisher",         :limit => 50
-    t.string  "Language",          :limit => 2
-    t.string  "Genre",             :limit => 5
-    t.string  "Current_Location",  :limit => 5
-    t.text    "notes",             :limit => 2147483647
-    t.string  "Translator",        :limit => 50
-    t.string  "ISBN",              :limit => 14
-    t.integer "Pages"
-    t.date    "Last_Modified"
-    t.string  "original_language", :limit => 2
-    t.integer "author_id",         :limit => 2,          :null => false
-  end
-
-  add_index "old_books", ["Title", "Publisher"], :name => "results_idx"
-  add_index "old_books", ["id"], :name => "id_idx"
-
-  create_table "ratings", :primary_key => "ratID", :force => true do |t|
-    t.string "rating", :limit => 50
+    t.boolean  "readable",   :default => true
   end
 
   create_table "readings", :force => true do |t|
-    t.integer  "book_id",       :limit => 2
-    t.integer  "rating",        :limit => 1
+    t.integer  "book_id"
+    t.integer  "rating"
     t.text     "comments"
-    t.date     "date_started"
-    t.date     "date_finished"
+    t.datetime "date_started"
+    t.datetime "date_finished"
     t.datetime "updated_on"
-  end
-
-  add_index "readings", ["id"], :name => "id_idx"
-
-  create_table "users", :force => true do |t|
-    t.string "username",  :limit => 20
-    t.string "role",      :limit => 10
-    t.string "real_name", :limit => 150
-    t.string "password",  :limit => 32
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

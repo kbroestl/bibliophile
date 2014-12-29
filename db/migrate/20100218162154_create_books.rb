@@ -9,9 +9,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :ISBN
       t.integer :pages
       t.integer :original_language
-      t.boolean :excluded, :default =>false
 
-      t.timestamps
     end
   end
 

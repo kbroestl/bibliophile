@@ -6,8 +6,7 @@ class CreateAuthors < ActiveRecord::Migration
       t.string :author_last
       t.string :title
       t.string :other
-      t.string :name
-      t.timestamps
+
     end
   end
 
