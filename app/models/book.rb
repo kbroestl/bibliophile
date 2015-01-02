@@ -33,11 +33,17 @@ class Book < ActiveRecord::Base
     self.author_ids = ids.split(",")
   end
   
-  #should create a before_save action to create the sortby_title field from given title (remove articles, primarily)
   def set_sortby_title
-      #as we discover more articles (for instance french, spanish, etc.), add to the array of articles
+      # as we discover more articles (for instance french, spanish, etc.), add to the array of articles
+      # Ideally, "The Rise and Fall of the Third Reich" returns "Rise and Fall of the Third Reich"
+      # "Die Elixiere des Teufels" should return "Elixiere des Teufels"
+      # Question: so the first element in the replacement array will replace multiple throughout the
+      # title. WHY?
+      # Following replaces all instances of the first (and only the first member) of the articles array:
+      # self.sortby_title = title.gsub(/#{articles.join('\b|\A')}/i, '').lstrip()
+
       articles = %W(the a an der die das dem den des ein eine eines einen einer)
 
-      self.sortby_title = title.gsub(/#{articles.join('\b|\A')}/i, '').lstrip()
+      self.sortby_title = title.sub(/#{articles.join('\b|\A')}/i, '').lstrip()
   end
 end

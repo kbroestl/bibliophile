@@ -689,3 +689,81 @@ Connecting to database specified by database.yml
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "1762475962663"], ["created_at", Fri, 02 Jan 2015 16:11:15 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Fugit eius sit rerum iste. Praesentium eos veniam. Omnis voluptatem voluptas. Et et optio provident ex exercitationem."], ["original_language", nil], ["pages", 737], ["publisher", "Goyette, Berge and Cartwright Inc"], ["sortby_title", "Teufels General"], ["title", "Des Teufels General"], ["updated_at", Fri, 02 Jan 2015 16:11:15 EST -05:00]]
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.1ms)[0m  [1mINSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["author", nil], ["author_first", "Hyman"], ["author_last", "Borer"], ["created_at", Fri, 02 Jan 2015 16:21:00 EST -05:00], ["name", "Hyman Borer"], ["other", nil], ["title", "Miss"], ["updated_at", Fri, 02 Jan 2015 16:21:00 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["author", nil], ["author_first", "Isaac"], ["author_last", "Asimov"], ["created_at", Fri, 02 Jan 2015 16:21:00 EST -05:00], ["name", "Isaac Asimov"], ["other", nil], ["title", "Ms."], ["updated_at", Fri, 02 Jan 2015 16:21:00 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "2452196780606"], ["created_at", Fri, 02 Jan 2015 16:21:00 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Et excepturi voluptatem ut soluta sit et ut. Quaerat qui quidem repellendus. Aspernatur voluptas atque quia sint voluptatem. Aut laudantium laboriosam commodi aut neque. Illum aut ea cum."], ["original_language", nil], ["pages", 505], ["publisher", "Hilll-Deckow Inc"], ["sortby_title", "expedita nihil laborum ut"], ["title", "expedita nihil laborum ut"], ["updated_at", Fri, 02 Jan 2015 16:21:00 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["ISBN", "7599208422415"], ["created_at", Fri, 02 Jan 2015 16:21:00 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Enim recusandae molestias quaerat labore. Et dolores corrupti. Sequi magnam aut quia fuga eaque et."], ["original_language", nil], ["pages", 596], ["publisher", "Ward, Kozey and Hessel Inc"], ["sortby_title", "Rise and Fall of  Roman Empire"], ["title", "The Rise and Fall of the Roman Empire"], ["updated_at", Fri, 02 Jan 2015 16:21:00 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "1822856892009"], ["created_at", Fri, 02 Jan 2015 16:21:00 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Omnis mollitia qui ipsam qui. Natus tempora nulla ut repellendus impedit sunt fugit. Modi consectetur quibusdam est facilis minima nobis beatae. Id optio non corrupti autem veniam praesentium."], ["original_language", nil], ["pages", 852], ["publisher", "Johnston-Toy Group"], ["sortby_title", "Teufels General"], ["title", "Des Teufels General"], ["updated_at", Fri, 02 Jan 2015 16:21:00 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.7ms)[0m  [1mINSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["author", nil], ["author_first", "Chadrick"], ["author_last", "Daniel"], ["created_at", Fri, 02 Jan 2015 16:21:38 EST -05:00], ["name", "Chadrick Daniel"], ["other", nil], ["title", "Ms."], ["updated_at", Fri, 02 Jan 2015 16:21:38 EST -05:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["author", nil], ["author_first", "Isaac"], ["author_last", "Asimov"], ["created_at", Fri, 02 Jan 2015 16:21:38 EST -05:00], ["name", "Isaac Asimov"], ["other", nil], ["title", "Ms."], ["updated_at", Fri, 02 Jan 2015 16:21:38 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "5260034586788"], ["created_at", Fri, 02 Jan 2015 16:21:38 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Aut totam sint quis. Quaerat consectetur voluptas sapiente qui nihil animi. Ullam voluptas aut. Voluptas fugit voluptatem incidunt et culpa qui dicta."], ["original_language", nil], ["pages", 426], ["publisher", "Labadie and Sons LLC"], ["sortby_title", "ducimus et voluptate molestiae"], ["title", "ducimus et voluptate molestiae"], ["updated_at", Fri, 02 Jan 2015 16:21:38 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["ISBN", "3114598705593"], ["created_at", Fri, 02 Jan 2015 16:21:38 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Nobis illum veritatis ad dolorem. Quis quos sit ducimus corporis ut. Alias tempore sit."], ["original_language", nil], ["pages", 230], ["publisher", "Dooley, Kuphal and Pacocha LLC"], ["sortby_title", "Rise and Fall of  Roman Empire"], ["title", "The Rise and Fall of the Roman Empire"], ["updated_at", Fri, 02 Jan 2015 16:21:38 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "4624966502581"], ["created_at", Fri, 02 Jan 2015 16:21:38 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Quam mollitia explicabo. Quas quasi voluptatum ex vel id facilis sequi. Exercitationem et consequatur autem voluptatem amet."], ["original_language", nil], ["pages", 488], ["publisher", "Schuster-Bogan LLC"], ["sortby_title", "Elixiere des Teufels"], ["title", "Die Elixiere des Teufels"], ["updated_at", Fri, 02 Jan 2015 16:21:38 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (14.4ms)[0m  [1mINSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["author", nil], ["author_first", "Karlee"], ["author_last", "Pouros"], ["created_at", Fri, 02 Jan 2015 17:39:34 EST -05:00], ["name", "Karlee Pouros"], ["other", nil], ["title", "Miss"], ["updated_at", Fri, 02 Jan 2015 17:39:34 EST -05:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["author", nil], ["author_first", "Isaac"], ["author_last", "Asimov"], ["created_at", Fri, 02 Jan 2015 17:39:34 EST -05:00], ["name", "Isaac Asimov"], ["other", nil], ["title", "Mrs."], ["updated_at", Fri, 02 Jan 2015 17:39:34 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "0947445824962"], ["created_at", Fri, 02 Jan 2015 17:39:34 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Eos dolor molestiae. Ad minus mollitia. Est est ut earum nulla dolorem. Voluptas consequatur sit recusandae est sed aut assumenda. Laborum natus aut quos et eos repellendus non."], ["original_language", nil], ["pages", 162], ["publisher", "Simonis-Jacobs and Sons"], ["sortby_title", "sunt sit ut optio"], ["title", "sunt sit ut optio"], ["updated_at", Fri, 02 Jan 2015 17:39:34 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["ISBN", "5610167556576"], ["created_at", Fri, 02 Jan 2015 17:39:34 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Laudantium alias nisi sunt voluptas earum nihil ratione. Vero minima aspernatur voluptatem accusamus. Est omnis et quas ex et eum."], ["original_language", nil], ["pages", 469], ["publisher", "Wolf Group and Sons"], ["sortby_title", "Rise and Fall of the Roman Empire"], ["title", "The Rise and Fall of the Roman Empire"], ["updated_at", Fri, 02 Jan 2015 17:39:34 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "2166925127470"], ["created_at", Fri, 02 Jan 2015 17:39:34 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Ipsum saepe deleniti consequuntur nobis quod voluptas. Necessitatibus et veritatis magnam ex pariatur. Iusto et totam maiores velit commodi quasi ex."], ["original_language", nil], ["pages", 336], ["publisher", "Sauer, Mayer and Reichel and Sons"], ["sortby_title", "Elixiere des Teufels"], ["title", "Die Elixiere des Teufels"], ["updated_at", Fri, 02 Jan 2015 17:39:34 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m

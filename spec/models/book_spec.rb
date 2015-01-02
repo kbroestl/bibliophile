@@ -11,7 +11,7 @@ RSpec.describe Book, :type => :model do
   end
 
   it "returns sortable German title" do
-    book = FactoryGirl.create(:book, title: "Des Teufels General")
-    expect(book.sortby_title).to eq("Teufels General")
+    book = FactoryGirl.create(:book, title: "Die Elixiere des Teufels")
+    expect(book.sortby_title).to eq("Elixiere des Teufels")
   end
 end
