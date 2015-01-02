@@ -569,3 +569,48 @@ Migrating to LengthenLocationName (20141211153334)
   [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141211153334')
   [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
   [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (8.3ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "6050786504524"], ["created_at", Fri, 02 Jan 2015 15:29:59 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Voluptatibus nihil quam error. Accusantium omnis rerum et animi eaque laudantium rem. Nulla voluptatum blanditiis ut eveniet culpa corporis deserunt. Perspiciatis tempora sit consectetur vel voluptatibus ut eaque."], ["original_language", nil], ["pages", 878], ["publisher", "Wilkinson-Ebert and Sons"], ["sortby_title", "[\"a\", \"tempore\", \"dolor\", \"doloribus\"]"], ["title", "[\"a\", \"tempore\", \"dolor\", \"doloribus\"]"], ["updated_at", Fri, 02 Jan 2015 15:29:59 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "3453012575627"], ["created_at", Fri, 02 Jan 2015 15:42:21 EST -05:00], ["excluded", true], ["lanugage_id", nil], ["location_id", nil], ["notes", "Ducimus praesentium sed. Officiis tempora reiciendis laudantium praesentium repudiandae vero. Quisquam eos quia cupiditate. Expedita a aliquam et quod natus."], ["original_language", nil], ["pages", 946], ["publisher", "Smith-Auer Group"], ["sortby_title", "quam ab velit quasi"], ["title", "quam ab velit quasi"], ["updated_at", Fri, 02 Jan 2015 15:42:21 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["ISBN", "6831838721508"], ["created_at", Fri, 02 Jan 2015 15:48:15 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Sit quos eius ut nobis deserunt repellat delectus. Recusandae rerum laboriosam quia quibusdam eos doloremque enim. Voluptate ut voluptates architecto modi cupiditate consectetur. Velit optio unde dolor."], ["original_language", nil], ["pages", 123], ["publisher", "Pfannerstill-Fahey LLC"], ["sortby_title", "nobis et laudantium qui"], ["title", "nobis et laudantium qui"], ["updated_at", Fri, 02 Jan 2015 15:48:15 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.2ms)[0m  [1mINSERT INTO "authors" ("author", "author_first", "author_last", "created_at", "name", "other", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["author", nil], ["author_first", "Baby"], ["author_last", "Halvorson"], ["created_at", Fri, 02 Jan 2015 15:49:43 EST -05:00], ["name", "Baby Halvorson"], ["other", nil], ["title", "Mr."], ["updated_at", Fri, 02 Jan 2015 15:49:43 EST -05:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "books" ("ISBN", "created_at", "excluded", "lanugage_id", "location_id", "notes", "original_language", "pages", "publisher", "sortby_title", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["ISBN", "0521412446625"], ["created_at", Fri, 02 Jan 2015 15:49:43 EST -05:00], ["excluded", false], ["lanugage_id", nil], ["location_id", nil], ["notes", "Et omnis vero est dolorem perspiciatis qui. Fugiat consectetur modi consequatur natus eum mollitia. Non ex accusantium ut consequatur. Eaque iusto adipisci quas amet dolorem voluptatem consequatur. Corporis quo exercitationem dolor officia maiores."], ["original_language", nil], ["pages", 275], ["publisher", "Klein and Sons LLC"], ["sortby_title", "rem nesciunt enim maiores"], ["title", "rem nesciunt enim maiores"], ["updated_at", Fri, 02 Jan 2015 15:49:43 EST -05:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
