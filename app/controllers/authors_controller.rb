@@ -3,10 +3,9 @@ class AuthorsController < ApplicationController
   # GET /authors.xml
   
   def index
-    # how do we accomodate the token-ized lookups
-    # and allow alphabetized listing of the authors?
-    @authors = Author.where("name like ?", "%#{params[:q]}%")
-    #@authors = Author.order(:author_last, :author_first)
+    
+    @authors = Author.where("name like ?", "%#{params[:q]}%").order(:author_last, :author_first)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @authors }
