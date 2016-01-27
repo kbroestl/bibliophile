@@ -1,5 +1,12 @@
 %h1 Welcome to the Bibliophile library catalog.
 
+-if @results
+	%h2 Search Results by Title
+	%ul
+		-@results.each do |b|
+			%li
+				=link_to b.title, b
+
 %p here's a quick glimpse of what's being reported as currently being read right now.
 
 -@books.each do |book|

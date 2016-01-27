@@ -32,6 +32,10 @@ class Book < ActiveRecord::Base
   def author_tokens=(ids)
     self.author_ids = ids.split(",")
   end
+
+  def self.search(query)
+    where("title like ?", "%#{query}%")
+  end
   
   def set_sortby_title
       # as we discover more articles (for instance french, spanish, etc.), add to the array of articles

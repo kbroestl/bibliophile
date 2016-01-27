@@ -5,6 +5,10 @@ class BooksController < ApplicationController
   def index
     @page_title = "Welcome"
     
+    if params[:search]
+      @results = Book.search(params[:search]).order("title")
+    end
+
     @books = Book.find_all_by_location_id(7)
     @unread = Book.count_unread
     @prolific_publishers = Book.find_most_prominent_publishers
