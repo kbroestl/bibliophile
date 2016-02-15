@@ -9,7 +9,8 @@ class BooksController < ApplicationController
       @results = Book.search(params[:search]).order("title")
     end
 
-    @books = Book.find_all_by_location_id(7)
+    # @books = Book.find_all_by_location_id(7)
+    @books = Book.find_in_process
     @unread = Book.count_unread
     @prolific_publishers = Book.find_most_prominent_publishers
     @last_read = Book.latest_readings
