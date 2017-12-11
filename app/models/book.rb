@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
   accepts_nested_attributes_for :authors, :authorships
   #validations
   before_save :set_sortby_title
-  
+
   def self.count_unread()
     Book.count(:joins => "left join readings r on r.book_id = books.id left join genres g on books.genre_id = g.id left join locations l on l.id = books.location_id", :conditions => "r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1")
   end
@@ -20,19 +20,19 @@ class Book < ActiveRecord::Base
   def self.find_in_process()
     Book.includes().find(:all, :conditions =>["readings.date_started is not null and readings.date_finished is null"], :joins => :readings)
   end
-  
+
   def self.find_most_prominent_publishers
     Book.find_by_sql('select count(publisher) as "total", publisher from books where publisher <> "" group by publisher order by total desc limit 10;')
   end
-  
+
   def self.unread_books()
     Book.find_by_sql("Select b.id, b.title from books b Left join readings r on r.book_id = b.id Left Join genres g on b.genre_id = g.id Left Join locations l on l.id = b.location_id where r.id is NULL and b.excluded = 0 and g.readable = 1 and l.readable = 1 order by b.sortby_title")
   end
-  
+
   def self.latest_readings()
-    Book.find_by_sql('select b.id, b.title, r.date_finished from books b INNER JOIN readings r on b.id = r.book_id order by r.date_finished DESC limit 10')
+    Book.find_by_sql('select b.id, b.title, r.date_finished from books b INNER JOIN readings r on b.id = r.book_id where r.date_finished >= DATE_SUB(now(), interval 1 year) order by r.date_finished DESC')
   end
-    
+
   def author_tokens=(ids)
     self.author_ids = ids.split(",")
   end
@@ -40,7 +40,7 @@ class Book < ActiveRecord::Base
   def self.search(query)
     where("title like ?", "%#{query}%")
   end
-  
+
   def set_sortby_title
       # as we discover more articles (for instance french, spanish, etc.), add to the array of articles
       # Ideally, "The Rise and Fall of the Third Reich" returns "Rise and Fall of the Third Reich"
