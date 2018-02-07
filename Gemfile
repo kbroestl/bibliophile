@@ -1,6 +1,6 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.2.21'
+gem 'rails', '3.2.22.3'
 
 gem 'formtastic'
 gem 'haml'
