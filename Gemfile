@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.3'
 
+gem 'rake', '< 11.0'
+
 gem 'formtastic'
 gem 'haml'
 gem 'sass'
@@ -17,11 +19,13 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'simplecov', '~> 0.15.1'
   gem 'factory_girl_rails'
   gem 'faker'
 end
 
 group :test do
   gem 'sqlite3'
+  gem 'minitest'
   gem 'capybara'
 end
