@@ -790,3 +790,157 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBooks (20100218162154)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "publisher" varchar(255), "lanugage_id" integer, "location_id" integer, "notes" text, "ISBN" varchar(255), "pages" integer, "original_language" integer) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20100218162154')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateAuthors (20100401015845)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "author_first" varchar(255), "author_last" varchar(255), "title" varchar(255), "other" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20100401015845')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateAuthorships (20100401020132)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "authorships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "author_id" integer, "translatior" boolean DEFAULT 'f', "editor" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20100401020132')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateLanguages (20101102031456)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101102031456')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddContributorToAuthorships (20101110154524)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "authorships" ADD "contributor" boolean DEFAULT 'f'
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101110154524')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateGenres (20101119185006)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "genre" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101119185006')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateLocations (20101120032744)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101120032744')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateReadings (20101123030913)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "readings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "rating" integer, "comments" text, "date_started" datetime, "date_finished" datetime, "last_modified" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101123030913')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to ReadingsRenameLastModifiedToUpdatedOn (20110418152426)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "altered_readings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "rating" integer, "comments" text, "date_started" datetime, "date_finished" datetime, "updated_on" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "readings"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "readings"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "readings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "rating" integer, "comments" text, "date_started" datetime, "date_finished" datetime, "updated_on" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_readings"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "altered_readings"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110418152426')
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeDatatypeForReadingsUpdatedOn (20110418162841)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_readings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "rating" integer, "comments" text, "date_started" datetime, "date_finished" datetime, "updated_on" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "readings"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "readings"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "readings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "rating" integer, "comments" text, "date_started" datetime, "date_finished" datetime, "updated_on" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "altered_readings"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_readings"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110418162841')[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to AddTimestampsToBooks (20110419210447)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "books" ADD "created_at" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "books" ADD "updated_at" datetime[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110419210447')
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddTimestampsToAuthors (20110419211217)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "authors" ADD "created_at" datetime[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "authors" ADD "updated_at" datetime
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110419211217')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddTimestampsToLocations (20110419211639)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "locations" ADD "created_at" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "locations" ADD "updated_at" datetime[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110419211639')
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddNameToAuthors (20110426235926)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "authors" ADD "name" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110426235926')
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddTimestampsToGenres (20110504024841)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "genres" ADD "created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "genres" ADD "updated_at" datetime
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110504024841')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to ElongateGenreNames (20110506173910)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "altered_genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "genre" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "genres"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "genres"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "genres" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "genre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_genres"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "altered_genres"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110506173910')
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to ElongateBookTitle (20110506175028)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "altered_books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "publisher" varchar(255), "lanugage_id" integer, "location_id" integer, "notes" text, "ISBN" varchar(255), "pages" integer, "original_language" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "books"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "books"[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "publisher" varchar(255), "lanugage_id" integer, "location_id" integer, "notes" text, "ISBN" varchar(255), "pages" integer, "original_language" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_books"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_books"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110506175028')[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddExcludedToBooks (20110928014703)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "books" ADD "excluded" boolean DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110928014703')[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddReadableToGenres (20120604002352)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "genres" ADD "readable" Boolean DEFAULT 't'
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120604002352')[0m
+  [1m[35m (4.3ms)[0m  commit transaction
+Migrating to AddReadableToLocations (20120604010940)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "locations" ADD "readable" Boolean DEFAULT 't'
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120604010940')[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddSortByTitleToBooks (20140302143656)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "books" ADD "sortby_title" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140302143656')[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to LengthenLocationName (20141211153334)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "altered_locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "readable" boolean DEFAULT 't') 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "locations"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "locations"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "readable" boolean DEFAULT 't') [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_locations"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "altered_locations"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141211153334')
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

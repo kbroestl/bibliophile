@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.22.3'
+gem 'rails', '3.2.22.5'
 
 gem 'rake', '< 11.0'
 
@@ -15,6 +15,7 @@ gem 'jquery_datepicker'
 
 group :development do
   gem 'mysql2'
+  gem 'activerecord-mysql2-adapter'
 end
 
 group :development, :test do
