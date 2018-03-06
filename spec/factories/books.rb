@@ -1,6 +1,6 @@
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :book do |b|
     b.title { Faker::Lorem.words(4).join(' ') }
     b.publisher { Faker::Company.name + ' ' +Faker::Company.suffix }

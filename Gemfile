@@ -20,8 +20,9 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'test-unit'
   gem 'simplecov', '~> 0.15.1'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
 end
 
