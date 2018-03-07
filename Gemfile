@@ -14,8 +14,7 @@ gem 'jquery-rails'
 gem 'jquery_datepicker'
 
 group :development do
-  gem 'mysql2'
-  gem 'activerecord-mysql2-adapter'
+  gem 'mysql2', '< 0.4' # 0.4 and higher are not supported by Rails < 4
 end
 
 group :development, :test do

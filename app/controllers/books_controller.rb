@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books.xml
   def index
     @page_title = "Welcome"
-    
+
     if params[:search]
       @results = Book.search(params[:search]).order("title")
     end
@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     @last_read = Book.latest_readings
     @prolific_authors = Author.find_most_prominent_authors
     @lchart = Language.lchartstats
-    
+
     respond_to do |format|
       format.html
       format.xml  { render :xml => @books }
@@ -40,7 +40,7 @@ class BooksController < ApplicationController
   # GET /books/new.xml
   def new
     @book = Book.new
-    
+
     respond_to do |format|
       format.html
       format.xml  { render :xml => @book }
@@ -110,7 +110,4 @@ class BooksController < ApplicationController
       format.json { render :json => @books }
     end
   end
-  
-  
-
 end
