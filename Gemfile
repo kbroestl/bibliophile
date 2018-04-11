@@ -23,6 +23,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.15.1'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry-rails'
 end
 
 group :test do

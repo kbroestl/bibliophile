@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141211153334) do
+ActiveRecord::Schema.define(:version => 20180327130012) do
 
   create_table "authors", :force => true do |t|
     t.string   "author"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20141211153334) do
     t.datetime "updated_at"
     t.boolean  "excluded",          :default => false
     t.string   "sortby_title"
+    t.integer  "genre_id"
   end
 
   create_table "genres", :force => true do |t|
