@@ -7,7 +7,7 @@ RailsPortal::Application.configure do
   config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
-  config.whiny_nils = true
+  # config.whiny_nils = true
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -25,8 +25,11 @@ RailsPortal::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
-   
+
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # set eager_load to development mode == false
+  config.eager_load = false
 end
 
