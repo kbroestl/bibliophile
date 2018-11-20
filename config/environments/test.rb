@@ -32,4 +32,7 @@ RailsPortal::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # set eager_load to test mode == false
+  config.eager_load = false
 end
