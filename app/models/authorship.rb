@@ -5,10 +5,11 @@ class Authorship < ActiveRecord::Base
   #
   # thoughts from Brian:
   # Remove the nested_attributes from the Book for :authors, only :authorships
-  # add accessor methods (attr accessors) for first and last name
+  # add accessor methods for first and last name
   # add the before save to this model for verification of disticnt author
   # DELEGATE author_first_name to book
-  # looking for first and last name on the authorships model, which won't work (not actual fields)
+  # looking for first and last name on the authorships model, which won't work 
+  # (not actual fields)
   #
   
 end
