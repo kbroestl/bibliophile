@@ -77,7 +77,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     respond_to do |format|
-      if @book.update_attributes(params[book_params])
+      if @book.update_attributes(book_params)
         flash[:notice] = 'Book was successfully updated.'
         format.html { redirect_to(@book) }
         format.xml  { head :ok }
@@ -110,4 +110,20 @@ class BooksController < ApplicationController
       format.json { render :json => @books }
     end
   end
+  private
+    def book_params
+      params.require(:book).permit(
+        {:author => [:author_first, :author_last]},
+        :author_tokens,
+        :title,
+        :publisher,
+        :ISBN,
+        :genre_id,
+        :location_id,
+        :pages,
+        :language_id,
+        :notes,
+        :excluded,
+        :original_language)
+    end
 end

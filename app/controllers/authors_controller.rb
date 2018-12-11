@@ -67,7 +67,7 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
 
     respond_to do |format|
-      if @author.update_attributes(params[:author])
+      if @author.update_attributes(authors_params)
         flash[:notice] = 'Author was successfully updated.'
         format.html { redirect_to(@author) }
         format.xml  { head :ok }
@@ -88,5 +88,12 @@ class AuthorsController < ApplicationController
       format.html { redirect_to(authors_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  def authors_params()
+    params.require(:author).permit(
+      :author_first,
+      :author_last)
   end
 end

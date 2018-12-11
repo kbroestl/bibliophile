@@ -69,20 +69,4 @@ class Book < ActiveRecord::Base
       self.sortby_title = title.sub(/#{articles.join('\b|\A')}/i, '').lstrip()
   end
   
-  private
-    def book_params
-      params.require(:book).permit(
-        {:author => [:author_first, :author_last]},
-        :author_tokens,
-        :title,
-        :publisher,
-        :ISBN,
-        :genre_id,
-        :location_id,
-        :pages,
-        :language_id,
-        :notes,
-        :excluded,
-        :original_language)
-    end
 end
