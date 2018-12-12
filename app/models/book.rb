@@ -18,16 +18,13 @@ class Book < ActiveRecord::Base
 
   def self.count_unread()
     # rewriting this is out of scope just for 4.x upgrade
-    # Book.count(:joins => "left join readings r on r.book_id = books.id left join genres g on books.genre_id = g.id left join locations l on l.id = books.location_id", :conditions => "r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1")
-    5
+    Book.joins("left join readings r on r.book_id = books.id left join genres g on books.genre_id = g.id left join locations l on l.id = books.location_id").where("r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1").count
   end
 
   def self.find_in_process()
     # rewriting this is out of scope just for 4.x upgrade
-    # Book.includes(:book, :reading).find(:all, 
-    #  :conditions =>["readings.date_started is not null and readings.date_finished is null"],
-    # :joins => :readings)
-    Book.limit(5)
+    # Not as Database agnostic as I'd like
+    Book.joins(:readings).where("readings.date_started is not null and readings.date_finished is null")
   end
 
   def self.find_most_prominent_publishers
