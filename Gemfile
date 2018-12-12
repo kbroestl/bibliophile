@@ -12,7 +12,7 @@ gem 'bluecloth'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
+gem 'bootstrap-datepicker-rails'
 gem 'mysql2', '~> 0.4.0' # 0.5 and higher are not supported by Rails < 5
 
 group :development, :test do

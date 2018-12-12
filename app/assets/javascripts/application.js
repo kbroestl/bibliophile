@@ -15,6 +15,8 @@
 //= require jquery-ui-1.10.1.custom.min.js
 //= require jquery.flot.min.js
 //= require jquery.flot.pie.min.js
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.en-CA.js
 //= require_tree .
 
 $(function(){
@@ -31,6 +33,7 @@ $(function(){
       $('#modal-receiver').fadeIn('slow');
     });
 
+  $('.datepicker').datepicker();
 
   $.ajax({
     url: '/lchart.json',
