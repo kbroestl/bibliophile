@@ -23,10 +23,8 @@ class Book < ActiveRecord::Base
 
   def self.find_in_process()
     # rewriting this is out of scope just for 4.x upgrade
-    # Book.includes(:book, :reading).find(:all, 
-    #  :conditions =>["readings.date_started is not null and readings.date_finished is null"],
-    # :joins => :readings)
-    Book.limit(5)
+    # Not as Database agnostic as I'd like
+    Book.joins(:readings).where("readings.date_started is not null and readings.date_finished is null")
   end
 
   def self.find_most_prominent_publishers
