@@ -1,6 +1,6 @@
-#Bibliophile
+# Bibliophile
 
-##Please note: This is a pet project, hardly ever stable, and may or may not be of any use to anyone other than the creator (and even that is up for debate). 
+## Please note: This is a pet project, hardly ever stable, and may or may not be of any use to anyone other than the creator (and even that is up for debate). 
 
 It's the first app I've done on Rails (starting back at Rails 1.0), it's been redone a few times, each with a different focus. Right now it's Rails4.
 
