@@ -114,6 +114,7 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(
         {:author => [:author_first, :author_last]},
+        {:authorship => [:contributor, :editor, :translator]},
         :author_tokens,
         :title,
         :publisher,

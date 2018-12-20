@@ -40,7 +40,7 @@ class AuthorshipsController < ApplicationController
   # POST /authorships
   # POST /authorships.xml
   def create
-    @authorship = Authorship.new(params[:authorship])
+    @authorship = Authorship.new(authorship_params)
 
     respond_to do |format|
       if @authorship.save
@@ -63,7 +63,7 @@ class AuthorshipsController < ApplicationController
     @authorship = Authorship.find(params[:id])
 
     respond_to do |format|
-      if @authorship.update_attributes(params[:authorship])
+      if @authorship.update_attributes(authorship_params)
         flash[:notice] = 'Authorship was successfully updated.'
         format.html { redirect_to(@authorship.book) }
         format.xml  { head :ok }
@@ -85,5 +85,11 @@ class AuthorshipsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+  private
+  def authorship_params()
+    params.require(:authorship).permit(
+      :contributor,
+      :editor,
+      :translator)
+  end
 end

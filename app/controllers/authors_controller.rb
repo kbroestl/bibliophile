@@ -44,7 +44,7 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.xml
   def create
-    @author = Author.new(params[:author])
+    @author = Author.new(author_params)
 
     respond_to do |format|
       if @author.save
@@ -67,7 +67,7 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
 
     respond_to do |format|
-      if @author.update_attributes(authors_params)
+      if @author.update_attributes(author_params)
         flash[:notice] = 'Author was successfully updated.'
         format.html { redirect_to(@author) }
         format.xml  { head :ok }
@@ -91,7 +91,7 @@ class AuthorsController < ApplicationController
   end
   
   private
-  def authors_params()
+  def author_params()
     params.require(:author).permit(
       :author_first,
       :author_last)
