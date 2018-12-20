@@ -1,6 +1,6 @@
 = form_for [@book, @reading] do |f|
   %p #{ f.label :rating, "Rating:"} #{ f.text_field :rating }
   %p #{ f.label :comments, "Comments:" }<br /> #{ f.text_area :comments }
-  %p #{ f.label :date_started, "Date Started:" } #{ f.datepicker 'date_started', :dateFormat => 'yy-mm-dd' }
-  %p #{ f.label :date_finished, "Date Finished:" } #{ f.datepicker 'date_finished', :dateFormat => 'yy-mm-dd' }
+  %p #{ f.label :date_started, "Date Started:" } #{ f.date_field 'date_started', :dateFormat => 'yy-mm-dd', :dataBehaviour => 'datepicker' }
+  %p #{ f.label :date_finished, "Date Finished:" } #{ f.date_field 'date_finished', :dateFormat => 'yy-mm-dd', :dataBehaviour => 'datepicker' }
   %p #{ f.submit 'Create' }

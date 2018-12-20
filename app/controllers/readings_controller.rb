@@ -44,7 +44,7 @@ class ReadingsController < ApplicationController
   # POST /readings.xml
   def create
     @book = Book.find(params[:book_id])
-    @reading = @book.readings.new(params[:reading])
+    @reading = @book.readings.new(reading_params)
 
     respond_to do |format|
       if @reading.save
@@ -64,7 +64,7 @@ class ReadingsController < ApplicationController
     @reading = @book.readings.find(params[:id])
 
     respond_to do |format|
-      if @reading.update_attributes(params[:reading])
+      if @reading.update_attributes(reading_params)
         format.html { redirect_to(@book, :notice => 'Reading was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -85,4 +85,13 @@ class ReadingsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+    def reading_params
+      params.require(:reading).permit(
+        :date_started,
+        :date_finished,
+        :rating,
+        :comments)
+    end
 end
