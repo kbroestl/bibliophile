@@ -24,6 +24,7 @@ $(function(){
     crossDomain: false,
     prePopulate: $('#book_author_tokens').data('pre')
   });
+
   $('a.open-modal').click(
     function() {
       $('body').append('<div id="blackout"></div>');
@@ -38,14 +39,11 @@ $(function(){
   $.ajax({
     url: '/lchart.json',
     dataType: 'json'
-    // data: data,
   }).done(function (stats) {
       var set = [];
-      //var series = Math.floor(Math.random()*10)+1;
       for (i in stats){
-        
-        set[i] = {label: stats[i].language.Language + ": " + Math.ceil(stats[i].language.percent) + "%", 
-                  data: parseInt(stats[i].language.percent) }
+        set[i] = {label: stats[i].Language + ": " + Math.ceil(stats[i].percent) + "%", 
+                  data: parseInt(stats[i].percent) }
       }
 
       $.plot($("#lchart"), set,
@@ -59,8 +57,6 @@ $(function(){
           }
           },
           }
-      });
-      
+      });  
     });
 });
-
