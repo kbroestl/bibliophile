@@ -27,5 +27,6 @@ end
 group :test do
   gem 'sqlite3'
   gem 'minitest'
+  gem 'database_cleaner'
   #gem 'capybara', # Latest capybara not supported < Ruby 2.3
 end
