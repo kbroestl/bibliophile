@@ -28,3 +28,12 @@ bundler?
 -- this has the complication that many of the methods, specifically on the Book
 model are not database agnostic, so we'll have to investigate what can be done
 to do those. Lots of 'find_by_sql'
+
+2019-01-03
+## Unit Test difficulties
+- previous versions of active record used to have a count_members function, which doesn't seem to exist any more. Genre and location tests are failing due to this
+- Find ways to gin up some test data for the books etc so we can start real testing for many of the other custom methods
+
+## Other issues
+- Some view/form pages (locations/genres) display nothing or very little, so we need to figure out what's going on there.
+
