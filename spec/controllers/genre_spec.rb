@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe GenresController do
-  # index fetch fails if the array is empty?
-  #
-  # Following does not work. (returns 10)
+  # This creates 10 genres every time the test suite runs and without something
+  # like database cleaner breaks genre model tests later
   # before(:all) do
   #   @genres = 10.times do
   #     FactoryBot.create(:genre)
@@ -13,8 +12,6 @@ RSpec.describe GenresController do
   describe "GET index" do
     it "renders the index template" do
       get :index
-      # binding.pry
-
       expect(response).to render_template("index")
     end
   end
