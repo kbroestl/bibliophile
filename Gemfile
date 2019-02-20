@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.11'
+gem 'rails', '5.0.0'
 
 gem 'rake'
 
@@ -28,5 +28,6 @@ group :test do
   gem 'sqlite3'
   gem 'minitest'
   gem 'database_cleaner'
+  gem 'rails-controller-testing' # necessary for controller testing in rails5?
   #gem 'capybara', # Latest capybara not supported < Ruby 2.3
 end
