@@ -13,7 +13,7 @@ class Book < ActiveRecord::Base
   # validations
   before_save :set_sortby_title
 
-  # Why are all of these abstract methods, and is that overcomplicating this, 
+  # Why are all of these abstract methods, and is that overcomplicating this,
   # causeing more problems than it solves?
 
   def self.count_unread()
@@ -51,13 +51,13 @@ class Book < ActiveRecord::Base
   end
 
   def set_sortby_title
-      # as we discover more articles (for instance french, spanish, etc.), add 
-      # to the array of articles. Ideally, "The Rise and Fall of the Third 
-      # Reich" returns "Rise and Fall of the Third Reich", "Die Elixiere des 
+      # as we discover more articles (for instance french, spanish, etc.), add
+      # to the array of articles. Ideally, "The Rise and Fall of the Third
+      # Reich" returns "Rise and Fall of the Third Reich", "Die Elixiere des
       # Teufels" should return "Elixiere des Teufels"
-      # Question: so the first element in the replacement array will replace 
+      # Question: so the first element in the replacement array will replace
       # multiple throughout the title. WHY?
-      # Following replaces all instances of the first (and only the first 
+      # Following replaces all instances of the first (and only the first
       # member) of the articles array:
       # self.sortby_title = title.gsub(/#{articles.join('\b|\A')}/i,'').lstrip()
 
@@ -65,5 +65,5 @@ class Book < ActiveRecord::Base
 
       self.sortby_title = title.sub(/#{articles.join('\b|\A')}/i, '').lstrip()
   end
-  
+
 end

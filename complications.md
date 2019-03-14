@@ -37,3 +37,6 @@ to do those. Lots of 'find_by_sql'
 ## Other issues
 - Some view/form pages (locations/genres) display nothing or very little, so we need to figure out what's going on there.
 
+# 2019-02-27
+What testing sets of data do we need to make the find_by_sql sections work? We won't be able to write stock tests until we can answer that particular question.
+- First step should be to identify where we use find_by_sql, then parse out what data elements are relavant to those queries.
