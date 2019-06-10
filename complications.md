@@ -15,9 +15,10 @@ However, re-creation of the data should be relatively easy. These tables are
 things like locations, languages, genres, etc.
 
 ## Ways forward
-- research ways to mysqldump only specific tables from a database, since we are unable to drop the corrupted innodb tables
-- confirm that the mysql2 bindings/gem cannot be built in the current state for mysql
-v.8
+- research ways to mysqldump only specific tables from a database, since we are
+unable to drop the corrupted innodb tables
+- confirm that the mysql2 bindings/gem cannot be built in the current state for
+mysql v.8
 - Look into possibilities for containerization? Docker container for the mysql
 chunk, but then what do we do about data-persistence?
 - Discover ways to set mysql_location compile-time variables via Gemfile and
@@ -31,12 +32,25 @@ to do those. Lots of 'find_by_sql'
 
 2019-01-03
 ## Unit Test difficulties
-- previous versions of active record used to have a count_members function, which doesn't seem to exist any more. Genre and location tests are failing due to this
-- Find ways to gin up some test data for the books etc so we can start real testing for many of the other custom methods
+- previous versions of active record used to have a count_members function,
+which doesn't seem to exist any more. Genre and location tests are failing due
+to this
+- Find ways to gin up some test data for the books etc so we can start real
+testing for many of the other custom methods
 
 ## Other issues
-- Some view/form pages (locations/genres) display nothing or very little, so we need to figure out what's going on there.
+- Some view/form pages (locations/genres) display nothing or very little, so we
+need to figure out what's going on there.
 
 # 2019-02-27
-What testing sets of data do we need to make the find_by_sql sections work? We won't be able to write stock tests until we can answer that particular question.
-- First step should be to identify where we use find_by_sql, then parse out what data elements are relavant to those queries.
+What testing sets of data do we need to make the find_by_sql sections work? We
+won't be able to write stock tests until we can answer that particular question.
+- First step should be to identify where we use find_by_sql, then parse out
+what data elements are relavant to those queries.
+
+# 2019-06-10
+- rethink the above. Rather than ginning up specific datasets to match the
+find_by_sql, better served by creating completed objects which are instantiated
+at beginning of test runs, find_by_sql runs on that test set
+- - need to look up how to set up those test sets before running tests. RSpec
+should make that easy.
