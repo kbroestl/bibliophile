@@ -47,6 +47,9 @@ class Book < ActiveRecord::Base
   end
 
   def self.search(query)
+    # double-check if this is sql-injection proof...
+    # according to http://gavinmiller.io/2015/fixing-sql-injection-vulnerabilities/
+    # this should be sql-injection safe:
     where("title like ?", "%#{query}%")
   end
 
