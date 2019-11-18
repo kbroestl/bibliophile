@@ -29,6 +29,7 @@ testing for many of the other custom methods
 need to figure out what's going on there.
 
 ## 2018-07-01
+*All below resolved by upgrading beyond Rails 5.0, to allow Mysql2 update beyond v0.4.*
 Upon updating mysql to v.8 via homebrew, the db appears to have gone south.
 'cannot connect via socket' errors of various kinds when accessing via the CLI.
 Ruby cannot compile the mysql2 gem to work with the latest version, either,
