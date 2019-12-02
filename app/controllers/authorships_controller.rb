@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AuthorshipsController < ApplicationController
   # GET /authorships
   # GET /authorships.xml
@@ -6,7 +8,7 @@ class AuthorshipsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @authorships }
+      format.xml  { render xml: @authorships }
     end
   end
 
@@ -17,7 +19,7 @@ class AuthorshipsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @authorship }
+      format.xml  { render xml: @authorship }
     end
   end
 
@@ -28,7 +30,7 @@ class AuthorshipsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @authorship }
+      format.xml  { render xml: @authorship }
     end
   end
 
@@ -46,17 +48,17 @@ class AuthorshipsController < ApplicationController
       if @authorship.save
         flash[:notice] = 'Authorship was successfully created.'
         format.html { redirect_to(@authorship) }
-        format.xml  { render :xml => @authorship, :status => :created, :location => @authorship }
+        format.xml  { render xml: @authorship, status: :created, location: @authorship }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @authorship.errors, :status => :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.xml  { render xml: @authorship.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PUT /authorships/1
   # PUT /authorships/1.xml
-  # Authorships are never updated in the context of the authorship itself, 
+  # Authorships are never updated in the context of the authorship itself,
   # rather, in the context of a book. Therefore on update redirect to the book
   # in question.
   def update
@@ -68,8 +70,8 @@ class AuthorshipsController < ApplicationController
         format.html { redirect_to(@authorship.book) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @authorship.errors, :status => :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @authorship.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -85,11 +87,14 @@ class AuthorshipsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
   private
-  def authorship_params()
+
+  def authorship_params
     params.require(:authorship).permit(
       :contributor,
       :editor,
-      :translator)
+      :translator
+    )
   end
 end

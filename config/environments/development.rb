@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RailsPortal::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -32,4 +34,3 @@ RailsPortal::Application.configure do
   # set eager_load to development mode == false
   config.eager_load = false
 end
-

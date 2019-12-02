@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddNameToAuthors < ActiveRecord::Migration
   def self.up
     add_column :authors, :name, :string

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LanguagesController < ApplicationController
   # GET /languages
   # GET /languages.xml
@@ -6,7 +8,7 @@ class LanguagesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @languages }
+      format.xml  { render xml: @languages }
     end
   end
 
@@ -17,7 +19,7 @@ class LanguagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @language }
+      format.xml  { render xml: @language }
     end
   end
 
@@ -28,7 +30,7 @@ class LanguagesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @language }
+      format.xml  { render xml: @language }
     end
   end
 
@@ -46,10 +48,10 @@ class LanguagesController < ApplicationController
       if @language.save
         flash[:notice] = 'Language was successfully created.'
         format.html { redirect_to(@language) }
-        format.xml  { render :xml => @language, :status => :created, :location => @language }
+        format.xml  { render xml: @language, status: :created, location: @language }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @language.errors, :status => :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.xml  { render xml: @language.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,8 +67,8 @@ class LanguagesController < ApplicationController
         format.html { redirect_to(@language) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @language.errors, :status => :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @language.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -86,8 +88,8 @@ class LanguagesController < ApplicationController
   def languageschart
     @languages = Language.lchartstats
     respond_to do |format|
-      format.json { render :json => @languages }
-      format.xml { render :xml => @languages }
+      format.json { render json: @languages }
+      format.xml { render xml: @languages }
     end
   end
 end

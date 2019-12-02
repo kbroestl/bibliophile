@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAuthors < ActiveRecord::Migration
   def self.up
     create_table :authors do |t|
@@ -6,7 +8,6 @@ class CreateAuthors < ActiveRecord::Migration
       t.string :author_last
       t.string :title
       t.string :other
-
     end
   end
 

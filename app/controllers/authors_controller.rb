@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.xml
-  
+
   def index
-    
-    @authors = Author.where("name like ?", "%#{params[:q]}%").order(:author_last, :author_first)
-    
+    @authors = Author.where('name like ?', "%#{params[:q]}%").order(:author_last, :author_first)
+
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @authors }
-      format.json { render :json => @authors.map(&:json_attributes) }
+      format.xml  { render xml: @authors }
+      format.json { render json: @authors.map(&:json_attributes) }
     end
   end
 
@@ -17,10 +18,10 @@ class AuthorsController < ApplicationController
   # GET /authors/1.xml
   def show
     @author = Author.find(params[:id])
-    @page_title = "Details for " + @author.name
+    @page_title = 'Details for ' + @author.name
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @author }
+      format.xml  { render xml: @author }
     end
   end
 
@@ -31,7 +32,7 @@ class AuthorsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @author }
+      format.xml  { render xml: @author }
       format.js
     end
   end
@@ -50,13 +51,13 @@ class AuthorsController < ApplicationController
       if @author.save
         flash[:notice] = 'Author was successfully created.'
         format.html { redirect_to(@author) }
-        format.xml  { render :xml => @author, :status => :created, :location => @author }
-        format.js { render :action => "show" }
+        format.xml  { render xml: @author, status: :created, location: @author }
+        format.js { render action: 'show' }
       else
         flash[:notice] = "Something's gone horribly wrong."
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @author.errors, :status => :unprocessable_entity }
-        format.js { render :action => "new" }
+        format.html { render action: 'new' }
+        format.xml  { render xml: @author.errors, status: :unprocessable_entity }
+        format.js { render action: 'new' }
       end
     end
   end
@@ -72,8 +73,8 @@ class AuthorsController < ApplicationController
         format.html { redirect_to(@author) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @author.errors, :status => :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @author.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -89,11 +90,13 @@ class AuthorsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   private
-  def author_params()
+
+  def author_params
     params.require(:author).permit(
       :author_first,
-      :author_last)
+      :author_last
+    )
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe GenresController do
@@ -9,10 +11,10 @@ RSpec.describe GenresController do
   #   end
   # end
 
-  describe "GET index" do
-    it "renders the index template" do
+  describe 'GET index' do
+    it 'renders the index template' do
       get :index
-      expect(response).to render_template("index")
+      expect(response).to render_template('index')
     end
   end
 end

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AddExcludedToBooks < ActiveRecord::Migration
   def self.up
-    add_column :books, :excluded, :boolean, :default => 0
+    add_column :books, :excluded, :boolean, default: 0
   end
 
   def self.down

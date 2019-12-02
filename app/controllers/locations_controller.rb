@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.xml
@@ -6,7 +8,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @locations }
+      format.xml  { render xml: @locations }
     end
   end
 
@@ -17,7 +19,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @location }
+      format.xml  { render xml: @location }
     end
   end
 
@@ -28,7 +30,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @location }
+      format.xml  { render xml: @location }
     end
   end
 
@@ -44,11 +46,11 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to(@location, :notice => 'Location was successfully created.') }
-        format.xml  { render :xml => @location, :status => :created, :location => @location }
+        format.html { redirect_to(@location, notice: 'Location was successfully created.') }
+        format.xml  { render xml: @location, status: :created, location: @location }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @location.errors, :status => :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.xml  { render xml: @location.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,11 +62,11 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.update_attributes(location_params)
-        format.html { redirect_to(@location, :notice => 'Location was successfully updated.') }
+        format.html { redirect_to(@location, notice: 'Location was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @location.errors, :status => :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @location.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -80,10 +82,13 @@ class LocationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
   private
-  def location_params()
+
+  def location_params
     params.require(:location).permit(
       :Location,
-      :readable)
+      :readable
+    )
   end
 end

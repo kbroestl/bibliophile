@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReadingsController < ApplicationController
   # GET /readings
   # GET /readings.xml
@@ -6,7 +8,7 @@ class ReadingsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @readings }
+      format.xml  { render xml: @readings }
     end
   end
 
@@ -18,7 +20,7 @@ class ReadingsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @reading }
+      format.xml  { render xml: @reading }
     end
   end
 
@@ -30,7 +32,7 @@ class ReadingsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @reading }
+      format.xml  { render xml: @reading }
     end
   end
 
@@ -48,11 +50,11 @@ class ReadingsController < ApplicationController
 
     respond_to do |format|
       if @reading.save
-        format.html { redirect_to(@book, :notice => 'Reading was successfully created.') }
-        format.xml  { render :xml => @book, :status => :created, :location => @reading }
+        format.html { redirect_to(@book, notice: 'Reading was successfully created.') }
+        format.xml  { render xml: @book, status: :created, location: @reading }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @reading.errors, :status => :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.xml  { render xml: @reading.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,11 +67,11 @@ class ReadingsController < ApplicationController
 
     respond_to do |format|
       if @reading.update_attributes(reading_params)
-        format.html { redirect_to(@book, :notice => 'Reading was successfully updated.') }
+        format.html { redirect_to(@book, notice: 'Reading was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @reading.errors, :status => :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @reading.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -87,11 +89,13 @@ class ReadingsController < ApplicationController
   end
 
   private
-    def reading_params
-      params.require(:reading).permit(
-        :date_started,
-        :date_finished,
-        :rating,
-        :comments)
-    end
+
+  def reading_params
+    params.require(:reading).permit(
+      :date_started,
+      :date_finished,
+      :rating,
+      :comments
+    )
+  end
 end

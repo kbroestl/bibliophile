@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddTimestampsToBooks < ActiveRecord::Migration
   def self.up
     add_column :books, :created_at, :timestamp

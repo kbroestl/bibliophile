@@ -1,13 +1,12 @@
-class BooksController < ApplicationController
+# frozen_string_literal: true
 
+class BooksController < ApplicationController
   # GET /books
   # GET /books.xml
   def index
-    @page_title = "Welcome"
+    @page_title = 'Welcome'
 
-    if params[:search]
-      @results = Book.search(params[:search]).order("title")
-    end
+    @results = Book.search(params[:search]).order('title') if params[:search]
 
     # @books = Book.find_all_by_location_id(7)
     @books = Book.find_in_process
@@ -19,8 +18,8 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @books }
-      format.json { render :json => @books }
+      format.xml  { render xml: @books }
+      format.json { render json: @books }
     end
   end
 
@@ -32,7 +31,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @book }
+      format.xml { render xml: @book }
     end
   end
 
@@ -43,14 +42,14 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @book }
+      format.xml { render xml: @book }
     end
   end
 
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
-    @page_title = "Editing " + @book.title
+    @page_title = 'Editing ' + @book.title
   end
 
   # POST /books
@@ -62,11 +61,11 @@ class BooksController < ApplicationController
       if @book.save
         flash[:notice] = 'Book was successfully created.'
         format.html { redirect_to(@book) }
-        format.xml  { render :xml => @book, :status => :created, :location => @book }
+        format.xml  { render xml: @book, status: :created, location: @book }
       else
-        flash[:notice] ="Something's gone horribly wrong."
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @book.errors, :status => :unprocessable_entity }
+        flash[:notice] = "Something's gone horribly wrong."
+        format.html { render action: 'new' }
+        format.xml  { render xml: @book.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -82,9 +81,9 @@ class BooksController < ApplicationController
         format.html { redirect_to(@book) }
         format.xml  { head :ok }
       else
-        flash[:notice] ="Something's gone horribly wrong."
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @book.errors, :status => :unprocessable_entity }
+        flash[:notice] = "Something's gone horribly wrong."
+        format.html { render action: 'edit' }
+        format.xml  { render xml: @book.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -103,28 +102,31 @@ class BooksController < ApplicationController
 
   def unread
     @books = Book.unread_books
-    @page_title = "Unread Books"
+    @page_title = 'Unread Books'
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @books }
-      format.json { render :json => @books }
+      format.xml  { render xml: @books }
+      format.json { render json: @books }
     end
   end
+
   private
-    def book_params
-      params.require(:book).permit(
-        {:author => [:author_first, :author_last]},
-        {:authorship => [:contributor, :editor, :translator]},
-        :author_tokens,
-        :title,
-        :publisher,
-        :ISBN,
-        :genre_id,
-        :location_id,
-        :pages,
-        :language_id,
-        :notes,
-        :excluded,
-        :original_language)
-    end
+
+  def book_params
+    params.require(:book).permit(
+      { author: %i[author_first author_last] },
+      { authorship: %i[contributor editor translator] },
+      :author_tokens,
+      :title,
+      :publisher,
+      :ISBN,
+      :genre_id,
+      :location_id,
+      :pages,
+      :language_id,
+      :notes,
+      :excluded,
+      :original_language
+    )
+  end
 end

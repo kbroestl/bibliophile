@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddTimestampsToAuthors < ActiveRecord::Migration
   def self.up
     add_column :authors, :created_at, :timestamp

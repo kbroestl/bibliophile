@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
-RailsPortal::Application.config.session_store :cookie_store, :key => '_RailsPortal_session'
+RailsPortal::Application.config.session_store :cookie_store, key: '_RailsPortal_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information

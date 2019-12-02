@@ -1,4 +1,6 @@
-require File.expand_path('../boot', __FILE__)
+# frozen_string_literal: true
+
+require File.expand_path('boot', __dir__)
 
 require 'rails/all'
 
@@ -37,11 +39,11 @@ module RailsPortal
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
-    config.time_zone = "Eastern Time (US & Canada)"
+    config.encoding = 'utf-8'
+    config.time_zone = 'Eastern Time (US & Canada)'
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
+
     # Enable the asset pipeline
     config.assets.enabled = true
 
@@ -50,15 +52,14 @@ module RailsPortal
 
     # Changes for rspec inclusion
     config.generators do |g|
-        g.test_framework :rspec,
-            :fixtures => true,
-            :view_specs => false,
-            :helper_specs => false,
-            :routing_specs => false,
-            :controller_specs => true,
-            :request_specs => true
-        g.fixture_replacement :factory_bot, :dir => "spec/factories"
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       controller_specs: true,
+                       request_specs: true
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
-
   end
 end
