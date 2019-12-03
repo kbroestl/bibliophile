@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
+# Included in the book model is the logic around counting of books
+# and stats related to publishers, languages, most-represented authors
 class Book < ActiveRecord::Base
-  # attr_accessible :author_first, :author_last, :author_tokens, :title, :publisher, :ISBN, :genre_id, :location_id, :pages, :language_id, :notes, :excluded, :original_language
   attr_reader :author_tokens, :author_first, :author_last
   # relationships/associations
   has_many :authorships
@@ -10,7 +11,6 @@ class Book < ActiveRecord::Base
   belongs_to :language
   belongs_to :genre
   belongs_to :location
-  # belongs_to :original_language, :class_name => 'Language', :foreign_key => 'original_language'
   accepts_nested_attributes_for :authors, :authorships
   # validations
   before_save :set_sortby_title
@@ -19,29 +19,64 @@ class Book < ActiveRecord::Base
   # causeing more problems than it solves?
 
   def self.count_unread
-    # rewriting this is out of scope just for 4.x upgrade
-    Book.joins('left join readings r on r.book_id = books.id left join genres g on books.genre_id = g.id left join locations l on l.id = books.location_id').where('r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1').count
+    unreadjoins = <<-SQL
+    left join readings r on r.book_id = books.id
+    left join genres g on books.genre_id = g.id
+    left join locations l on l.id = books.location_id
+    SQL
+    whereclause = <<-WC
+    r.id is NULL and excluded = 0 and g.readable = 1 and l.readable = 1
+    WC
+    Book.joins(unreadjoins).where(whereclause).count
   end
 
   def self.find_in_process
     # rewriting this is out of scope just for 4.x upgrade
     # Not as Database agnostic as I'd like
-    Book.joins(:readings).where('readings.date_started is not null and readings.date_finished is null')
+    whereclause = <<-WC
+    readings.date_started is not null
+    and readings.date_finished is null
+    WC
+    Book.joins(:readings).where(whereclause)
   end
 
   def self.find_most_prominent_publishers
     # rewrite this method to use ORM DSL for better database abstraction
-    Book.find_by_sql('select count(publisher) as "total", publisher from books where publisher <> "" group by publisher order by total desc limit 10;')
+    query = <<-SQL
+    select count(publisher) as "total", publisher
+    from books
+    where publisher <> ""
+    group by publisher
+    order by total desc
+    limit 10;
+    SQL
+    Book.find_by_sql(query)
   end
 
   def self.unread_books
     # rewrite this method to use ORM DSL for better database abstraction
-    Book.find_by_sql('Select b.id, b.title from books b Left join readings r on r.book_id = b.id Left Join genres g on b.genre_id = g.id Left Join locations l on l.id = b.location_id where r.id is NULL and b.excluded = 0 and g.readable = 1 and l.readable = 1 order by b.sortby_title')
+    query = <<-SQL
+    select b.id, b.title
+    from books b
+    Left join readings r on r.book_id = b.id
+    Left Join genres g on b.genre_id = g.id
+    Left Join locations l on l.id = b.location_id
+    where r.id is NULL and b.excluded = 0 and g.readable = 1
+    and l.readable = 1 order by b.sortby_title
+    SQL
+    Book.find_by_sql(query)
   end
 
   def self.latest_readings
     # rewrite this method to use ORM DSL for better database abstraction
-    Book.find_by_sql('select b.id, b.title, r.date_finished from books b INNER JOIN readings r on b.id = r.book_id where r.date_finished >= DATE_SUB(now(), interval 1 year) order by r.date_finished DESC')
+    query = <<-SQL
+    select b.id, b.title, r.date_finished
+    from books b
+    INNER JOIN readings r on b.id = r.book_id
+    where r.date_finished >= DATE_SUB(now(), interval 1 year)
+    order by r.date_finished DESC
+    SQL
+    Book.find_by_sql(query)
   end
 
   def author_tokens=(ids)
