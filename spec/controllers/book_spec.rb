@@ -4,12 +4,12 @@ require 'rails_helper'
 
 RSpec.describe BooksController, type: :controller do
   let!(:book) { FactoryBot.create(:book) }
-  let (:params) do { id: book.id } end
+  # let(:params) id: book.id
 
   describe 'GET index' do
     it 'renders the index template' do
-      # get :index
-      # expect(response).to render_template("index")
+      get :index
+      expect(response).to render_template("index")
     end
   end
   describe 'show' do

@@ -4,8 +4,8 @@ require 'rails_helper'
 require 'pry'
 
 RSpec.describe Genre, type: :model do
-  let (:genre) { FactoryBot.create(:genre, genre: 'Nonsense') }
-  let (:book) { FactoryBot.create(:book, title: 'Enigma', genre_id: genre.id) }
+  let(:genre) { FactoryBot.create(:genre, genre: 'Nonsense') }
+  let(:book) { FactoryBot.create(:book, title: 'Enigma', genre_id: genre.id) }
 
   it 'has a valid factory' do
     expect(FactoryBot.create(:genre)).to be_valid

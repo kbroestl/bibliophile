@@ -8,7 +8,8 @@ RSpec.describe Book, type: :model do
   end
 
   it 'returns sortable English title' do
-    book = FactoryBot.create(:book, title: 'The Rise and Fall of the Roman Empire')
+    book = FactoryBot.create(:book,
+                             title: 'The Rise and Fall of the Roman Empire')
     expect(book.sortby_title).to eq('Rise and Fall of the Roman Empire')
   end
 

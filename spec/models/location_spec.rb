@@ -4,9 +4,12 @@ require 'rails_helper'
 require 'pry'
 
 RSpec.describe Location, type: :model do
-  let (:location) { FactoryBot.create(:location, location: 'Limbo') }
-  let (:book) { FactoryBot.create(:book, title: 'Enigma', location_id: location.id) }
-  
+  let(:location) { FactoryBot.create(:location, location: 'Limbo') }
+  let :book do
+    FactoryBot.create(:book,
+                      title: 'Enigma',
+                      location_id: location.id)
+  end
 
   it 'has a valid factory' do
     expect(FactoryBot.create(:location)).to be_valid
