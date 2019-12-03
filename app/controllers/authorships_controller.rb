@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AuthorshipsController < ApplicationController
+  before_action :fetch_authorship, only: [:show, :update]
   # GET /authorships
   # GET /authorships.xml
   def index
@@ -15,7 +16,7 @@ class AuthorshipsController < ApplicationController
   # GET /authorships/1
   # GET /authorships/1.xml
   def show
-    @authorship = Authorship.find(params[:id])
+    # @authorship = Authorship.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -62,7 +63,7 @@ class AuthorshipsController < ApplicationController
   # rather, in the context of a book. Therefore on update redirect to the book
   # in question.
   def update
-    @authorship = Authorship.find(params[:id])
+    # @authorship = Authorship.find(params[:id])
 
     respond_to do |format|
       if @authorship.update_attributes(authorship_params)
@@ -89,6 +90,10 @@ class AuthorshipsController < ApplicationController
   end
 
   private
+
+  def fetch_authorship
+    @authorship = Authorship.find(params[:id])
+  end
 
   def authorship_params
     params.require(:authorship).permit(
