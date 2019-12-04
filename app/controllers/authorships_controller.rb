@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AuthorshipsController < ApplicationController
-  before_action :fetch_authorship, only: [:show, :update]
+  before_action :fetch_authorship, only: %I[show update]
   # GET /authorships
   # GET /authorships.xml
   def index
