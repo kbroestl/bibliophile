@@ -2,7 +2,7 @@
 
 # Basic ActiveRecord Model, with some stat generation bits for the
 # Pie chart on the home page.
-class Language < ActiveRecord::Base
+class Language < ApplicationRecord
   has_many :books
 
   def self.lchartstats

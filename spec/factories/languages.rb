@@ -3,7 +3,7 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :location do
-    location { Faker::Lorem.words(1) }
+  factory :language do |l|
+  	l.language { Faker::Lorem.words(1)}
   end
 end

@@ -3,12 +3,15 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :book do |b|
-    b.title { Faker::Lorem.words(4).join(' ') }
-    b.publisher { Faker::Company.name + ' ' + Faker::Company.suffix }
-    b.notes { Faker::Lorem.paragraph }
-    b.ISBN { Faker::Code.isbn(13).gsub(/[\D]/, '') }
-    b.pages { Faker::Number.number(3) }
-    b.excluded { %w[0 1].sample }
+  factory :book do
+    title { Faker::Lorem.words(4).join(' ') }
+    publisher { Faker::Company.name + ' ' + Faker::Company.suffix }
+    notes { Faker::Lorem.paragraph }
+    ISBN { Faker::Code.isbn(13).gsub(/[\D]/, '') }
+    pages { Faker::Number.number(3) }
+    excluded { %w[0 1].sample }
+    association :language, factory: :language
+    association :genre, factory: :genre
+    association :location, factory: :location
   end
 end

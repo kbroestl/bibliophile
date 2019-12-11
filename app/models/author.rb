@@ -2,7 +2,7 @@
 
 # Class to also include methods for sanitizing author names
 # and collect stats for relating to authors
-class Author < ActiveRecord::Base
+class Author < ApplicationRecord
   has_many :authorships
   has_many :books, through: :authorships
   before_save :process_author

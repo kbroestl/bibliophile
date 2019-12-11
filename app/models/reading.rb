@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 # Basic ActiveRecord model Nothing fancy.
-class Reading < ActiveRecord::Base
+class Reading < ApplicationRecord
   belongs_to :book
 end

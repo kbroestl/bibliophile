@@ -3,9 +3,9 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :author do |a|
-    a.author_first { Faker::Name.first_name }
-    a.author_last { Faker::Name.last_name }
-    a.title { Faker::Name.prefix }
+  factory :author do
+    author_first { Faker::Name.first_name }
+    author_last { Faker::Name.last_name }
+    title { Faker::Name.prefix }
   end
 end
