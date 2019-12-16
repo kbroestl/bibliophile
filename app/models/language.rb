@@ -3,6 +3,7 @@
 # Basic ActiveRecord Model, with some stat generation bits for the
 # Pie chart on the home page.
 class Language < ApplicationRecord
+  attr_reader :name
   has_many :books
 
   def self.lchartstats

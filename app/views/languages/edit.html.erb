@@ -1,6 +1,14 @@
 <h1>Editing language</h1>
 
-<% form_for(@language) do |f| %>
+<h3> Where is it?
+<%= @language.name %>
+</h3>
+
+
+<% form_for :language do |f| %>
+  <p>
+  	Language: <%= f.text_field :name %>
+  </p>
   <p>
     <%= f.submit 'Update' %>
   </p>

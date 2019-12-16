@@ -12,7 +12,6 @@ class Author < ApplicationRecord
   end
 
   def process_author
-    # Rails.logger.debug "Author last is #{author_last}"
     self.name = "#{author_first} #{author_last}".strip
   end
 
