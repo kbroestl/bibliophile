@@ -42,7 +42,7 @@ $(function(){
   }).done(function (stats) {
       var set = [];
       for (i in stats){
-        set[i] = {label: stats[i].Language + ": " + Math.ceil(stats[i].percent) + "%", 
+        set[i] = {label: stats[i].name + ": " + Math.ceil(stats[i].percent) + "%", 
                   data: parseInt(stats[i].percent) }
       }
 

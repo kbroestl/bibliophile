@@ -29,6 +29,10 @@ group :development, :test do
   gem 'test-unit'
 end
 
+group :assets do
+  gem 'sassc-rails', '~> 2.0.0'
+end
+
 group :test do
   gem 'database_cleaner'
   gem 'minitest'
