@@ -7,13 +7,13 @@ class Language < ApplicationRecord
 
   def self.lchartstats
     query = <<-SQL
-    select x.total, x.Language, 100 * x.total / b.total as percent
-    from (select count(books.id) as total, ol.Language
+    select x.total, x.name, 100 * x.total / b.total as percent
+    from (select count(books.id) as total, ol.name
     from books INNER join languages ol on ol.id = books.original_language
-    group by ol.Language) x
+    group by ol.name) x
     Inner join ( select count(*) as total
     from books where original_language is not NULL ) b
-    order by x.total desc, x.Language;
+    order by x.total desc, x.name;
     SQL
     Language.find_by_sql(query)
   end
