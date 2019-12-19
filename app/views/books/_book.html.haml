@@ -1,4 +1,4 @@
-= form_for @book do |f|
+  = form_for @book do |f|
   %p #{ f.label :author_tokens, "Authors"} #{f.text_field :author_tokens, "data-pre" => @book.authors.map(&:json_attributes).to_json }
   %p Need an author which is not found above? #{ link_to "Click here", new_author_path, :remote => true, :class =>"open-modal" }
   
