@@ -3,8 +3,9 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :reading do |b|
-    b.rating { Faker::Number.number(1) }
-    b.comments { Faker::Lorem.paragraph }
+  factory :reading do
+  	association :book, factory: :book
+    rating { Faker::Number.number(digits: 1) }
+    comments { Faker::Lorem.paragraph }
   end
 end

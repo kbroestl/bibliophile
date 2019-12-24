@@ -1,7 +1,7 @@
-# frozen_string_literal: true
+# Load the Rails application.
+require_relative 'application'
 
-# Load the rails application
-require File.expand_path('application', __dir__)
+# Initialize the Rails application.
+Rails.application.initialize!
 
-# Initialize the rails application
-RailsPortal::Application.initialize!
+Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true

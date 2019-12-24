@@ -2,7 +2,7 @@
 
 # Class to also include methods for sanitizing author names
 # and collect stats for relating to authors
-class Author < ActiveRecord::Base
+class Author < ApplicationRecord
   has_many :authorships
   has_many :books, through: :authorships
   before_save :process_author
@@ -12,7 +12,6 @@ class Author < ActiveRecord::Base
   end
 
   def process_author
-    # Rails.logger.debug "Author last is #{author_last}"
     self.name = "#{author_first} #{author_last}".strip
   end
 

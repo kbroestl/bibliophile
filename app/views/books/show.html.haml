@@ -45,7 +45,11 @@
 
 %p
   %strong Language:
-  #{@book.language.Language} 
+  #{@book.language.name} 
+
+%p
+  %strong Original Language:
+  #{@book.original_language}
 
 %p 
   %strong Last Modified:

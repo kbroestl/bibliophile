@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ReadingsRenameLastModifiedToUpdatedOn < ActiveRecord::Migration
+class ReadingsRenameLastModifiedToUpdatedOn < ActiveRecord::Migration[4.2]
   def self.up
     rename_column :readings, :last_modified, :updated_on
   end

@@ -2,6 +2,6 @@
 
 # Basic Active Record class.
 # No business logic here as yet.
-class Location < ActiveRecord::Base
+class Location < ApplicationRecord
   has_many :books
 end

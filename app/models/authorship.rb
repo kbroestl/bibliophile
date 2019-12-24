@@ -2,7 +2,7 @@
 
 # Join model tying authors to books. There will likely be no specific methods
 # to this class, since logically they belong to the other objects.
-class Authorship < ActiveRecord::Base
+class Authorship < ApplicationRecord
   belongs_to :book
   belongs_to :author
 

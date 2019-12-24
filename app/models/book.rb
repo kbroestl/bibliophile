@@ -2,7 +2,7 @@
 
 # Included in the book model is the logic around counting of books
 # and stats related to publishers, languages, most-represented authors
-class Book < ActiveRecord::Base
+class Book < ApplicationRecord
   attr_reader :author_tokens, :author_first, :author_last
   # relationships/associations
   has_many :authorships

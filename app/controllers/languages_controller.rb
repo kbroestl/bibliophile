@@ -42,7 +42,7 @@ class LanguagesController < ApplicationController
   # POST /languages
   # POST /languages.xml
   def create
-    @language = Language.new(params[:language])
+    @language = Language.new(language_params)
 
     respond_to do |format|
       if @language.save
@@ -62,7 +62,7 @@ class LanguagesController < ApplicationController
     @language = Language.find(params[:id])
 
     respond_to do |format|
-      if @language.update_attributes(params[:language])
+      if @language.update_attributes(language_params)
         flash[:notice] = 'Language was successfully updated.'
         format.html { redirect_to(@language) }
         format.xml  { head :ok }
@@ -91,5 +91,13 @@ class LanguagesController < ApplicationController
       format.json { render json: @languages }
       format.xml { render xml: @languages }
     end
+  end
+
+  private
+    
+  def language_params
+    params.require(:language).permit(
+      :name
+    )
   end
 end

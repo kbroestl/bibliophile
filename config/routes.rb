@@ -1,14 +1,11 @@
 # frozen_string_literal: true
 
-RailsPortal::Application.routes.draw do
+Rails.application.routes.draw do
   resources :books do
     resources :readings
   end
-  resources :authors
-  resources :locations
-  resources :genres
-  resources :authorships
-  resources :languages
+
+  resources :authors, :authorships, :genres, :languages, :locations
 
   root to: 'books#index'
 

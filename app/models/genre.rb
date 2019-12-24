@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Include methods to gather stats around genres.
-class Genre < ActiveRecord::Base
+class Genre < ApplicationRecord
   has_many :books
 
   def self.count_members(genre)

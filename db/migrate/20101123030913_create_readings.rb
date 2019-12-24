@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateReadings < ActiveRecord::Migration
+class CreateReadings < ActiveRecord::Migration[4.2]
   def self.up
     create_table :readings do |t|
       t.integer :book_id

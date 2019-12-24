@@ -3,6 +3,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '5.2.3'
+gem 'bootsnap'
+gem 'listen'
 
 gem 'rake'
 
@@ -25,6 +27,10 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'simplecov' # , '~> 0.15.1'
   gem 'test-unit'
+end
+
+group :assets do
+  gem 'sassc-rails', '~> 2.0.0'
 end
 
 group :test do

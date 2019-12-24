@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AddReadableToGenres < ActiveRecord::Migration
+class AddReadableToGenres < ActiveRecord::Migration[4.2]
   def self.up
     add_column :genres, :readable, :Boolean, default: true
   end
