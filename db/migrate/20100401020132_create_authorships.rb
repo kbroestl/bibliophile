@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateAuthorships < ActiveRecord::Migration
+class CreateAuthorships < ActiveRecord::Migration[4.2]
   def self.up
     create_table :authorships do |t|
       t.integer :book_id

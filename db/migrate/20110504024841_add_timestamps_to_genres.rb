@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AddTimestampsToGenres < ActiveRecord::Migration
+class AddTimestampsToGenres < ActiveRecord::Migration[4.2]
   def self.up
     add_column :genres, :created_at, :timestamp
     add_column :genres, :updated_at, :timestamp

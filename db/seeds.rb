@@ -6,3 +6,22 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+languages = Language.create([
+  {:name => 'unassigned'},
+  {:name => 'Chinese'},
+  {:name => 'Danish'},
+  {:name => 'English'},
+  {:name => 'French'},
+  {:name => 'German'},
+  {:name => 'Greek'},
+  {:name => 'Italian'},
+  {:name => 'Latin'},
+  {:name => 'Russian'},
+  {:name => 'Spanish'},
+  {:name => 'Polish'},
+  {:name => 'Swedish'},
+  {:name => 'Japanese'},
+  {:name => 'Swahili'},
+  {:name => 'Hungarian'}
+])

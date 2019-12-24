@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ElongateBookTitle < ActiveRecord::Migration
+class ElongateBookTitle < ActiveRecord::Migration[4.2]
   def self.up
     change_column :books, :title, :string
   end

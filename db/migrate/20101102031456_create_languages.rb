@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-class CreateLanguages < ActiveRecord::Migration
-  def self.up
-    create_table :languages, &:timestamps
-  end
-
-  def self.down
-    drop_table :languages
+class CreateLanguages < ActiveRecord::Migration[5.2]
+  def change
+    create_table :languages do |t|
+      t.string :name
+      t.timestamps
+    end
   end
 end
