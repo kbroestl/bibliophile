@@ -5,7 +5,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
-require 'support/factory_bot'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -22,6 +22,8 @@ require 'support/factory_bot'
 # require only the support files necessary.
 #
 # Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+
+require 'support/factory_bot'
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
