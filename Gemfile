@@ -18,6 +18,7 @@ gem 'jquery-ui-rails'
 gem 'mysql2', '~> 0.5.0' # 0.5 and higher are not supported by Rails < 5
 gem 'nifty-generators'
 gem 'sass'
+gem 'wikipedia-client'
 
 group :development, :test do
   gem 'factory_bot_rails'

@@ -39,7 +39,26 @@ body {
   margin:0;
 }
 
+#book-list {
+  width:45%;
+  float:left;
+}
 
+#bio-section {
+  display: block;
+  width:50%;
+  float:right;
+}
+
+img.author-portrait {
+  display: block;
+  float: left;
+  margin-right: 20px;
+}
+
+#page-nav {
+  clear:both;
+}
 
 #contributors,
 .reading {

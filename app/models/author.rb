@@ -5,6 +5,7 @@
 class Author < ApplicationRecord
   has_many :authorships
   has_many :books, through: :authorships
+  has_one :biography
   before_save :process_author
 
   def fullname

@@ -1,9 +1,17 @@
 %h2=@author.name
 
-%h3 is the author of:
-%ul
--@author.books.each do |book|
-	%li= link_to book.title, book_path(book)
+%div#book-list
+  %h3 is the author of:
+  %ul
+  -@author.books.each do |book|
+    %li= link_to book.title, book_path(book)
 
-%a=link_to 'Edit', edit_author_path(@author)
-%a= link_to 'Back', authors_path
+%div#bio-section
+  %img{ :src=> @bio.main_image_url, :width => "200", :class => "author-portrait"} 
+  =@bio.summary
+  %p
+    %a=link_to 'Read More', @bio.fullurl
+
+#page-nav
+  %a=link_to 'Edit', edit_author_path(@author)
+  %a= link_to 'Back', authors_path

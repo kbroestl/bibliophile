@@ -18,6 +18,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1.xml
   def show
     @author = Author.find(params[:id])
+    @bio = Biography.fetch_bio(@author)
     @page_title = 'Details for ' + @author.name
     respond_to do |format|
       format.html # show.html.erb
