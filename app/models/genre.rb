@@ -4,8 +4,7 @@
 class Genre < ApplicationRecord
   has_many :books
 
-  def self.count_members(genre)
-    Genre.count(joins: 'Inner Join books b on b.genre_id = genres.id',
-                conditions: "b.genre_id = #{genre}")
+  def count_members
+  	self.books.count
   end
 end
