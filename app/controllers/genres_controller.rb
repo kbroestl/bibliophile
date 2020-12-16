@@ -16,7 +16,7 @@ class GenresController < ApplicationController
   # GET /genres/1.xml
   def show
     @genre = Genre.find(params[:id])
-    @count = Genre.count_members(params[:id])
+    @count = @genre.count_members
 
     respond_to do |format|
       format.html # show.html.erb
