@@ -12,26 +12,28 @@
 
 ActiveRecord::Schema.define(version: 2020_05_21_014252) do
 
-  create_table "authors", id: :integer, limit: 2, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "author", limit: 50
-    t.string "author_first", limit: 25
-    t.string "author_last", limit: 25
-    t.string "title", limit: 25
-    t.text "other"
+  create_table "authors", force: :cascade do |t|
+    t.string "author"
+    t.string "author_first"
+    t.string "author_last"
+    t.string "title"
+    t.string "other"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "name"
   end
 
-  create_table "authorships", id: :integer, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "book_id", default: 0, null: false, unsigned: true
-    t.integer "author_id", limit: 2, default: 0, null: false
-    t.integer "translator", limit: 2, default: 0
-    t.integer "editor", limit: 2, default: 0
+  create_table "authorships", force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "author_id"
+    t.boolean "translatior", default: false
+    t.boolean "editor", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean "contributor", default: false
   end
 
-  create_table "biographies", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "biographies", force: :cascade do |t|
     t.string "image_url"
     t.text "bio_text"
     t.integer "author_id"
@@ -39,56 +41,51 @@ ActiveRecord::Schema.define(version: 2020_05_21_014252) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", id: :integer, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "publisher", limit: 50
+    t.string "publisher"
     t.integer "language_id"
-    t.integer "genre_id"
     t.integer "location_id"
-    t.text "notes", limit: 4294967295
-    t.string "translator", limit: 50
-    t.string "ISBN", limit: 14
+    t.text "notes"
+    t.string "ISBN"
     t.integer "pages"
-    t.string "original_language", limit: 2
+    t.integer "original_language"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "excluded", default: false
     t.string "sortby_title"
+    t.integer "genre_id"
   end
 
-  create_table "genres", id: :integer, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "genID", limit: 5, default: "", null: false
+  create_table "genres", force: :cascade do |t|
     t.string "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "readable", default: true
   end
 
-  create_table "languages", id: :integer, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string "name", limit: 20
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "locations", id: :integer, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "Location"
+  create_table "locations", force: :cascade do |t|
+    t.string "location"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "readable", default: true
   end
 
-  create_table "ratings", primary_key: "ratID", id: :integer, limit: 1, default: 0, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "rating", limit: 50
-  end
-
-  create_table "readings", id: :integer, limit: 2, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "book_id", limit: 2
-    t.integer "rating", limit: 1
+  create_table "readings", force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "rating"
     t.text "comments"
-    t.date "date_started"
-    t.date "date_finished"
+    t.datetime "date_started"
+    t.datetime "date_finished"
     t.datetime "updated_on"
-    t.index ["id"], name: "id_idx"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
