@@ -47,6 +47,9 @@
   %strong Language:
   #{@book.language.name} 
 
+-# #{@book.original_language.name} will not work, since there's no original_
+-# language method. Look into what to do translate this into a usable string
+-# maybe what is used for the pie-graph on the front page could be helpful
 %p
   %strong Original Language:
   #{@book.original_language}

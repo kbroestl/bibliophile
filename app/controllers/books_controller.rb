@@ -102,6 +102,7 @@ class BooksController < ApplicationController
 
   def unread
     @books = Book.unread_books
+    @fruit = Book.low_hanging_fruit
     @page_title = 'Unread Books'
     respond_to do |format|
       format.html

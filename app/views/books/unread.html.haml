@@ -1,5 +1,17 @@
 %h1 Unread Books
 
+%h2 Low-Hanging Fruit
+%p books which have relatively low page counts, but haven't yet been read. If you're looking for Thomas Mann or James Joyce, look elsewhere.
+
+%table
+	-@fruit.each do |book|
+		%tr
+			%td #{book.title}
+			%td #{book.pages}
+			%td= link_to 'Show', book
+			%td= link_to 'Edit', edit_book_path(book)
+
+
 %p What classifies a book as "unread?" In general, it's a book that is in the catalog which has no associated reading.
 
 %table
@@ -7,4 +19,4 @@
 		%tr
 			%td #{book.title}
 			%td= link_to 'Show', book
-			%td= link_to 'Edit', edit_book_path(book)    
+			%td= link_to 'Edit', edit_book_path(book)
