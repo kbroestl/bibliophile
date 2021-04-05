@@ -16,7 +16,7 @@ class Book < ApplicationRecord
   before_save :set_sortby_title
 
   # Why are all of these abstract methods, and is that overcomplicating this,
-  # causeing more problems than it solves?
+  # causing more problems than it solves?
 
   def self.count_unread
     unreadjoins = <<-SQL
@@ -41,7 +41,7 @@ class Book < ApplicationRecord
   end
 
   def self.find_most_prominent_publishers
-    # rewrite this method to use ORM DSL for better database abstraction
+    # TODO: rewrite this method to use ORM DSL for better database abstraction
     query = <<-SQL
     select count(publisher) as "total", publisher
     from books
@@ -54,7 +54,7 @@ class Book < ApplicationRecord
   end
 
   def self.unread_books
-    # rewrite this method to use ORM DSL for better database abstraction
+    # TODO: rewrite this method to use ORM DSL for better database abstraction
     query = <<-SQL
     select b.id, b.title
     from books b
@@ -68,13 +68,36 @@ class Book < ApplicationRecord
   end
 
   def self.latest_readings
-    # rewrite this method to use ORM DSL for better database abstraction
+    # TODO: rewrite this method to use ORM DSL for better database abstraction
     query = <<-SQL
     select b.id, b.title, r.date_finished
     from books b
     INNER JOIN readings r on b.id = r.book_id
     where r.date_finished >= DATE_SUB(now(), interval 1 year)
     order by r.date_finished DESC
+    SQL
+    Book.find_by_sql(query)
+  end
+
+  def self.low_hanging_fruit
+    # What is low_hanging_fruit? Shorter books which are haven't been read yet
+    # Books with no readings, where the location is not something like sold
+    # and genre, etc. doesn't exclude it (e.g. Dictionaries)
+
+    # TODO: rewrite this method to use ORM DSL for better database abstraction
+    query = <<-SQL
+    select b.id, b.title, b.pages 
+    from books 
+    b Left outer join readings r 
+    on r.book_id = b.id
+    inner join locations l 
+    on l.id = b.location_id and l.readable = 1
+    inner join genres g
+    on g.id = b.genre_id and g.readable = 1
+    where r.book_id is null 
+    and b.pages <> 0
+    and b.excluded = 0 
+    order by pages ASC limit 20;
     SQL
     Book.find_by_sql(query)
   end
