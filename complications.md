@@ -2,6 +2,10 @@
 
 Over the course of any project, complications arise. Document them here so we can remember things better, and address as time goes on.
 
+## 2022-03-19
+- more and better mocking for the tests would be good
+- with release of rails 7, we need to move this to at least 6.0 for maintainabililty
+
 ## 2019-06-10
 - rethink the above. Rather than ginning up specific datasets to match the
 find_by_sql, better served by creating completed objects which are instantiated
@@ -45,15 +49,15 @@ been corrupted. However, re-creation of the data should be relatively easy.
 These tables are things like locations, languages, genres, etc.
 
 ### Ways forward
-- research ways to mysqldump only specific tables from a database, since we are
-unable to drop the corrupted innodb tables
-- confirm that the mysql2 bindings/gem cannot be built in the current state for
-mysql v.8
 - Look into possibilities for containerization? Docker container for the mysql
 chunk, but then what do we do about data-persistence?
+- research ways to mysqldump only specific tables from a database, since we are
+unable to drop the corrupted innodb tables
+- **DONE** confirm that the mysql2 bindings/gem cannot be built in the current state for
+mysql v.8
 - Discover ways to set mysql_location compile-time variables via Gemfile and
 bundler?
-- Continue to press forward with upgrades to Rails to get the app beyond
+- **DONE** Continue to press forward with upgrades to Rails to get the app beyond
 3-series?
 - Abandon mysql in favor of other dbms
 -- this has the complication that many of the methods, specifically on the Book
