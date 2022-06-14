@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '5.2.6.3'
+gem 'rails', '5.2.7.1'
 gem 'bootsnap'
 gem 'listen'
 
