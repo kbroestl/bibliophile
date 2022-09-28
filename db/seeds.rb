@@ -29,10 +29,10 @@ languages = Language.create([
 
 # VERY generic, general use locations. Think rooms of a house.
 locations = Location.create([
-  {:Location => 'Office', :readable => 1},
-  {:Location => 'Bedroom', :readable => 1},
-  {:Location => 'Family Room', :readable => 1},
-  {:Location => 'Sold', :readable => 0}
+  {:location => 'Office', :readable => 1},
+  {:location => 'Bedroom', :readable => 1},
+  {:location => 'Family Room', :readable => 1},
+  {:location => 'Sold', :readable => 0}
 ])
 
 

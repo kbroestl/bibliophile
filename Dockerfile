@@ -1,12 +1,19 @@
 #syntax=docker/dockerfile:1
-FROM frolvlad/alpine-ruby:latest
+FROM ruby:2.7.0
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt update && apt install -y \
+	build-essential \
+	libpq-dev \
+	nodejs
 
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+RUN mkdir /app
+WORKDIR /app
+
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install
+
+ADD . /app
 
 # add a script to be executed every time the container starts:
 COPY entrypoint.sh /usr/bin
