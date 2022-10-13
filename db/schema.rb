@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_27_210617) do
+ActiveRecord::Schema.define(version: 2020_05_21_014252) do
 
-  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "authors", force: :cascade do |t|
     t.string "author"
     t.string "author_first"
     t.string "author_last"
@@ -23,17 +23,17 @@ ActiveRecord::Schema.define(version: 2022_09_27_210617) do
     t.string "name"
   end
 
-  create_table "authorships", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "authorships", force: :cascade do |t|
     t.integer "book_id"
     t.integer "author_id"
-    t.boolean "translator", default: false
+    t.boolean "translatior", default: false
     t.boolean "editor", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "contributor", default: false
   end
 
-  create_table "biographies", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "biographies", force: :cascade do |t|
     t.string "image_url"
     t.text "bio_text"
     t.integer "author_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_09_27_210617) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "publisher"
     t.integer "language_id"
@@ -57,27 +57,27 @@ ActiveRecord::Schema.define(version: 2022_09_27_210617) do
     t.integer "genre_id"
   end
 
-  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "genres", force: :cascade do |t|
     t.string "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "readable", default: true
   end
 
-  create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "languages", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.string "location"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "readable", default: true
   end
 
-  create_table "readings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "readings", force: :cascade do |t|
     t.integer "book_id"
     t.integer "rating"
     t.text "comments"
