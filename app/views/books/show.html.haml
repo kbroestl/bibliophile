@@ -37,11 +37,11 @@
 
 %p
   %strong Current Location:
-  #{@book.location.Location}
+  #{@book.location.name}
 
 %p
   %strong Genre:
-  #{ @book.genre.genre.downcase.gsub(/\b\w/){$&.upcase} }
+  #{ @book.genre.name.downcase.gsub(/\b\w/){$&.upcase} }
 
 %p
   %strong Language:

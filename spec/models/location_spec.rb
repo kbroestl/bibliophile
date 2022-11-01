@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'pry'
 
 RSpec.describe Location, type: :model do
-  let(:location) { FactoryBot.create(:location, location: 'Limbo') }
+  let(:location) { FactoryBot.create(:location, name: 'Limbo') }
   let :book do
     FactoryBot.create(:book,
                       title: 'Enigma',

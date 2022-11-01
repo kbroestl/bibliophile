@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git"}
 
 gem 'rails', '5.2.8.1'
-gem 'bootsnap'
-gem 'listen'
+gem 'mysql2', '~> 0.5.0' # 0.5 and higher are not supported by Rails < 5'
+gem 'uglifier', '>= 1.3.0'
+gem 'bootsnap', '>= 1.0.0', require: false
+gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.5'
 
 gem 'rake'
 
@@ -15,12 +19,12 @@ gem 'haml'
 gem 'high_voltage'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'mysql2', '~> 0.5.0' # 0.5 and higher are not supported by Rails < 5
 gem 'nifty-generators'
 gem 'sass'
 gem 'wikipedia-client'
 
 group :development, :test do
+  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
