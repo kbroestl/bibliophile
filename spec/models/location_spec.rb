@@ -15,9 +15,10 @@ RSpec.describe Location, type: :model do
     expect(FactoryBot.create(:location)).to be_valid
   end
 
+# 4 in the seed file, 1 created above, so 5
   describe 'Locations have members' do
     it 'returns a count of location members' do
-      expect(Location.count(location.id)).to eq(1)
+      expect(Location.count(location.id)).to eq(5)
     end
   end
 end

@@ -11,9 +11,10 @@ RSpec.describe Genre, type: :model do
     expect(FactoryBot.create(:genre)).to be_valid
   end
 
+# 4 in the seed file, 1 created above, so 5.
   describe 'Genres have members' do
     it 'returns a count of genre members' do
-      expect(Genre.count(genre.id)).to eq(1)
+      expect(Genre.count(genre.id)).to eq(5)
     end
   end
 end

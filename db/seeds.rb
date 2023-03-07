@@ -26,7 +26,6 @@ languages = Language.create([
   {:name => 'Hungarian'}
 ])
 
-
 # VERY generic, general use locations. Think rooms of a house.
 locations = Location.create([
   {:name => 'Office', :readable => 1},
@@ -34,7 +33,6 @@ locations = Location.create([
   {:name => 'Family Room', :readable => 1},
   {:name => 'Sold', :readable => 0}
 ])
-
 
 # VERY generic, general use genres. Think Dewey Decimal level.
 genres = Genre.create([
