@@ -63,7 +63,7 @@ class GenresController < ApplicationController
     @genre = Genre.find(params[:id])
 
     respond_to do |format|
-      if @genre.update_attributes(params[:genre])
+      if @genre.update(params[:genre])
         flash[:notice] = 'genre was successfully updated.'
         format.html { redirect_to(@genre) }
         format.xml  { head :ok }

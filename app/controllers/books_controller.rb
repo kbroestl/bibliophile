@@ -76,7 +76,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     respond_to do |format|
-      if @book.update_attributes(book_params)
+      if @book.update(book_params)
         flash[:notice] = 'Book was successfully updated.'
         format.html { redirect_to(@book) }
         format.xml  { head :ok }
