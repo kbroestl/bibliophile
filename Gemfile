@@ -10,6 +10,8 @@ gem 'bootsnap', '>= 1.0.0', require: false
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'puma'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
