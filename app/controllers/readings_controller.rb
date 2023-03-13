@@ -66,7 +66,7 @@ class ReadingsController < ApplicationController
     @reading = @book.readings.find(params[:id])
 
     respond_to do |format|
-      if @reading.update_attributes(reading_params)
+      if @reading.update(reading_params)
         format.html { redirect_to(@book, notice: 'Reading was successfully updated.') }
         format.xml  { head :ok }
       else

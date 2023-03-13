@@ -66,7 +66,7 @@ class AuthorshipsController < ApplicationController
     # @authorship = Authorship.find(params[:id])
 
     respond_to do |format|
-      if @authorship.update_attributes(authorship_params)
+      if @authorship.update(authorship_params)
         flash[:notice] = 'Authorship was successfully updated.'
         format.html { redirect_to(@authorship.book) }
         format.xml  { head :ok }
