@@ -11,6 +11,10 @@ module RailsPortal
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # The allowed IP may change based on whether or not the development host
+    # is in docker on on another linux host.
+    config.web_console.permissions = '172.28.0.0/16'
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
