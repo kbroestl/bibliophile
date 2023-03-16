@@ -13,7 +13,7 @@ module RailsPortal
 
     # The allowed IP may change based on whether or not the development host
     # is in docker on on another linux host.
-    config.web_console.permissions = '172.28.0.0/16'
+    config.web_console.permissions = %w[172.0.0.0/10]
 
     # Configuration for the application, engines, and railties goes here.
     #
