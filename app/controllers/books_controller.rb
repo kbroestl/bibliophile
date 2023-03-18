@@ -101,7 +101,6 @@ class BooksController < ApplicationController
   end
 
   def unread
-    raise FooBar
     @books = Book.unread_books
     @fruit = Book.low_hanging_fruit
     @page_title = 'Unread Books'
