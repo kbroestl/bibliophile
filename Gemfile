@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git"}
 
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 7.0.5'
 gem 'mysql2', '~> 0.5.0' # 0.5 and higher are not supported by Rails < 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', '>= 1.0.0', require: false
