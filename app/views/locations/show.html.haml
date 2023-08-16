@@ -1,0 +1,8 @@
+.page-header
+  %h1 #{ @location.name}
+
+  -if @location.readable?
+    %p This book is in a readable location
+
+
+%p #{ link_to 'Edit', edit_location_path(@location) } | #{ link_to 'Back', locations_path }
