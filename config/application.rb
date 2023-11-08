@@ -14,6 +14,7 @@ module RailsPortal
     # The allowed IP may change based on whether or not the development host
     # is in docker on on another linux host.
     config.web_console.permissions = %w[172.0.0.0/10]
+    config.web_console.development_only = false
 
     # Configuration for the application, engines, and railties goes here.
     #

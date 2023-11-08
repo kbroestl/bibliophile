@@ -4,5 +4,10 @@
   -if @location.readable?
     %p This book is in a readable location
 
+%div#book-list
+  %h3 Books in this location:
+  %ul
+  -@location.books.each do |book|
+    %li= link_to book.title, book_path(book)
 
 %p #{ link_to 'Edit', edit_location_path(@location) } | #{ link_to 'Back', locations_path }
