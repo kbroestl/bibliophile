@@ -40,9 +40,12 @@
 	-if @last_read
 		#last_read
 			%h3 Latest Read Books:
+			%p #{@last_read.count} books completed in the last 12 months:
+			%ol
 			-@last_read.each do |read|
-				%h5=link_to read.title, read
-				%p.small Completed #{read.date_finished.strftime('%B %-d, %Y')}
+				%li
+					%h5=link_to read.title, read
+					%p.small Completed #{read.date_finished.strftime('%B %-d, %Y')}
 	
 	-if @prolific_authors
 		#prolific_authors
