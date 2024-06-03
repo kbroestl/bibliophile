@@ -52,7 +52,7 @@
 -# maybe what is used for the pie-graph on the front page could be helpful
 %p
   %strong Original Language:
-  #{@book.original_language}
+  #{Language.find(@book.original_language).name}
 
 %p 
   %strong Last Modified:
