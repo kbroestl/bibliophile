@@ -18,7 +18,7 @@
 			%span= link_to 'Show', book
 			%span= link_to 'Edit', edit_book_path(book)
 
-%a= link_to 'New book', new_book_path
+%p= link_to 'New book', new_book_path
 #unread_prompt
 	-if @unread > 0
 		%p #{@unread} books are reported #{ link_to 'unread', unread_path }.
