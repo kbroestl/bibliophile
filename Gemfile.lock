@@ -78,8 +78,8 @@ GEM
       mutex_m
       securerandom (>= 0.3)
       tzinfo (~> 2.0)
-    addressable (2.8.4)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.2)
     base64 (0.2.0)
     benchmark (0.4.0)
@@ -187,7 +187,7 @@ GEM
       pry (>= 0.10.4)
     psych (5.2.0)
       stringio
-    public_suffix (5.0.1)
+    public_suffix (7.0.5)
     puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
