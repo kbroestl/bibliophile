@@ -171,7 +171,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nifty-generators (0.4.6)
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.17.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -188,7 +188,7 @@ GEM
     psych (5.2.0)
       stringio
     public_suffix (5.0.1)
-    puma (6.4.3)
+    puma (7.2.1)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.18)
