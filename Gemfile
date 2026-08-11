@@ -48,6 +48,6 @@ group :test do
   gem 'database_cleaner'
   gem 'minitest'
   gem 'rails-controller-testing' # necessary for controller testing in rails5?
-  gem 'sqlite3', '~> 1.4'
+  gem 'sqlite3', '~> 2.9'
   # gem 'capybara', # Latest capybara not supported < Ruby 2.3
 end
